@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Replay Trader</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAALQUlEQVR4nO2bz6slRxXHP6eq+903M5mYZEjimIQYNAiKGyG4cqULN4JbEf8DF7rIwlGMcZHNkJ24EVfuBDeCEnDhTjAQhCgRdTFGCRlGJpg3781793VVHRf1o6v79r3dL3lChpkz3Ol+t+vHqW+dH9+q6gsP5IE8kPtZ5INU+skvXtPzVuS85Nvf+uqZxnSmwh/lgY9lKRCLCt1LAx/LHBCzAEwN/vorL30Ynf6v8uK1lze+2wXCTgDGg/8oD3wsYyC2gbAVgDz4H137Dk3T4J2jafdw7hRrGnzwGGNQjRiJgCq0bct6fULTtHjnsE2D9w5jLBoCIrHLoIoxBu89jW1wvqNtWhRQVYKP7SNC8B576QJufUqD4FyHtQ3Be8QYUEUBYwQRQYPGdtuGH/z41Z0gNHNIqirOOTQEQEHBuQ4FQggFRQVEJJXVWEYV7ToURYMS1QRJNVwIoIrTWLZzDmsMzntQJWiIXR4do088gnpH994B7O/htCMpkTVFg8FYg3ceULrTbm54mF2znxBIgwfXdQTVOOvVR6vv8r2GCFb8u7+i4DXgc300tomiGqIFhHT1AV21yHNX0Y8/Ck8/Dk8/jpo4y1r3p6AZMA3l79ptp+LZrAWQTFZVsU2DOkeFTi6EqJayIjJwLklFBQjABWMxwFEImGQP8Wm8FxEwAicOPvdJ7LVvwvEa9lq4fYD//s/RuydgBeohifQ9Sul5p2xYQI3S9VdeKrMsgE+m2X8SBikO5KsOnpE9BwFONfBk0/LM3op1CEVFpbIgKquCCEYGRaSyQAY65PK5razPLiuYtQBrG3KzTdPivY+mtoGuIhJ90Goe7tDiBLAqiLUggrU2BtJSIH6nSpzdxoMxENJgkltZa8E2YE0PPtFyjLXYNGFLZIELpKFoNu88lM2C0fInymnfjlTtiKSorTpuqtQVEbA2AmFMHDTJIga6aLldaP3AAgC896l9xQuE4CvQFbQghKS0GLyvtNBiCCLgQyCEQFDwzuGTBeQs4lOfogH1Hukc9u4JrLs42ydrvHfgXew7A1zAqnQ+DwBy3o551vb+J0QFShSRNKMmBbFknpLydKpiDVgRjBGsiWWzw2SLEInBTfb34MZN/Hd/ijzzOHp0ArcPkM7F9rOXmXiNwVeKzucCQDW8mPen3RtFo/kLaOcR30FrwXmwBmkbVJU73nPoPU6FA++50jRTzWX0oXNwcASXL8DBXbh9APttz7wmJKt4rgAoirUWpyMQin/n1HWK+coX4IXPgA9gDPKXG6x//QeuXr7Ez576NI/aFkE5CoEfvvMv/nZyzL4IPa2qMBaBtoHGxmtr0+CrUfbZmBKFzisGZFVEJKXB0aP6XgRcgGefRL70ebh9CI9dQo7XBO9ZGcPXH70CYslB6/rNd/ApfvTONoAgcoycbnXwZKSHlHYnzfSDAaDlEi0g59e6g0KGU7Lv4PA4kpdDA+uu+Pod57hoNLkM+KxvjILkfyqKlK4TQaI3uk01SyRJBZY5wqIgmNuO0bVuuDbXmoWllGVSMKyCkhXBDgIffUqrPjmexKA21Cf3OIA/tVEeL/SBRYuheE0W4BQIwzL5v4p9TbaVaoakvIwYn2j/IZXLnRd72+hDI0cRLWuP2Lgu8YB5AJqmLcpLYmpgJ8uKtZg20JkhwxYRbNPSNg0PZUKTpG1amrZFxdChBGtwwWBFaFNaIxCZX9NA28aAOAG0iGCMJZOyJTILQF7y5iww4OijUCxGIHh0REXjcjhw6j2vHx1y2VoEWIfAsXd4H7i6anm4adizls463veed7rT6C7Bx2VvCBB8BGQ8fu3dQ4NfMvnLAIi8PwLuvUuA9G6BaCaCmBAIYdMNVKFR5dZpx5f//hafWu2zL4Y/Hx/xkLGsBE68pxXBAZ33nAaPBiUYerMPcZktqY/xIAUBFcIONzwzAH2qUYwYVLSMbxictGdhE+YnkoijCInNl2BoRbjlHTe9w9om7vggNOPl7SjIDbpR6HNI1vs80mDPSKafseVZnburMnsi3Ow6RGCVYoEqtCkFWiM4iTRXVSfa3uLcdRbZUWws8wDk2abPCAUUHxiYg7X9fWPTktbGdFj0EjoUQvZZJV1QGZDLwYj6VLtlVnV4K4lXzMkyHpBWdHETNKCBuKrZ34NHLkX1/nvYg3HaRd5+d13oca1MyfH13lK2cu1pfq6SgelBGHNgeqxKMGSJBywIgqV1JYQQFXAOufIwfO8bsGpiIefh+i/huIPf/BFeewOeexJ9+1YEZH8vbmgMpAZFR4Poi+yex5FVVKR0iRvMW0C6KmCsRdNaW0WQhy+mXZlUIi+FT05Rv4ajE3j/KDZiZDgjk9YsKBLbJrlcAUISVa6rTTUyi9hAli+H0/58ZvECcdZJOmgoBFXSWl2tRVqbdojr1DHF0sYGrmVfQMUg6w6870Eo5K8GZVnkPxMAhQmq0u61OO9RD9gGP0h5aY+vafFpg0KNQWzTc9tJqSK9RLo9XmrRNPDeYVwkrVZVHa2RKHuCcgYTmAXAeZf0VHSd9+tdZGQj8d6jzuHTapd/vgvd9PZUP+y0LtQ844p3bkarTUA1AWDTQU6W1UxLkwcjU/0pYJumn5odk5qJsJ66gbrKsKpWg6/L7VQkL37oCWJN/LQqt6TFWQDyylKoNkS2sL2+TsUKGRYd8hRJ+Trd1yUm248RQrJLVcwwr5tKuwtXQ7MA1FzMGtsHsa36JU0m2OOYpJVgRvTjUmVnLOtz3KCdbA2pjOoGWZ6UBRbQz0jQUL7dqltN5bL57OCnfdpOLD7V7zdEpmr09zr6rj6P0PnxL4sBGkc/MKtJdCuTTBUrxlczlI1qve8mK9K8oTHjxiUJTlnOgow4D0Ae1FNXSnfbLVSGdwMSw4jeTblH374Ux2brCrOuXRucVJ85WZYFjMDli5HclFa1P7PL53b0a3Qt/6VrdRwe08oQwtp38wFpdmrtnXskfXt181PZYZvMU+Eu7cQcn2LWLu4HGIMYS7i4GhxRi7H9yQ70BKg2hw2W0w9GEMRIZJL0M9hX0f6LvuFyKxLripmNpGcA4GtfRD/7LIgQGgtv/APz29fjlverv4LHLkdNbx9g37+L2dsD9ZN99zl6QrmUXq2xqNntyNuGJQjGmJitFsr84eizT8ALz6N3jmlWK/y7t6Hr4O4JvP5XuHoFjKD//g/6sUsYY/Gu23RAJVHWOkKOHidgavY5LVpXGtS3anGuKw/mmOC8BZx26NEaOTnF23TWlw8/L16Ai6tIeh66EM2vbItJNUYt+b5PTaMgmFZ+g8w3AlHHfww9YHQ4uswF5omQSJxhY7Cu3u1NgS8HQh/K10OqO8Npan8eZb4BoS0RbluDw4C4VOYtQOOWtoSAt1L1LQxWeSXwTdGeQQhj8DXDNqZpUzXdY44xCIgpgS5If1nm9wP29+DyxbgYWu3h9trpKDzSc6ztRNAfkYVdsoUHnGGmt8k8AG/eQA5PYNUSvMJbb8cj6vKiRPZ33TmWDY88wyxFmWaRm2XOJvMu8Ps34Xd/guc/gb1xC0QJqzb6vjUxGyD91tikjsPhLwtPU23sbHZb5ztlIwjWr5O+eO1ldNWily/AhRXh0grdawvrwwjcOYY7d/s3tnKc0hwE879eakI4pnCDR1RtjF/PYzz4nj0WNqn9OKbGBwsswOR9OVWsGJBAqA43JZ5FxqOx9O6PCfn9nVHgqgCIm+2CDEYRiYypD1fL+0j1UDfnWtF0OJrqLzSzrTaz8cLkPSq7Zh8WLoam3sG/F2SJ3lsBGKN1r4HwoX8vkOW+/sVIlvv6N0O13EtAnOuvxsbyUQbirL8bfCAP5D6X/wH3JSemCanyhwAAAABJRU5ErkJggg==">
+<style>
+:root{--bg:#0b1118;--panel:#111923;--panel2:#151f2b;--line:#273241;--txt:#d8dee9;--muted:#8592a3;--blue:#2962ff;--green:#0F8A73;--red:#ff4d5d;--yellow:#c8954b;--gap:#9a7a55;--grid:rgba(100,115,135,.16)}
+*{box-sizing:border-box}body{margin:0;background:#070b10;color:var(--txt);font:14px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;overflow:hidden}button,select,input{font:inherit;color:var(--txt);background:#121b26;border:1px solid #2a3544;border-radius:6px;padding:7px 9px}button{cursor:pointer;transition:transform .06s ease,background .12s ease,box-shadow .12s ease}button:hover{background:#1a2635}button:active{transform:scale(.97)}.primary{background:linear-gradient(180deg,#3674ff,#1d55e6);border-color:#3674ff;color:white}.danger{background:#33141b;border-color:#71303a}.good{background:#0d312b;border-color:#187766}.top{height:46px;background:#0b0f15;border-bottom:1px solid #1f2833;display:flex;align-items:center;gap:12px;padding:0 12px}.brand{font-weight:850;font-size:16px;letter-spacing:.25px;color:#f3f6fb}.tf button{padding:5px 8px;border:0;background:transparent}.tf button.active{color:#4d83ff}.main{--sideW:300px;--bottomH:190px;height:calc(100vh - 46px);display:grid;grid-template-columns:1fr var(--sideW);grid-template-rows:minmax(260px,1fr) var(--bottomH);position:relative;transition:grid-template-columns .2s ease}.main.sideClosed{--sideW:0px}.main.resizingSide{transition:none!important}.side{grid-column:2;grid-row:1/3;background:linear-gradient(270deg,#111a25 0%,#111a25 82%,#0b1118 100%);border-left:1px solid #273241;padding:14px;overflow:auto;transition:.2s;min-width:0}.side.collapsed{padding:0;border-left:0;overflow:hidden}.section{border-bottom:1px solid #253241;padding-bottom:14px;margin-bottom:14px}.section h3{font-size:12px;text-transform:uppercase;color:#cbd5e1;margin:0 0 10px}.row{display:flex;align-items:center;justify-content:space-between;gap:9px;margin:8px 0}.row label{color:#c4ccd8}.row input,.row select{width:124px}.status{color:var(--green);font-size:12px}.chartWrap{grid-column:1;grid-row:1;position:relative;background:linear-gradient(180deg,#f8fafc 0%,#d9dee6 52%,#9aa4b2 100%);overflow:hidden}.chartWrap.dark{background:radial-gradient(ellipse at center,#18222f 0%,#111923 42%,#0d131b 73%,#070b10 100%)}canvas{position:absolute;inset:0;width:100%;height:100%}.leftTools{position:absolute;left:0;top:0;bottom:0;width:48px;background:#0b1118cc;border-right:1px solid #263140;display:flex;flex-direction:column;align-items:center;padding-top:8px;gap:7px;z-index:4}.tool{width:34px;height:34px;border:0;background:transparent;border-radius:6px;font-size:18px;display:flex;align-items:center;justify-content:center}.tool.indTool{font-size:11px;font-weight:800;color:#cbd5e1}.tool.active{background:#1b2a3b;color:#4d83ff}.toolIcon{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}.tool#clearDrawings{color:#cbd5e1}.tool#clearDrawings:hover{color:#ffb86b}.chartHead{position:absolute;left:58px;top:8px;right:70px;z-index:3;display:flex;align-items:center;gap:10px;pointer-events:none}.symbol{background:#111923dd;color:#d9e1ed;padding:6px 8px;border-radius:4px;pointer-events:auto;display:inline-flex;align-items:center;gap:6px}.dark .symbol{background:#111923dd;color:#d9e1ed}.chartSymbolSelect{background:transparent;border:0;color:#d9e1ed;padding:0 18px 0 0;max-width:330px;font-weight:600;outline:none;cursor:pointer}.chartSymbolSelect option{background:#111923;color:#d9e1ed}.headTf{color:#9ca3af;white-space:nowrap}.quote{color:#ff4657;background:#f4f6faee;padding:4px 6px;border-radius:3px}.dark .quote{background:#111923dd}.bidask{position:absolute;left:58px;top:48px;display:flex;gap:8px;z-index:3}.box{width:84px;text-align:center;border-radius:6px;padding:5px 6px;font-weight:700;background:#0d1420;cursor:pointer;user-select:none}.box.active{box-shadow:0 0 0 2px #4d83ff99;background:#17243a}.sell{border:1px solid var(--red);color:var(--red)}.buy{border:1px solid #3d73ff;color:#3d73ff}.rightbar{display:none}.bottom{grid-column:1;grid-row:2;background:linear-gradient(180deg,#0e151d,#0a0f15);border:1px solid #273241;border-radius:14px;margin:8px 14px 2px 14px;padding:5px 18px 5px;display:grid;grid-template-columns:1.15fr 1.25fr 1fr;gap:18px;align-items:stretch;box-shadow:0 10px 30px #0005;min-height:176px;align-self:stretch;overflow:hidden}.bottomBlock{min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-start;height:100%;padding-top:0}.recentList{display:grid;gap:5px}.recentItem{display:flex;justify-content:space-between;align-items:center;background:#111b27;border:1px solid #263545;border-radius:7px;padding:5px 8px;font-size:12px}.recentItem b{font-size:12px}.recentItem .win{color:var(--green)}.recentItem .loss{color:var(--red)}.bottomTitle{font-size:12px;text-transform:uppercase;color:#9aa6b6;margin:0 0 4px;line-height:15px;min-height:15px}.metricLine{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric{background:#111b27;border:1px solid #293646;border-radius:8px;padding:7px 9px}.metric span{display:block;color:#8d99aa;font-size:11px}.metric b{font-size:13px}.centerMsg{color:#9aa6b6}.pill{display:inline-flex;gap:8px;background:#182231;border:1px solid #2c3b4d;border-radius:8px;padding:6px}.statgrid{display:grid;grid-template-columns:1fr auto;gap:4px 12px;color:#cfd6e2}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.hideBtn{position:absolute;right:var(--sideW);top:12px;z-index:10;border-radius:10px 0 0 10px;width:42px;height:38px;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0}.main.sideClosed .hideBtn{right:0}.tradePanel{display:none}.tradePanel h3{margin:0 0 8px}.small{font-size:12px;color:#9ba7b7}.inline{display:flex;gap:6px}.inline.mainReplay button{padding:9px 12px;font-weight:700}.speedRow{justify-content:flex-end;margin-top:8px}.speedRow select{max-width:120px}.inline button{flex:1}.file{width:100%}.help{font-size:12px;color:#8d99aa}.miniBtn{padding:4px 7px}.priceTag{position:absolute;right:0;background:#ff4657;color:white;padding:5px 8px;border-radius:2px;font-weight:700;z-index:3}.autoTimer{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:5;background:#0b1118d9;border:1px solid #2b3a4d;border-radius:10px;padding:8px 13px;font-weight:700;color:#dbeafe;display:none;box-shadow:0 8px 24px #0008}.autoTimer b{color:#60a5fa}.eventTag{position:absolute;z-index:4;background:#111827dd;border:1px solid #334155;border-radius:6px;color:#dbeafe;padding:4px 7px;font-size:12px;pointer-events:none}.kbd{background:#202b39;border:1px solid #344155;border-radius:4px;padding:2px 5px;color:#cbd5e1;font-size:12px}.toast{position:absolute;left:50%;bottom:205px;transform:translateX(-50%);z-index:12;background:#0b1118e8;border:1px solid #3b4c62;border-radius:9px;padding:9px 13px;color:#dbeafe;box-shadow:0 10px 30px #0009;opacity:0;pointer-events:none;transition:opacity .18s ease}.toast.show{opacity:1}.toast.warn{border-color:#f59e0b;color:#fbbf24;box-shadow:0 10px 30px #0009,0 0 0 1px rgba(245,158,11,.15) inset}.reviewBanner{position:absolute;top:82px;left:50%;transform:translateX(-50%) translateY(6px) scale(.96);z-index:6;display:block;min-width:330px;text-align:center;border-radius:14px;padding:16px 26px;background:#0b1118e8;border:1px solid #334155;box-shadow:0 16px 42px #000a;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s ease}.reviewBanner.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}.reviewBanner .big{display:block;font-weight:900;font-size:23px;letter-spacing:.9px}.reviewBanner .sub{display:block;font-size:13px;color:#cbd5e1;margin-top:4px}.reviewBanner.win{border-color:#0F8A73;color:#34d399}.reviewBanner.loss{border-color:#ff4d5d;color:#fb7185}.reviewBanner.flat{border-color:var(--yellow);color:#fbbf24}.indicatorLine{pointer-events:none}.autoScaleBtn{position:absolute;right:8px;bottom:42px;z-index:5;width:30px;height:26px;padding:0;border-radius:8px;background:#2b3440cc;border:1px solid #4b5563;color:#aeb8c6;font-weight:800;box-shadow:inset 0 1px 3px #0008}.autoScaleBtn.active{background:#1d4ed8;border-color:#60a5fa;color:white;box-shadow:0 0 0 1px #60a5fa66,inset 0 1px 1px #ffffff22}.tzSelect{position:absolute;right:8px;bottom:10px;z-index:5;width:64px;height:26px;padding:2px 5px;border-radius:8px;background:#2b3440cc;border:1px solid #4b5563;color:#dbeafe;font-size:11px;font-weight:700;outline:none}.tzSelect option{background:#111923;color:#dbeafe}.recentItem.new{animation:recentIn .18s ease-out}@keyframes recentIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}.statFlashUp{animation:flashUp .45s ease}.statFlashDown{animation:flashDown .45s ease}@keyframes flashUp{0%{color:#34d399;text-shadow:0 0 10px rgba(52,211,153,.7)}100%{text-shadow:none}}@keyframes flashDown{0%{color:#fb7185;text-shadow:0 0 10px rgba(251,113,133,.7)}100%{text-shadow:none}}.bottomResize::after,.sideResize::after{content:none!important;display:none!important}
+.sideHeader{padding:2px 2px 14px;margin-bottom:14px;border-bottom:1px solid #253241}
+.sideHeader h1{margin:0;color:#f1f5f9;font-size:22px;line-height:1.05;letter-spacing:.2px}
+.sideHeader p{margin:6px 0 0;color:#8d99aa;font-size:12px}
+.legalBlock{border-top:1px solid #253241;padding-top:14px;margin-top:18px;color:#8d99aa;font-size:11px;line-height:1.35}
+.legalBlock h3{font-size:11px;text-transform:uppercase;color:#cbd5e1;margin:0 0 6px}.legalBlock p{margin:0 0 10px}
+
+.settingsPanel{position:absolute;left:56px;top:154px;z-index:20;width:280px;background:#0b1118f4;border:1px solid #334155;border-radius:12px;padding:14px;box-shadow:0 18px 50px #000b;display:block;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-5px) scale(.97);transition:opacity .16s ease,transform .16s ease,visibility .16s ease}.settingsPanel.show{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1)}.settingsPanel h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;color:#cbd5e1}.settingsPanel .row input{width:110px}.settingsPanel .row select{width:110px}
+
+@keyframes tabPulse{0%,100%{filter:brightness(1);box-shadow:none}50%{filter:brightness(1.45);box-shadow:0 0 0 2px #60a5fa66,0 0 18px #60a5fa55}}
+.hideBtn.pulse{animation:tabPulse .55s ease-in-out 3}
+.sideHint{position:absolute;right:calc(var(--sideW) + 52px);top:54px;z-index:20;background:#0b1118ee;border:1px solid #3b4c62;color:#dbeafe;border-radius:10px;padding:9px 12px;box-shadow:0 10px 30px #0008;font-size:12px;opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+.sideHint.show{opacity:1;transform:translateY(0)}
+.resizeHint{position:absolute;z-index:31;background:#0b1118ee;border:1px solid #3b4c62;color:#dbeafe;border-radius:10px;padding:8px 11px;box-shadow:0 10px 30px #0008;font-size:12px;opacity:0;transform:translateY(5px);pointer-events:none;transition:opacity .25s ease,transform .25s ease}.resizeHint.show{opacity:1;transform:translateY(0)}.bottomHint{left:50%;bottom:calc(var(--bottomH) + 8px);transform:translate(-50%,5px)}.bottomHint.show{transform:translate(-50%,0)}.settingsResizeHint{right:calc(var(--sideW) + 10px);top:128px}.main.sideClosed .settingsResizeHint{display:none}
+.controlRow{display:grid;gap:7px;margin-top:7px;align-items:center}
+.controlRow.topActions{grid-template-columns:1fr 1fr}
+.controlRow.mainReplay{grid-template-columns:1.2fr 1fr 1.15fr}
+.controlRow.mainReplay button{padding:10px 12px;font-weight:800;min-height:38px}
+.controlRow.selectOnly select{width:100%;min-width:0}
+.controlRow.drillOptions{grid-template-columns:1.55fr .9fr;align-items:center}
+.controlRow.drillOptions select{width:100%;min-width:0}
+.controlRow.drillOptions .speedWrap{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center}
+.controlRow button{min-width:0}
+
+.bottomResize{grid-column:1;grid-row:1/3;align-self:end;justify-self:stretch;height:18px;margin-bottom:calc(var(--bottomH) - 7px);border-top:1px solid #273241;background:linear-gradient(180deg,rgba(39,50,65,.9),rgba(39,50,65,.18),rgba(39,50,65,0));cursor:row-resize;z-index:30;transition:border-color .12s ease;touch-action:none}
+.bottomResize:hover,.bottomResize.dragging{border-top-color:#4b5f78;background:linear-gradient(180deg,rgba(75,95,120,.55),rgba(39,50,65,0))}
+.sideResize{grid-column:1;grid-row:1/3;align-self:stretch;justify-self:end;width:8px;cursor:col-resize;z-index:11;background:linear-gradient(90deg,rgba(39,50,65,0),rgba(39,50,65,.55),rgba(39,50,65,0));opacity:.45;transition:opacity .12s ease}.sideResize:hover,.sideResize.dragging{opacity:1;background:linear-gradient(90deg,rgba(77,131,255,0),rgba(77,131,255,.55),rgba(77,131,255,0))}.main.sideClosed .sideResize{display:none}
+
+#confirm,#flat{font-weight:850;}
+.controlRow.mainReplay button{font-size:15px;}
+#autoStart.runActive,#autoStop.pauseActive,#flat.choiceActive{background:linear-gradient(180deg,#3674ff,#1d55e6);border-color:#3674ff;color:white;}
+#confirm.noTradeLocked{background:#1b2430;border-color:#334155;color:#7f8da1;box-shadow:none;}
+#autoStart.idle,#autoStop.idle{background:#121b26;border-color:#2a3544;color:var(--txt);}
+@keyframes nextScenarioPulse{0%,100%{box-shadow:0 0 0 0 rgba(96,165,250,.18),0 0 0 rgba(96,165,250,0);filter:brightness(1)}50%{box-shadow:0 0 0 2px rgba(96,165,250,.28),0 0 24px rgba(96,165,250,.48);filter:brightness(1.18)}}
+#autoStart.nextScenarioReady{animation:nextScenarioPulse 2.2s ease-in-out infinite;border-color:#60a5fa!important;color:#fff!important;}
+html.mobileUI #autoStart.nextScenarioReady{animation:none;}
+.entryTip{position:absolute;z-index:13;background:#0b1118e8;border:1px solid #3b4c62;border-radius:7px;padding:5px 8px;color:#dbeafe;font-size:12px;pointer-events:none;opacity:0;transition:opacity .12s ease;white-space:nowrap;box-shadow:0 8px 24px #0008}.entryTip.show{opacity:1}
+
+.welcomeOverlay{position:fixed;inset:0;z-index:9999;background:rgba(3,7,12,.72);display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.welcomeOverlay.show{display:flex}
+.welcomeCard{width:min(520px,calc(100vw - 34px));background:linear-gradient(180deg,#121b26,#0c121a);border:1px solid #314154;border-radius:18px;box-shadow:0 30px 90px #000b;padding:26px 28px;text-align:left}
+.welcomeCard h1{margin:0 0 8px;font-size:28px;letter-spacing:.2px;color:#f8fafc}
+.welcomeCard p{margin:8px 0;color:#cbd5e1}.welcomeCard ul{margin:14px 0 20px;padding-left:22px;color:#dbeafe}.welcomeCard li{margin:6px 0}.welcomeCard .fine{font-size:12px;color:#94a3b8;margin-top:14px}
+.welcomeTerms{display:flex;gap:10px;align-items:flex-start;margin:16px 0 10px;padding:12px;border:1px solid #314154;border-radius:12px;background:#0d1520;color:#cbd5e1;font-size:12px;line-height:1.35}.welcomeTerms.flash,.welcomePasswordRow.flash{border-color:#ff4d5d;box-shadow:0 0 0 2px rgba(255,77,93,.28),0 0 20px rgba(255,77,93,.18)}.welcomePasswordRow{display:grid;grid-template-columns:1fr auto;gap:8px;margin:10px 0;padding:10px;border:1px solid #314154;border-radius:12px;background:#0d1520}.welcomePasswordRow input{width:100%;min-width:0}.welcomePasswordRow button{min-width:96px;font-weight:800}.welcomeError{display:none;margin:6px 0 10px;color:#fb7185;font-size:12px;font-weight:800}.welcomeError.show{display:block}
+.tool.soundOn{color:#60a5fa}.tool.soundOff{color:#94a3b8}
+
+
+.mobileLandscapeControls{display:none}
+/* Mobile GUI layer: desktop layout above is untouched; these rules only apply when JS marks the device as mobile. */
+.mobileNav{display:none}
+html.mobileUI,html.mobileUI body{width:100%;height:100%;overflow:hidden}
+html.mobileUI body{position:fixed;inset:0;touch-action:manipulation;background:#070b10;-webkit-text-size-adjust:100%}
+html.mobileUI .top{height:38px;padding:0 7px;gap:7px;overflow:hidden;white-space:nowrap}
+html.mobileUI .brand{font-size:0!important;min-width:max-content}
+html.mobileUI .brand::after{content:'Replay Trader';font-size:13px;font-weight:850;letter-spacing:.2px;color:#f3f6fb}
+html.mobileUI .tf{display:flex;gap:2px;overflow-x:auto;max-width:50vw;-webkit-overflow-scrolling:touch}
+html.mobileUI .tf button{padding:4px 6px;font-size:11px;min-width:31px}
+html.mobileUI #darkToggle{padding:4px 6px;font-size:11px;min-width:max-content}
+html.mobileUI .top .muted{display:none}
+html.mobileUI .main{display:block;height:calc(100dvh - 38px);min-height:0;overflow:hidden;position:relative;transition:none;--mobileNavH:66px;--mobileToolH:46px;--mobileSheetH:244px;--sideW:0px}
+html.mobileUI .chartWrap{position:absolute;left:-1px;right:-1px;top:0;bottom:var(--mobileNavH);grid-column:auto;grid-row:auto;border:0;transition:bottom .24s cubic-bezier(.22,.61,.36,1)}
+html.mobileUI.mobilePanelOpen .chartWrap{bottom:calc(var(--mobileNavH) + var(--mobileSheetH))}
+html.mobileUI.mobile-tab-settings .chartWrap{bottom:var(--mobileNavH)}
+html.mobileUI canvas{touch-action:none}
+html.mobileUI .chartHead{left:8px;top:7px;right:76px;gap:6px}
+html.mobileUI .symbol{padding:5px 7px;max-width:calc(100vw - 90px);font-size:12px;background:#111923df}
+html.mobileUI .chartSymbolSelect{max-width:calc(100vw - 150px);font-size:12px;text-overflow:ellipsis}
+html.mobileUI .headTf{font-size:12px}
+html.mobileUI .bidask{left:8px;top:42px;gap:5px;flex-direction:column;align-items:flex-start}
+html.mobileUI .bidask>div:not(.box){display:none}
+html.mobileUI .box{width:76px;padding:5px 5px;font-size:12px;border-radius:7px;background:#0d1420df}
+html.mobileUI .priceTag{font-size:12px;padding:4px 7px}
+html.mobileUI .autoTimer{top:48px;left:50%;padding:6px 10px;font-size:12px}
+html.mobileUI .reviewBanner{top:80px;min-width:min(330px,calc(100vw - 28px));padding:13px 18px}
+html.mobileUI .reviewBanner .big{font-size:20px}
+html.mobileUI .reviewBanner .sub{font-size:12px}
+html.mobileUI .toast{bottom:calc(var(--mobileNavH) + var(--mobileToolH) + 10px);max-width:calc(100vw - 24px);font-size:12px}
+html.mobileUI.mobilePanelOpen .toast{bottom:calc(var(--mobileNavH) + var(--mobileToolH) + var(--mobileSheetH) + 10px)}
+html.mobileUI .leftTools{position:absolute;left:0;right:0;top:auto;bottom:0;width:auto;height:var(--mobileToolH);border-right:0;border-top:1px solid #263140;background:#0b1118f2;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;padding:5px 8px;overflow-x:auto;overflow-y:hidden;z-index:18;-webkit-overflow-scrolling:touch;transition:bottom .24s cubic-bezier(.22,.61,.36,1)}
+html.mobileUI.mobilePanelOpen .leftTools{bottom:0}
+html.mobileUI.mobile-tab-settings .leftTools{display:none}
+html.mobileUI .tool{min-width:36px;width:36px;height:36px;font-size:17px;border-radius:9px;background:#121b26cc;border:1px solid #263140}
+html.mobileUI .tool.indTool{font-size:11px}
+html.mobileUI .autoScaleBtn{right:8px;bottom:calc(var(--mobileToolH) + 8px)}
+html.mobileUI.mobilePanelOpen .autoScaleBtn{bottom:calc(var(--mobileToolH) + 8px)}
+html.mobileUI .tzSelect{right:46px;bottom:calc(var(--mobileToolH) + 8px)}
+html.mobileUI.mobilePanelOpen .tzSelect{bottom:calc(var(--mobileToolH) + 8px)}
+html.mobileUI .bottom{position:absolute;left:8px;right:8px;bottom:var(--mobileNavH);height:var(--mobileSheetH);min-height:0;margin:0;padding:12px;display:none;grid-template-columns:1fr;gap:0;z-index:16;border-radius:16px 16px 0 0;box-shadow:0 -12px 32px #0009;overflow:auto;-webkit-overflow-scrolling:touch;background:linear-gradient(180deg,#101923,#090e14)}
+html.mobileUI.mobile-tab-setup .bottom,html.mobileUI.mobile-tab-replay .bottom,html.mobileUI.mobile-tab-trades .bottom{display:block}
+html.mobileUI .bottomBlock{display:none;height:auto;min-height:100%;padding:0;gap:0}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1),html.mobileUI.mobile-tab-replay .bottomBlock:nth-child(2),html.mobileUI.mobile-tab-trades .bottomBlock:nth-child(3){display:flex}
+html.mobileUI .bottomTitle{font-size:12px;margin-bottom:8px;min-height:auto;letter-spacing:.05em}
+html.mobileUI .metricLine{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+html.mobileUI .metric{padding:8px 9px;border-radius:10px}
+html.mobileUI .metric span{font-size:11px}
+html.mobileUI .metric b{font-size:14px}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1){display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:start;min-height:0}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1) .bottomTitle{grid-column:1/-1;margin-bottom:0}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1) .metricLine{display:contents!important}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1) .metricLine[style]{margin-top:0!important}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1) .metric{min-width:0;padding:8px 8px}
+html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1)>a.small{grid-column:1/-1;margin-top:0!important}
+html.mobileUI .controlRow{gap:8px;margin-top:8px}
+html.mobileUI .controlRow.topActions,html.mobileUI .controlRow.mainReplay,html.mobileUI .controlRow.drillOptions{grid-template-columns:1fr 1fr}
+html.mobileUI .controlRow.mainReplay button,html.mobileUI .controlRow.topActions button{min-height:42px;padding:10px 9px;font-size:14px;border-radius:10px}
+html.mobileUI .controlRow.mainReplay #step{grid-column:1/3}
+html.mobileUI .controlRow.drillOptions select{min-height:38px;font-size:12px}
+html.mobileUI .controlRow.drillOptions .speedWrap{grid-template-columns:1fr;gap:0}html.mobileUI .controlRow.drillOptions .speedWrap label{display:none!important}
+html.mobileUI .recentList{gap:6px}
+html.mobileUI .recentItem{padding:7px 9px;border-radius:9px;font-size:12px}
+html.mobileUI .small{font-size:12px}
+html.mobileUI .centerMsg{color:#cbd5e1}
+html.mobileUI .side{position:absolute;inset:0 0 var(--mobileNavH) 0;width:auto;min-width:0;grid-column:auto;grid-row:auto;transform:translateX(105%);z-index:24;border-left:1px solid #273241;padding:14px;overflow:auto;-webkit-overflow-scrolling:touch;background:linear-gradient(270deg,#111a25 0%,#0b1118 100%);transition:transform .18s ease;display:block}
+html.mobileUI.mobile-tab-settings .side{transform:translateX(0)}
+html.mobileUI .side.collapsed{padding:14px;border-left:1px solid #273241;overflow:auto}
+html.mobileUI .sideHeader h1{font-size:20px}
+html.mobileUI .row input,html.mobileUI .row select{width:140px;max-width:48vw}
+html.mobileUI .hideBtn,html.mobileUI .bottomResize,html.mobileUI .sideResize,html.mobileUI .sideHint,html.mobileUI .resizeHint{display:none!important}
+html.mobileUI .settingsPanel{left:8px;right:8px;top:calc(var(--mobileNavH) + 58px);width:auto;max-width:none}
+html.mobileUI .mobileNav{position:absolute;left:0;right:0;bottom:0;height:var(--mobileNavH);display:grid;grid-template-columns:repeat(5,1fr);align-items:stretch;background:#05080dcc;border-top:1px solid #1f2833;z-index:32;backdrop-filter:blur(10px)}
+html.mobileUI .mobileTabBtn{appearance:none;border:0;border-radius:0;background:transparent;color:#8d99aa;padding:6px 2px 7px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;line-height:1.05}
+html.mobileUI .mobileTabBtn .ico{font-size:17px;line-height:1}
+html.mobileUI .mobileTabBtn.active{color:#dbeafe;background:#101923}
+html.mobileUI .mobileTabBtn:active{transform:none;background:#172231}
+html.mobileUI button,html.mobileUI select,html.mobileUI input,html.mobileUI .mobileNav,html.mobileUI .top,html.mobileUI .bottom,html.mobileUI .side{touch-action:manipulation;-webkit-tap-highlight-color:transparent;pointer-events:auto}
+html.mobileUI .welcomeOverlay{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;z-index:100000!important;display:none!important;align-items:center!important;justify-content:center!important;padding:14px;background:rgba(3,7,12,.86)!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}
+html.mobileUI .welcomeOverlay.show{display:flex!important;pointer-events:auto!important;visibility:visible!important;opacity:1!important}
+html.mobileUI .welcomeCard{width:min(520px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:auto;margin:0;pointer-events:auto;position:relative!important;z-index:100001!important;opacity:1!important;visibility:visible!important;transform:none!important}
+html.mobileUI .welcomeCard h1{font-size:24px}
+
+html.mobileUI .welcomeOverlay:not(.show){display:none!important;pointer-events:none!important;visibility:hidden!important;opacity:0!important}
+html.mobileUI .sideHeader::after{content:'Tap Chart tab to close';display:block;margin-top:6px;color:#8d99aa;font-size:11px}
+html.mobileUI .mobileLandscapeControls{display:none}
+html.mobileUI .mobileLandscapeControls select,html.mobileUI .mobileLandscapeControls button{height:32px;padding:4px 7px;border-radius:8px;font-size:12px;background:#121b26cc;border:1px solid #263140;color:#dbeafe}
+html.mobileUI .mobileOrientationLock{display:none;position:fixed;inset:0;z-index:200000;background:#070b10;color:#dbeafe;align-items:center;justify-content:center;text-align:center;padding:24px;font:600 18px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+html.mobileUI .mobileOrientationLock b{display:block;font-size:24px;margin-bottom:8px;color:#f8fafc}
+@media (orientation:landscape) and (max-height:520px){
+ html.mobileUI .mobileOrientationLock{display:none!important}
+ html.mobileUI .main{visibility:visible!important}
+ html.mobileUI .top{display:none!important}
+ html.mobileUI .main{height:100dvh;--mobileNavH:59px;--mobileToolH:40px;--mobileSheetH:170px}
+ html.mobileUI .chartWrap{top:0;bottom:calc(var(--mobileNavH) + var(--mobileToolH));left:-1px;right:-1px}
+ html.mobileUI.mobile-tab-chart .chartWrap{bottom:calc(var(--mobileNavH) + var(--mobileToolH))!important}
+ html.mobileUI.mobile-tab-chart .leftTools{display:flex!important}
+ html.mobileUI.mobilePanelOpen .chartWrap{bottom:calc(var(--mobileNavH) + var(--mobileSheetH))}
+ html.mobileUI.mobile-tab-settings .chartWrap{bottom:var(--mobileNavH)}
+ html.mobileUI .leftTools{position:fixed;left:0;right:0;bottom:var(--mobileNavH);height:var(--mobileToolH);z-index:33;border-top:1px solid #263140;border-bottom:1px solid #111923;background:#05080df2;padding:4px 8px;gap:8px}
+ html.mobileUI.mobilePanelOpen .leftTools,html.mobileUI.mobile-tab-settings .leftTools{display:none}
+ html.mobileUI .mobileLandscapeControls{display:flex;gap:8px;align-items:center;order:20;margin-left:4px}
+ html.mobileUI .mobileLandscapeControls select{width:66px}
+ html.mobileUI .mobileLandscapeControls button{min-width:76px}
+ html.mobileUI .tool{min-width:34px;width:34px;height:32px;font-size:15px;border-radius:8px}
+ html.mobileUI .mobileNav{height:var(--mobileNavH)}
+ html.mobileUI .mobileTabBtn{font-size:11px;padding:8px 2px 9px}.mobileTabBtn .ico{font-size:16px}
+ html.mobileUI .bottom{bottom:calc(var(--mobileNavH) + var(--mobileToolH));height:var(--mobileSheetH);border-radius:14px 14px 0 0}
+ html.mobileUI.mobilePanelOpen .bottom{bottom:var(--mobileNavH)}
+ html.mobileUI .side{bottom:var(--mobileNavH)}
+ html.mobileUI .chartHead{top:7px;left:8px;right:82px}html.mobileUI .symbol{font-size:12px}
+ html.mobileUI .bidask{top:42px;left:8px;flex-direction:row;align-items:center}html.mobileUI .bidask>div:not(.box){display:block}html.mobileUI .box{width:72px;font-size:11px}
+ html.mobileUI .autoTimer{top:47px;font-size:12px;padding:5px 9px}
+ html.mobileUI .autoScaleBtn{bottom:8px;right:8px}
+ html.mobileUI .tzSelect{bottom:8px;right:46px}
+ html.mobileUI .toast{bottom:calc(var(--mobileNavH) + var(--mobileToolH) + 8px)}
+}
+@media (max-width:380px){html.mobileUI .controlRow.topActions,html.mobileUI .controlRow.mainReplay,html.mobileUI .controlRow.drillOptions{grid-template-columns:1fr}html.mobileUI .controlRow.mainReplay #step{grid-column:auto}html.mobileUI .metricLine{grid-template-columns:1fr 1fr}html.mobileUI.mobile-tab-setup .bottomBlock:nth-child(1){grid-template-columns:repeat(2,minmax(0,1fr))}html.mobileUI .main{--mobileSheetH:270px}html.mobileUI .mobileTabBtn{font-size:10px}}
+
+/* Repair v8: adaptive chart symbol width, cleaner market header, and landscape timer placement. */
+.chartSymbolSelect{
+ -webkit-appearance:none;
+ appearance:none;
+ background-color:transparent;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5' fill='none' stroke='%23cbd5e1' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;
+ background-position:right center;
+ background-size:12px 12px;
+ padding-right:18px!important;
+ width:auto;
+ min-width:0;
+ max-width:330px;
+}
+.symbol{max-width:max-content}
+@media (orientation:landscape) and (max-height:520px){
+ html.mobileUI .chartHead{right:auto;max-width:calc(100vw - 150px)}
+ html.mobileUI .symbol{max-width:calc(100vw - 155px)}
+ html.mobileUI .chartSymbolSelect{max-width:235px;color:#dbeafe}
+ html.mobileUI .headTf{font-size:12px}
+ html.mobileUI .autoTimer{top:7px;left:auto;right:8px;transform:none;font-size:12px;padding:5px 9px;min-height:30px;display:none;align-items:center}
+}
+
+
+/* Mobile manual review next button */
+.reviewNextMobile{display:none}
+html.mobileUI .reviewBanner.manualNextReady{pointer-events:auto}
+html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile{display:inline-flex;align-items:center;justify-content:center;margin-top:11px;padding:9px 18px;border-radius:10px;border:1px solid #3674ff;background:linear-gradient(180deg,#3674ff,#1d55e6);color:#fff;font-weight:850;font-size:13px;letter-spacing:.2px;box-shadow:0 8px 22px #0007;min-width:132px}
+html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:scale(.97)}
+@media (orientation: landscape){html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile{margin-top:8px;padding:7px 16px;font-size:12px;min-width:118px}}
+
+</style>
+</head>
+<body>
+<div class="welcomeOverlay" id="welcomeOverlay">
+  <div class="welcomeCard">
+    <h1>Private Practice Simulator</h1>
+    <p>This browser-based replay simulator is a private educational practice tool for chart replay and simulated trade review only.</p>
+    <ul>
+      <li>It does not provide financial, investment, tax, legal, trading, brokerage, prop-firm, or other professional advice.</li>
+      <li>It does not recommend when to buy, sell, hold, enter, exit, or risk real money.</li>
+      <li>Simulated and hypothetical results do not represent real trading results and do not guarantee or predict future performance.</li>
+      <li>Trading involves risk. Any real trading decision made outside this simulator is your responsibility.</li>
+    </ul>
+    <div class="welcomeTerms" id="welcomeTermsBox"><span>By entering the access password and using this site, you agree that this is only a private practice website and that you understand the terms listed above.</span></div>
+    <div class="welcomePasswordRow" id="welcomePasswordBox"><input id="welcomePassword" type="password" inputmode="numeric" autocomplete="off" placeholder="Access password" aria-label="Access password"><button id="welcomeStart" class="primary">Enter</button></div>
+    <div class="welcomeError" id="welcomeError">Incorrect password. Please enter the access password to continue.</div>
+    <p class="fine">Private educational simulator only. Not financial advice. Not affiliated with any broker, charting platform, exchange, index provider, market-data provider, or prop firm.</p>
+  </div>
+</div>
+
+<div class="top">
+ <span class="brand">Replay Trader</span><div class="tf" id="tfBtns"><button data-tf="1">1m</button><button class="active" data-tf="5">5m</button><button data-tf="15">15m</button><button data-tf="60">1h</button><button data-tf="240">4h</button></div><button id="darkToggle" class="miniBtn">☾ Theme</button><span class="muted">Wheel zooms. Drag chart left/right/up/down to pan. Drag right price scale to stretch candles.</span>
+</div>
+<div class="main">
+ <aside class="side" id="side">
+  <div class="sideHeader"><h1>Simulator Settings</h1><p>Configure your replay session.</p></div>
+  <div class="section"><h3>Performance</h3><div class="statgrid"><span>Account equity</span><b id="equity">$250,000.00</b><span>Trail floor</span><b id="trailFloor">$243,500.00</b><span>Drawdown room</span><b id="ddRoom">$6,500.00</b><span>Day P/L</span><b id="daypl">$0.00</b><span>Net P/L</span><b id="netpl" class="green">$0.00</b><span>Trades</span><b id="trades">0</b><span>Win rate</span><b id="wr">--</b><span>Profit factor</span><b id="pf">--</b></div><button id="resetStats" class="danger" style="width:100%;margin-top:12px">Reset stats</button></div>
+ 
+  <div class="section"><h3>Account / Risk</h3><div style="display:none"><select id="symbol"><option value="MNQ">MNQ</option><option value="NQ" selected>NQ</option><option value="MES">MES</option><option value="ES">ES</option></select><input id="contracts" type="number" min="1" max="50" value="1"><input id="accountSize" type="hidden" value="250000"><input id="loss" type="hidden" value="6500"><input id="trailLimit" type="hidden" value="6500"></div><div class="row"><label>Account size</label><select id="accountPlan"><option value="15000">$15K</option><option value="50000">$50K</option><option value="150000">$150K</option><option value="250000" selected>$250K</option></select></div><div class="row"><label>Trail mode</label><select id="trailMode"><option value="intraday" selected>Intraday trail</option><option value="eod">End of day trail</option></select></div><div class="statgrid" style="margin-top:8px"><span>Daily loss</span><b id="lossDisplay">$6,500.00</b><span>Trailing DD</span><b id="trailDisplay">$6,500.00</b></div><p class="help">Account size presets automatically set the simulated starting balance and drawdown limits. Intraday trail follows peak equity in real time; End of day trail follows closed equity.</p><div class="row"><label>Commission/side</label><input id="comm" type="number" value="0.74" step="0.01"></div><p class="help">Commission/side is the simulated fee charged once per contract on entry and once per contract on exit.</p></div>
+  <div class="section"><h3>Session</h3><div style="display:none"><select id="tf"><option value="1">1m</option><option value="5" selected>5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select><select id="days"><option value="1" selected>1 day</option></select><input id="reveal" type="hidden" value="50"><select id="gapMode"><option value="include" selected>Include all gaps</option></select><input id="gapPts" type="hidden" value="999999"><input id="gapBuffer" type="hidden" value="0"></div><p class="help">Timeframe is controlled from the chart toolbar. Every scenario uses about 24 hours of lookback on the selected timeframe, and the continuous data sampler can choose from anywhere in the loaded NQ/ES data.</p><button id="random" class="primary" style="width:100%">New random window</button></div>
+
+  <div class="section"><h3>Data <span id="loaded" class="status">external continuous futures data ready</span></h3><input class="file" type="file" id="csv" accept=".csv"><p class="help">This build loads continuous NQ1 data for MNQ/NQ and continuous ES1 data for MES/ES from CSV files in the /data folder. You can still import another CSV if you want.</p><button id="sample" class="primary" style="width:100%">Reload selected embedded data</button></div>
+  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 6.02<br>Build: Limit Fill Timing Patch<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" style="color:#8d99aa;text-decoration:none">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>The simulator may display historical, imported, sample, or market-style data for practice. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
+  <div class="legalBlock"><h3>Terms of use / disclaimer</h3><p>This simulator is provided only for private education, chart replay, journaling, and practice. It is not a brokerage platform, signal service, financial adviser, investment adviser, prop-firm service, or trading recommendation system. Nothing in this simulator should be interpreted as financial, investment, tax, legal, brokerage, prop-firm, or trading advice.</p><p>Historical, simulated, and hypothetical results are not real trading results and are not guarantees or predictions of future performance. Simulated trading cannot fully account for slippage, liquidity, commissions, execution delays, emotional pressure, live-market conditions, or real financial risk. Market data may be incomplete, delayed, inaccurate, adjusted, imported from third-party files, or provided only for private educational testing. Do not copy, resell, republish, or redistribute market data from this site. Futures, stocks, options, and other financial instruments involve substantial risk, including the risk of losing more than expected. You are solely responsible for any real trading decisions you make outside this simulator.</p><p>This software is provided “as is” and “as available,” without warranties of any kind. Use it at your own risk. The author is not responsible for trading losses, missed trades, data errors, software bugs, browser issues, or decisions made based on simulator output.</p><h3>Privacy</h3><p>This browser-based simulator is hosted as a static site. It does not create accounts, collect payments, sell personal information, or intentionally send your trades, settings, or performance stats to the site owner. Settings, simulator preferences, and performance statistics may be saved locally in your browser storage so the simulator can remember them on this computer. Your browser and hosting provider may still process standard technical data needed to load the site.</p><p>If you clear browser data, use another browser, or open the simulator on another computer, locally saved settings and stats may not carry over.</p><h3>Cookies / local storage</h3><p>This site does not intentionally use advertising cookies, tracking cookies, analytics cookies, or third-party marketing pixels. It may use browser local storage or similar local browser storage only to remember simulator settings and practice statistics. If this site is modified later or connected to third-party services, this notice should be updated to accurately describe those changes.</p></div>
+</aside>
+ <button class="hideBtn" id="hide" title="Simulator settings">⚙</button>
+ <div class="sideHint" id="sideHint">Open settings here to change simulator options.</div>
+ <div class="resizeHint bottomHint" id="bottomHint">Drag this divider to resize the chart and control section.</div>
+ <div class="resizeHint settingsResizeHint" id="settingsResizeHint">Drag this edge to widen simulator settings.</div>
+ <div class="bottomResize" id="bottomResize" title="Drag to resize chart and controls"></div>
+ <div class="sideResize" id="sideResize" title="Drag to resize settings panel"></div>
+ <section class="chartWrap dark" id="wrap">
+  <canvas id="chart"></canvas><canvas id="draw"></canvas>
+  <div class="leftTools"><button class="tool active" data-tool="cursor" title="Cursor">＋</button><button class="tool" data-tool="line" title="Trend line">╱</button><button class="tool" data-tool="rect" title="Rectangle">▭</button><button class="tool" data-tool="erase" title="Eraser: delete one drawing"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.2 13.7 5.5a2.1 2.1 0 0 1 3 0l2.1 2.1a2.1 2.1 0 0 1 0 3L10.6 18.8H4v-3.6Z"/><path d="M10.6 18.8h9"/></svg></button><button class="tool" id="clearDrawings" title="Clear all drawings"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l-.7 11.2A2 2 0 0 1 14.3 21H9.7a2 2 0 0 1-2-1.8L7 8Z"/><path d="M5 8h14M9 8V5.8A1.8 1.8 0 0 1 10.8 4h2.4A1.8 1.8 0 0 1 15 5.8V8M10 11v6M14 11v6"/></svg></button><button class="tool soundOn" id="soundToggle" title="Sound on/off">🔊</button><button class="tool indTool" id="demaBtn" data-ind="dema" title="DEMA">D</button><button class="tool indTool" id="stBtn" data-ind="st" title="Supertrend">ST</button><div class="mobileLandscapeControls" aria-label="Landscape chart controls"><select id="mobileTfSelect" title="Timeframe"><option value="1">1m</option><option value="5">5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select><button id="mobileThemeBtn" type="button">☾ Theme</button></div></div>
+  <div class="chartHead"><span class="symbol" id="headSym"><select id="chartSymbol" class="chartSymbolSelect"><option value="MNQ">Micro E-mini Nasdaq-100 Index Futures</option><option value="NQ" selected>E-mini Nasdaq-100 Index Futures</option><option value="MES">Micro E-mini S&amp;P 500 Index Futures</option><option value="ES">E-mini S&amp;P 500 Index Futures</option></select><span id="headTf" class="headTf">· 5</span></span></div>
+  <div class="bidask"><div class="box sell" id="sellBox">SELL<br>--</div><div style="align-self:center">0.50</div><div class="box buy" id="buyBox">BUY<br>--</div></div>
+  <div class="autoTimer" id="autoTimer">Manual</div>
+  <div class="reviewBanner" id="reviewBanner"><span class="big">REVIEW</span><span class="sub">Result will show here</span></div>
+  <div class="toast" id="toast"></div><div class="entryTip" id="entryTip">Confirm trade?</div>
+  <div class="settingsPanel" id="demaPanel"><h3>DEMA indicator</h3><div class="row"><label>Visible</label><input id="demaOn2" type="checkbox"></div><div class="row"><label>Length</label><input id="demaLen2" type="number" value="200" min="1" step="1"></div><button id="closeDema" style="width:100%">Close</button></div><div class="settingsPanel" id="stPanel"><h3>Supertrend indicator</h3><div class="row"><label>Visible</label><input id="stOn2" type="checkbox"></div><div class="row"><label>ATR length</label><input id="stAtr2" type="number" value="12" min="1" step="1"></div><div class="row"><label>Multiplier</label><input id="stMult2" type="number" value="3" step="0.1"></div><button id="closeSt" style="width:100%">Close</button></div>
+
+  <div class="priceTag" id="priceTag">--</div><button class="autoScaleBtn active" id="autoScaleBtn" title="Auto-scale price">A</button><select id="tzSelect" class="tzSelect" title="Chart display time zone"><option value="local" selected>Local</option><option value="America/New_York">ET</option><option value="America/Chicago">CT</option><option value="America/Denver">MT</option><option value="America/Los_Angeles">PT</option><option value="UTC">UTC</option></select>
+ </section>
+ <footer class="bottom">
+  <div class="bottomBlock">
+    <div class="bottomTitle">Trade setup</div>
+    <div class="metricLine">
+      <div class="metric"><span>Entry</span><b id="entryTxt">--</b></div>
+      <div class="metric"><span>Stop</span><b id="stopTxt">--</b></div>
+      <div class="metric"><span>Target</span><b id="targetTxt">--</b></div>
+    </div>
+    <div class="metricLine" style="margin-top:8px">
+      <div class="metric"><span>Risk</span><b id="riskTxt">--</b></div>
+      <div class="metric"><span>Reward</span><b id="rewardTxt">--</b></div>
+      <div class="metric"><span>R:R</span><b id="rrTxt">--</b></div>
+    </div>
+    <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="small" style="margin-top:7px;color:#8d99aa;text-decoration:none;align-self:flex-start">Created by @_aidan_w</a>
+    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 6.02</div>
+  </div>
+  <div class="bottomBlock">
+    <div class="bottomTitle">Replay controls</div>
+    <div class="controlRow topActions"><button id="confirm" class="primary">Confirm Trade</button><button id="flat">No Trade / Clear</button></div>
+    <div class="controlRow mainReplay"><button id="autoStart" class="primary">▶ Play Drill</button><button id="autoStop">⏸ Pause</button><button id="step">Next Candle</button></div>
+    <div class="controlRow drillOptions"><select id="autoLen"><option value="manual" selected>Manual</option><option value="50,30,12">Slow</option><option value="30,20,12">Medium</option><option value="15,10,12">Fast</option></select><div class="speedWrap"><label class="small" for="speed">Speed</label><select id="speed"><option value="0.5">0.5× reveal</option><option value="1" selected>1× reveal</option><option value="1.5">1.5× reveal</option><option value="2">2× reveal</option><option value="instant">Instant</option></select></div></div>
+  </div>
+  <div class="bottomBlock centerMsg">
+    <div class="bottomTitle">Recent trades</div>
+    <div id="recentTrades" class="recentList"><div class="recentItem"><span>No trades yet</span><b>--</b></div></div>
+    <div id="tradeHelp" class="small" style="margin-top:7px">Press SELL or BUY, then click the chart for entry.</div>
+    <div id="bottomMsg" class="small" style="margin-top:4px">No open position</div>
+    <div id="result" class="small" style="margin-top:4px"></div>
+    <span id="posCount" style="display:none">0</span>
+  </div>
+ </footer>
+
+ <nav class="mobileNav" id="mobileNav" aria-label="Mobile simulator sections">
+  <button class="mobileTabBtn active" type="button" data-mobile-tab="chart"><span class="ico">▥</span><span>Chart</span></button>
+  <button class="mobileTabBtn" type="button" data-mobile-tab="replay"><span class="ico">▶</span><span>Start</span></button>
+  <button class="mobileTabBtn" type="button" data-mobile-tab="setup"><span class="ico">⌖</span><span>Setup</span></button>
+  <button class="mobileTabBtn" type="button" data-mobile-tab="trades"><span class="ico">▤</span><span>Trades</span></button>
+  <button class="mobileTabBtn" type="button" data-mobile-tab="settings"><span class="ico">☰</span><span>Settings</span></button>
+ </nav>
+</div>
+<script>
+const EMBEDDED_NDX_DATA=[];
+const $=id=>document.getElementById(id);const c=$('chart'),d=$('draw'),ctx=c.getContext('2d'),dtx=d.getContext('2d'),wrap=$('wrap');
+let raw=[],data=[],viewStart=0,viewEnd=100,revealIndex=70,shownEnd=70,tf=5,scaleY=1,priceOffset=0,manualRange=null,autoScale=true,orderDragRange=null,mouse={x:0,y:0},drag=null,tool='cursor',drawings=[],draft=null,order=null,orderLocked=false,decisionConfirmed=false,confirmedHadTrade=false,pendingSide=null,trade=null,playing=false,timer=null,autoMode=false,autoPaused=false,autoPhase="",autoLeft=0,autoTimerId=null,hintSteps=0,decisionIndex=null,decisionTime=null,decisionSide=null,tradeEndIndex=null,exitInfo=null,stableRange=null,entryTag=null,revealTimer=null,revealing=false,hoverDrawing=-1,reviewStopIndex=null,reviewExitDeadline=null,reviewPrevAutoScale=true,reviewDrawFade=0,drawFadeRAF=null,focusRAF=null,reviewFinishToken=0,orderClickStage=null,recentLateStarts=JSON.parse(localStorage.futRecentLateStarts||'[]'),recentScenarios=JSON.parse(localStorage.futRecentScenarios||'[]'),stats=JSON.parse(localStorage.futStats||'{"trades":0,"wins":0,"grossWin":0,"grossLoss":0,"net":0,"peakEquity":250000,"recent":[]}');
+stats.peakEquity=stats.peakEquity||50000;stats.recent=stats.recent||[];
+const EMBEDDED_SPX_DATA=[];
+const EMBEDDED_MARKETS={MNQ:{label:'NQ1 continuous futures',url:'data/nq1.csv'},NQ:{label:'NQ1 continuous futures',url:'data/nq1.csv'},MES:{label:'ES1 continuous futures',url:'data/es1.csv'},ES:{label:'ES1 continuous futures',url:'data/es1.csv'}};
+const specs={MNQ:{pv:2,tick:.25,name:'Micro E-mini Nasdaq-100 Index Futures'},NQ:{pv:20,tick:.25,name:'E-mini Nasdaq-100 Index Futures'},MES:{pv:5,tick:.25,name:'Micro E-mini S&P 500 Index Futures'},ES:{pv:50,tick:.25,name:'E-mini S&P 500 Index Futures'}};
+async function loadEmbeddedMarket(sym=($('symbol')?.value||'MNQ')){const pack=EMBEDDED_MARKETS[sym]||EMBEDDED_MARKETS.MNQ;$('loaded').textContent='loading '+pack.label+'...';try{const res=await fetch(pack.url,{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);parseCSV(await res.text());$('loaded').textContent=raw.length+' '+pack.label+' rows';resetData();}catch(err){console.error(err);$('loaded').textContent='Could not load '+pack.url+' — upload or host CSV files in /data';toast('Market data file not found. Upload the CSV files with index.html.','warn');raw=[];data=[];drawAll();}}
+function loadEmbeddedNDX(){loadEmbeddedMarket('MNQ')}
+function resize(){const r=wrap.getBoundingClientRect();for(const x of [c,d]){x.width=r.width*devicePixelRatio;x.height=r.height*devicePixelRatio;x.style.width=r.width+'px';x.style.height=r.height+'px'}ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);dtx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);drawAll();if(typeof adjustChartSymbolWidth==='function')adjustChartSymbolWidth()}addEventListener('resize',resize);
+let desktopResizeAnim=0;
+function smoothDesktopRerender(duration=260){
+ if(desktopResizeAnim)cancelAnimationFrame(desktopResizeAnim);
+ const start=performance.now();
+ const frame=now=>{
+  if(document.documentElement.classList.contains('mobileUI')){desktopResizeAnim=0;return;}
+  resize();
+  if(now-start<duration)desktopResizeAnim=requestAnimationFrame(frame);
+  else{desktopResizeAnim=0;resize();}
+ };
+ desktopResizeAnim=requestAnimationFrame(frame);
+}
+if('ResizeObserver' in window){
+ let desktopROQueued=false;
+ const desktopRO=new ResizeObserver(()=>{
+  if(document.documentElement.classList.contains('mobileUI')||desktopROQueued)return;
+  desktopROQueued=true;
+  requestAnimationFrame(()=>{desktopROQueued=false;resize();});
+ });
+ desktopRO.observe(wrap);
+}
+function genDemo(){raw=[];let p=29600,t=new Date('2024-05-01T06:30:00');for(let i=0;i<12000;i++){let drift=Math.sin(i/180)*1.2+(i%900>420&&i%900<520?3.2:0)+(i%1300>1100?-2.4:0);let o=p;let move=drift+(Math.random()-.48)*9;let cl=o+move;let h=Math.max(o,cl)+Math.random()*8;let l=Math.min(o,cl)-Math.random()*8;raw.push({t:new Date(t),o,h,l,c:cl});p=cl;t=new Date(+t+60000)}}
+function parseCSV(text){const lines=String(text||'').trim().split(/\r?\n/).filter(Boolean);if(!lines.length){raw=[];return}const head=lines[0].toLowerCase().split(',').map(s=>s.trim().replace(/"/g,''));function idx(names){return head.findIndex(h=>names.some(n=>h.includes(n)))}let ti=idx(['time','date']),oi=idx(['open']),hi=idx(['high']),li=idx(['low']),ci=idx(['close']);raw=[];for(let i=1;i<lines.length;i++){let parts=lines[i].match(/("[^"]*"|[^,]+)/g)||[];parts=parts.map(s=>s.replace(/^"|"$/g,'').trim());const num=s=>Number(String(s||'').replace(/,/g,''));function parseTime(v){let n=Number(String(v||'').trim());if(Number.isFinite(n)&&String(v).trim()!==''){if(n<1e12)n*=1000;return new Date(n)}return new Date(v)}let row={t:parseTime(parts[ti]),o:num(parts[oi]),h:num(parts[hi]),l:num(parts[li]),c:num(parts[ci])};if(row.t instanceof Date&&!isNaN(+row.t)&&isFinite(row.o+row.h+row.l+row.c))raw.push(row)}raw.sort((a,b)=>a.t-b.t)}
+function aggregate(min){if(!raw.length)return[];if(min===1)return raw.slice();let out=[],bucket=null,cur=null;for(const r of raw){let ms=Math.floor(+r.t/(min*60000))*min*60000;if(ms!==bucket){if(cur)out.push(cur);bucket=ms;cur={t:new Date(ms),o:r.o,h:r.h,l:r.l,c:r.c}}else{cur.h=Math.max(cur.h,r.h);cur.l=Math.min(cur.l,r.l);cur.c=r.c}}if(cur)out.push(cur);return out}
+function resetData(){data=aggregate(tf);if(data.length<40)return;newWindow();updateHead()}
+function timeOfIndex(idx){if(!data.length)return Date.now();idx=Math.max(0,Math.min(data.length-1,idx));let lo=Math.floor(idx),hi=Math.ceil(idx);if(lo===hi)return +data[lo].t;let a=+data[lo].t,b=+data[hi].t;return a+(b-a)*(idx-lo)}
+function indexOfTime(ms){if(!data.length)return 0;ms=+ms;if(ms<=+data[0].t)return 0;if(ms>=+data[data.length-1].t)return data.length-1;let lo=0,hi=data.length-1;while(hi-lo>1){let m=(lo+hi)>>1;if(+data[m].t<ms)lo=m;else hi=m}let a=+data[lo].t,b=+data[hi].t;return lo+(ms-a)/(b-a)}
+function xOfTime(ms){return xOf(indexOfTime(ms))}
+function tOfX(x){return timeOfIndex(iOf(x))}
+function isGapAt(i){return false}
+function dayKey(t){let d=new Date(t);return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function etParts(t){try{const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).formatToParts(new Date(t));const get=k=>parts.find(p=>p.type===k).value;let h=(+get('hour'))%24,m=+get('minute');return {y:+get('year'),mo:+get('month'),d:+get('day'),h,m,min:h*60+m}}catch(e){let d=new Date(t);return {y:d.getFullYear(),mo:d.getMonth()+1,d:d.getDate(),h:d.getHours(),m:d.getMinutes(),min:d.getHours()*60+d.getMinutes()}}}
+function isoDateKey(y,mo,d){return y+'-'+String(mo).padStart(2,'0')+'-'+String(d).padStart(2,'0')}
+function nextDateKey(y,mo,d){let dt=new Date(Date.UTC(y,mo-1,d)+86400000);return isoDateKey(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate())}
+function tradingSessionKey(t){let p=etParts(t);return p.min>=1020?nextDateKey(p.y,p.mo,p.d):isoDateKey(p.y,p.mo,p.d)}
+function isFivePmOrLaterIndex(i){return !!data[i]&&etMinutes(data[i].t)>=1020}
+function isLateDayIndex(i){if(!data[i])return false;let m=etMinutes(data[i].t);return m>=780&&m<1020}
+function rememberLateStart(isLate){recentLateStarts.unshift(!!isLate);recentLateStarts=recentLateStarts.slice(0,10);localStorage.futRecentLateStarts=JSON.stringify(recentLateStarts)}
+function recentLateBlocked(){return recentLateStarts.slice(0,10).some(Boolean)}
+function findSessionEnd(idx){
+ if(!data.length)return viewEnd;
+ idx=Math.max(0,Math.min(data.length-1,Math.floor(idx||0)));
+ const forwardBars=Math.max(12,Math.ceil(1440/(+tf||1)));
+ return Math.min(data.length,idx+forwardBars);
+}
+function sessionLimit(){let base=Math.max(viewStart,shownEnd-1);return tradeEndIndex??findSessionEnd(decisionIndex??base)}
+function revealLimit(){let lim=sessionLimit();return reviewStopIndex!=null?Math.min(reviewStopIndex,lim):lim}
+function toast(msg,kind=''){let el=$('toast');if(!el)return;el.textContent=msg;el.classList.toggle('warn',kind==='warn');el.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>{el.classList.remove('show');el.classList.remove('warn')},1700)}
+function setActionState(){let run=$('autoStart'),pause=$('autoStop'),flat=$('flat'),confirm=$('confirm');let noTradeSelected=decisionSide===null&&!!decisionIndex&&(!trade||!trade.open);if(run&&pause){run.classList.remove('runActive','idle','nextScenarioReady');pause.classList.remove('pauseActive','idle');if(isManualDrill&&typeof isManualDrill==='function'&&isManualDrill()&&autoMode&&autoPhase==='postreview'){run.classList.add('nextScenarioReady');pause.classList.add('idle')}else if(autoMode&&!autoPaused){run.classList.add('runActive');pause.classList.add('idle')}else if(autoMode&&autoPaused){run.classList.add('idle');pause.classList.add('pauseActive')}else{run.classList.add('idle');pause.classList.add('idle')}}if(flat){flat.classList.toggle('choiceActive',noTradeSelected)}if(confirm){confirm.classList.toggle('noTradeLocked',noTradeSelected)}}
+function showEntryTip(x,y,show,msg='Confirm trade?'){let el=$('entryTip');if(!el)return;if(show){el.textContent=msg;el.style.left=(x-40)+'px';el.style.top=(y-34)+'px';el.classList.add('show')}else el.classList.remove('show')}
+function displayTime(t){let tz=$('tzSelect')?.value||'local';let opts={hour:'2-digit',minute:'2-digit'};if(tz&&tz!=='local')opts.timeZone=tz;try{return new Date(t).toLocaleTimeString([],opts)}catch(e){return new Date(t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}}
+function isManualDrill(){return $('autoLen')?.value==='manual'}
+function canTradeNow(){return !autoMode||autoPhase==='trade'}
+function validOrder(o=order){if(!o)return{ok:false,msg:'No trade setup.'};let e=o.entry,t=o.target,s=o.stop;let distinct=Math.abs(t-s)>1e-9&&Math.abs(e-t)>1e-9&&Math.abs(e-s)>1e-9;if(!distinct)return{ok:false,msg:'Improper trade setup: entry, target, and stop must be different.'};if(o.side==='long' && t>e && e>s)return{ok:true};if(o.side==='short' && t<e && e<s)return{ok:true};return{ok:false,msg:'Improper trade setup: entry must be between take profit and stop loss.'}}
+function setToolMode(next){tool=next;document.querySelectorAll('.tool[data-tool]').forEach(x=>x.classList.toggle('active',x.dataset.tool===next))}
+function gapNearDecision(idx){return false}
+function scenarioKey(st,total){let pct=+$('reveal').value/100;let dec=st+Math.floor(total*pct);let t=data[dec]?.t||data[st]?.t;let sym=$('symbol')?.value||'NQ';let bucket=t?Math.floor(+t/60000):dec;return sym+'|'+tf+'|'+bucket}
+function rememberScenario(key){if(!key)return;recentScenarios=recentScenarios.filter(k=>k!==key);recentScenarios.unshift(key);recentScenarios=recentScenarios.slice(0,20);localStorage.futRecentScenarios=JSON.stringify(recentScenarios)}
+function etMinutes(t){return etParts(t).min}
+function sessionBucketForTime(t){let m=etMinutes(t);if(m>=240&&m<570)return 'pre';if(m>=570&&m<630)return 'open';if(m>=630&&m<720)return 'mid';if(m>=720&&m<810)return 'lunch';if(m>=810&&m<900)return 'afternoon';if(m>=900&&m<1019)return 'power';if(m>=1020&&m<1200)return 'after';return 'other'}
+function weightedSessionBucket(){const bag=['open','open','open','mid','mid','lunch','afternoon','afternoon','power','power','pre','after'];return bag[Math.floor(Math.random()*bag.length)]}
+function pickScenarioStart(total){let maxStart=Math.max(0,data.length-total-1);let best=0,bestKey='';for(let a=0;a<800;a++){let st=Math.floor(Math.random()*Math.max(1,maxStart));let key=scenarioKey(st,total);if(!recentScenarios.includes(key)){rememberScenario(key);return st}if(!bestKey){best=st;bestKey=key}}rememberScenario(bestKey||scenarioKey(best,total));return best}
+function setTimeframeUI(){if($('tf'))$('tf').value=String(tf);if($('mobileTfSelect'))$('mobileTfSelect').value=String(tf);document.querySelectorAll('#tfBtns button').forEach(b=>b.classList.toggle('active',+b.dataset.tf===tf));}
+function newWindow(){let preferredAuto=reviewPrevAutoScale;data=aggregate(tf);setTimeframeUI();if(data.length<10){drawAll();return}let historyBars=Math.max(1,Math.ceil(1440/(+tf||1)));let futureBars=Math.max(12,historyBars);let minDecision=Math.min(data.length-1,historyBars);let maxDecision=Math.max(minDecision,data.length-futureBars-1);let total=Math.max(2,Math.min(data.length,historyBars+futureBars));let st=pickScenarioStart(Math.min(total,data.length-1));let dec=Math.max(minDecision,Math.min(maxDecision,st+historyBars));viewStart=Math.max(0,dec-historyBars);revealIndex=dec;shownEnd=revealIndex;viewEnd=Math.min(data.length-1,dec+futureBars);scaleY=1;priceOffset=0;manualRange=null;autoScale=true;order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;reviewDrawFade=0;drawings=[];draft=null;hoverDrawing=-1;setToolMode('cursor');playing=false;clearInterval(timer);clearInterval(revealTimer);revealing=false;$('autoStart').textContent=autoMode?'▶ Running':'▶ Play Drill';$('result').textContent='';hideReviewBanner();setActionState();if(!autoMode){$('autoTimer').style.display='none'}stableRange=null;orderDragRange=null;let fit=desiredPriceRange();autoScale=preferredAuto;if(autoScale){manualRange=null}else{manualRange=fit}reviewPrevAutoScale=preferredAuto;updateAutoScaleButton();updateHead();drawAll()}
+function changeTimeframePreserve(newTf){let vs=timeOfIndex(viewStart),ve=timeOfIndex(viewEnd),rv=timeOfIndex(revealIndex),se=timeOfIndex(shownEnd);tf=+newTf;data=aggregate(tf);if(data.length<40)return;viewStart=indexOfTime(vs);viewEnd=indexOfTime(ve);if(viewEnd-viewStart<25){let mid=indexOfTime(rv);viewStart=mid-80;viewEnd=mid+80}revealIndex=indexOfTime(rv);shownEnd=Math.max(revealIndex,indexOfTime(se));viewStart=Math.max(0,viewStart);viewEnd=Math.min(data.length-1,viewEnd);shownEnd=Math.min(shownEnd,viewEnd);stableRange=null;updateHead();drawAll()}
+function rawVisibleRange(){let s=Math.max(0,Math.floor(viewStart)),e=Math.min(data.length,Math.ceil(shownEnd));let hi=-1e9,lo=1e9;for(let i=s;i<e;i++){hi=Math.max(hi,data[i].h);lo=Math.min(lo,data[i].l)}if(order){hi=Math.max(hi,order.entry,order.stop,order.target);lo=Math.min(lo,order.entry,order.stop,order.target)}if(!isFinite(hi)||!isFinite(lo)){hi=1;lo=0}return {hi,lo}}
+function desiredPriceRange(){let r=rawVisibleRange();let mid=(r.hi+r.lo)/2,range=((r.hi-r.lo||1)*1.18)/scaleY;return {hi:mid+range/2+priceOffset,lo:mid-range/2+priceOffset}}
+function updateStableRange(){}
+function priceRange(){return orderDragRange||(autoScale?desiredPriceRange():(manualRange||desiredPriceRange()))}
+function ensureManualRange(){if(!manualRange)manualRange=desiredPriceRange();return manualRange}
+function updateAutoScaleButton(){let b=$('autoScaleBtn');if(!b)return;b.classList.toggle('active',autoScale);b.title=autoScale?'Auto-scale price: ON':'Auto-scale price: OFF'}
+function xOf(i){let mob=document.documentElement.classList.contains('mobileUI'),L=mob?0:48,R=mob?wrap.clientWidth-1:wrap.clientWidth-54,W=Math.max(1,R-L);return L+(i-viewStart)/(viewEnd-viewStart)*W}function iOf(x){let mob=document.documentElement.classList.contains('mobileUI'),L=mob?0:48,R=mob?wrap.clientWidth-1:wrap.clientWidth-54,W=Math.max(1,R-L);return viewStart+(x-L)/W*(viewEnd-viewStart)}function yOf(p){let H=wrap.clientHeight;let r=priceRange();return 8+(r.hi-p)/(r.hi-r.lo)*(H-28)}function pOf(y){let H=wrap.clientHeight;let r=priceRange();return r.hi-(y-8)/(H-28)*(r.hi-r.lo)}function roundTick(p){let sp=specs[$('symbol').value];return Math.round(p/sp.tick)*sp.tick}
+function drawAll(){ctx.clearRect(0,0,wrap.clientWidth,wrap.clientHeight);dtx.clearRect(0,0,wrap.clientWidth,wrap.clientHeight);drawChartBackground();drawGrid();drawGaps();drawCandles();drawIndicators();drawDecisionMarker();drawExitMarker();drawDrawings();drawCross();drawOrderClickHint();drawOrder();updateTradeTxt();updateStats();}
+function drawChartBackground(){let W=wrap.clientWidth,H=wrap.clientHeight;if(wrap.classList.contains('dark')){let g=ctx.createRadialGradient(W*.5,H*.35,20,W*.5,H*.5,Math.max(W,H)*.72);g.addColorStop(0,'#18222f');g.addColorStop(.42,'#111923');g.addColorStop(.73,'#0d131b');g.addColorStop(1,'#070b10');ctx.fillStyle=g;}else{let g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#f8fafc');g.addColorStop(.52,'#d9dee6');g.addColorStop(1,'#9aa4b2');ctx.fillStyle=g;}ctx.fillRect(0,0,W,H)}
+function drawGrid(){let W=wrap.clientWidth,H=wrap.clientHeight,isMob=document.documentElement.classList.contains('mobileUI'),gridL=isMob?0:48,gridR=isMob?W-2:W;ctx.strokeStyle='rgba(120,135,155,.17)';ctx.lineWidth=1;for(let x=gridL;x<gridR;x+=70){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=28;y<H-24;y+=42){ctx.beginPath();ctx.moveTo(gridL,y);ctx.lineTo(gridR,y);ctx.stroke()}ctx.fillStyle=wrap.classList.contains('dark')?'#b8c0cc':'#111827';ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';let r=priceRange();if(isMob){ctx.textAlign='right';for(let y=40;y<H-30;y+=42){let p=pOf(y);ctx.fillText(p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}),W-4,y+4)}ctx.textAlign='left'}else{for(let y=40;y<H-30;y+=42){let p=pOf(y);ctx.fillText(p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}),W-96,y+4)}}ctx.fillStyle=wrap.classList.contains('dark')?'#aeb7c5':'#1f2937';for(let x=isMob?36:70;x<W-70;x+=95){let i=Math.round(iOf(x));if(data[i])ctx.fillText(displayTime(data[i].t),x,H-14)}}
+function drawGaps(){let start=Math.max(1,Math.floor(viewStart)-2),end=Math.min(data.length,Math.ceil(shownEnd));ctx.save();ctx.font='11px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';for(let i=start;i<end;i++){if(!isGapAt(i))continue;let x=xOf(i);ctx.strokeStyle='rgba(154,122,85,.28)';ctx.lineWidth=1;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,wrap.clientHeight-24);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(154,122,85,.035)';ctx.fillRect(x-2,0,4,wrap.clientHeight-24);ctx.fillStyle='rgba(203,213,225,.38)';ctx.fillText('gap',x+5,24)}ctx.restore()}
+function drawCandles(){let start=Math.max(0,Math.floor(viewStart)-2),end=Math.min(data.length,Math.ceil(shownEnd));let mob=document.documentElement.classList.contains('mobileUI'),chartW=mob?wrap.clientWidth:(wrap.clientWidth-110);let cw=Math.max(2,(chartW/(viewEnd-viewStart))*0.65);for(let i=start;i<end;i++){let b=data[i],x=xOf(i),yo=yOf(b.o),yc=yOf(b.c),yh=yOf(b.h),yl=yOf(b.l),up=b.c>=b.o,fill=up?'#22ab94':'#ff6773',edge=up?'#07826E':'#f23645';ctx.strokeStyle=edge;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,yh);ctx.lineTo(x,yl);ctx.stroke();let bx=x-cw/2,by=Math.min(yo,yc),bh=Math.max(1,Math.abs(yc-yo));ctx.fillStyle=fill;ctx.fillRect(bx,by,cw,bh);ctx.strokeStyle=edge;ctx.lineWidth=2;ctx.strokeRect(bx,by,cw,bh)}if(data[end-1]){let last=data[end-1],p=last.c,up=last.c>=last.o;$('priceTag').style.top=(yOf(p)-14)+'px';$('priceTag').style.background=up?'#0F8A73':'#ff4d5d';$('priceTag').textContent=p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});$('sellBox').innerHTML='SELL<br>'+p.toFixed(2);$('buyBox').innerHTML='BUY<br>'+(p+0.5).toFixed(2);}}
+
+function emaSeries(vals,len){let out=new Array(vals.length).fill(null),k=2/(len+1),ema=null;for(let i=0;i<vals.length;i++){let v=vals[i];ema=ema==null?v:ema+(v-ema)*k;if(i>=len-1)out[i]=ema}return out}
+function demaSeries(len){let closes=data.map(b=>b.c),e1=emaSeries(closes,len);let e1filled=e1.map((v,i)=>v==null?closes[i]:v);let e2=emaSeries(e1filled,len);return e1.map((v,i)=>v==null||e2[i]==null?null:2*v-e2[i])}
+function supertrendSeries(period,mult){let n=data.length,atr=new Array(n).fill(null),tr=new Array(n).fill(0);for(let i=0;i<n;i++){let prev=i?data[i-1].c:data[i].c;tr[i]=Math.max(data[i].h-data[i].l,Math.abs(data[i].h-prev),Math.abs(data[i].l-prev));atr[i]=i?((atr[i-1]??tr[i-1])*(period-1)+tr[i])/period:tr[i]}let upper=new Array(n),lower=new Array(n),trend=new Array(n).fill(null),dir=new Array(n).fill(1);for(let i=0;i<n;i++){let hl2=(data[i].h+data[i].l)/2,bu=hl2+mult*(atr[i]||0),bl=hl2-mult*(atr[i]||0);if(i===0){upper[i]=bu;lower[i]=bl;trend[i]=bl;continue}upper[i]=(bu<upper[i-1]||data[i-1].c>upper[i-1])?bu:upper[i-1];lower[i]=(bl>lower[i-1]||data[i-1].c<lower[i-1])?bl:lower[i-1];dir[i]=dir[i-1];if(dir[i-1]<0&&data[i].c>upper[i])dir[i]=1;else if(dir[i-1]>0&&data[i].c<lower[i])dir[i]=-1;trend[i]=dir[i]>0?lower[i]:upper[i]}return {trend,dir}}
+function drawSeries(arr,col,width=2,dashed=false){ctx.save();ctx.strokeStyle=col;ctx.lineWidth=width;if(dashed)ctx.setLineDash([6,5]);ctx.beginPath();let open=false;let start=Math.max(0,Math.floor(viewStart)-2),end=Math.min(data.length,Math.ceil(shownEnd));for(let i=start;i<end;i++){let v=arr[i];if(v==null||!isFinite(v)){open=false;continue}let x=xOf(i),y=yOf(v);if(!open){ctx.moveTo(x,y);open=true}else ctx.lineTo(x,y)}ctx.stroke();ctx.restore()}
+function drawIndicators(){if(!data.length)return;let demaOn=$('demaOn2')?.checked;let stOn=$('stOn2')?.checked;if(demaOn){let len=+$('demaLen2')?.value||200;drawSeries(demaSeries(len),'rgba(59,130,246,.78)',2,false)}if(stOn){let per=+$('stAtr2')?.value||12,m=+$('stMult2')?.value||3;let st=supertrendSeries(per,m);let up=st.trend.map((v,i)=>st.dir[i]>0?v:null),dn=st.trend.map((v,i)=>st.dir[i]<0?v:null);drawSeries(up,'rgba(22,184,155,.72)',2,false);drawSeries(dn,'rgba(255,77,93,.72)',2,false)}}
+function drawOrder(){if(!order){entryTag=null;return}let lines=[['entry',order.entry,'#4d83ff','ENTRY'],['target',order.target,'#0F8A73','TP'],['stop',order.stop,'#ff4d5d','SL']];entryTag=null;for(const [k,p,col,lab] of lines){let y=yOf(p);ctx.strokeStyle=col;ctx.lineWidth=2;ctx.setLineDash(k==='entry'?[6,5]:[]);ctx.beginPath();ctx.moveTo(48,y);ctx.lineTo(wrap.clientWidth-54,y);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=col;ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';if(k==='entry'){let q=+$('contracts').value||1;let locked=orderLocked||decisionConfirmed||!!trade;let label=(locked?(q+'x '+lab+' '+p.toFixed(2)):'');let x,w,h=26;if(locked){w=128;x=wrap.clientWidth-w-54;entryTag=null;ctx.fillRect(x,y-13,w,h);ctx.fillStyle='white';ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';ctx.fillText(label,x+8,y+4)}else{x=wrap.clientWidth-260;w=206;entryTag={x,y:y-13,w,h,minus:{x:x+6,y:y-10,w:18,h:20},plus:{x:x+28,y:y-10,w:18,h:20},check:{x:x+52,y:y-10,w:22,h:20}};ctx.fillRect(x,y-13,w,h);ctx.fillStyle='rgba(255,255,255,.18)';ctx.fillRect(x+5,y-10,18,20);ctx.fillRect(x+27,y-10,18,20);ctx.fillStyle='rgba(255,255,255,.22)';ctx.fillRect(x+51,y-10,22,20);ctx.fillStyle='white';ctx.font='bold 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';ctx.fillText('−',x+11,y+4);ctx.fillText('+',x+33,y+4);ctx.fillText('✓',x+57,y+4);ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';ctx.fillText(q+'x',x+82,y+4);ctx.fillText(lab+' '+p.toFixed(2),x+112,y+4)}}else{ctx.fillRect(wrap.clientWidth-146,y-13,92,26);ctx.fillStyle='white';ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';ctx.fillText(lab+' '+p.toFixed(2),wrap.clientWidth-140,y+4)}}}
+function drawDecisionMarker(){
+ if(decisionIndex==null&&decisionTime==null)return;
+ let x=decisionTime!=null?xOfTime(decisionTime):xOf(decisionIndex),H=wrap.clientHeight;
+ ctx.strokeStyle='#60a5fa';ctx.lineWidth=2;ctx.setLineDash([8,5]);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();ctx.setLineDash([]);
+ ctx.fillStyle='#0f172add';ctx.strokeStyle='#334155';ctx.lineWidth=1;
+ let label=decisionSide?('TRADE: '+decisionSide.toUpperCase()):'NO TRADE';
+ let w=ctx.measureText(label).width+18;ctx.fillRect(Math.max(52,Math.min(x+8,wrap.clientWidth-54-w)),58,w,25);ctx.strokeRect(Math.max(52,Math.min(x+8,wrap.clientWidth-54-w)),58,w,25);
+ ctx.fillStyle='#dbeafe';ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';ctx.fillText(label,Math.max(60,Math.min(x+16,wrap.clientWidth-46-w)),75);
+}
+
+
+let soundEnabled=(localStorage.futSoundMuted!=='1');
+function updateSoundButton(){let b=$('soundToggle');if(!b)return;b.textContent=soundEnabled?'🔊':'🔇';b.classList.toggle('soundOn',soundEnabled);b.classList.toggle('soundOff',!soundEnabled)}
+function playTone(type){
+ if(!soundEnabled)return;
+ try{
+  const AC=window.AudioContext||window.webkitAudioContext; if(!AC)return;
+  const ac=playTone.ctx||(playTone.ctx=new AC());
+  if(ac.state==='suspended')ac.resume();
+  const now=ac.currentTime;
+  const o=ac.createOscillator(), g=ac.createGain();
+  o.type=type==='loss'?'triangle':'sine';
+  o.frequency.setValueAtTime(type==='win'?740:type==='loss'?180:420,now);
+  if(type==='win')o.frequency.exponentialRampToValueAtTime(980,now+.10);
+  if(type==='loss')o.frequency.exponentialRampToValueAtTime(120,now+.12);
+  g.gain.setValueAtTime(0.0001,now);
+  g.gain.exponentialRampToValueAtTime(type==='flat'?0.12:0.20,now+.018);
+  g.gain.exponentialRampToValueAtTime(0.0001,now+(type==='flat'?.18:.28));
+  o.connect(g).connect(ac.destination);o.start(now);o.stop(now+(type==='flat'?.20:.32));
+ }catch(e){}
+}
+function initWelcomeAndSound(){
+ updateSoundButton();
+ let sb=$('soundToggle');if(sb)sb.onclick=()=>{soundEnabled=!soundEnabled;localStorage.futSoundMuted=soundEnabled?'0':'1';updateSoundButton();if(soundEnabled)playTone('flat')};
+ let overlay=$('welcomeOverlay'), start=$('welcomeStart'), passInput=$('welcomePassword'), termsBox=$('welcomeTermsBox'), passBox=$('welcomePasswordBox'), welcomeError=$('welcomeError');
+ const ACCESS_PASSWORD='8888';
+ const ACCESS_KEY='futPrivateAccessGranted_v1';
+ function flashAccess(){
+  if(welcomeError)welcomeError.classList.add('show');
+  const box=passBox||termsBox;
+  if(box){box.classList.remove('flash');void box.offsetWidth;box.classList.add('flash');setTimeout(()=>box.classList.remove('flash'),650)}
+  if(passInput)passInput.focus();
+ }
+ if(passInput)passInput.addEventListener('input',()=>{if(welcomeError)welcomeError.classList.remove('show');if(passBox)passBox.classList.remove('flash')});
+ function hardHideWelcome(){
+  if(!overlay)return;
+  overlay.classList.remove('show');
+  overlay.setAttribute('aria-hidden','true');
+  overlay.style.display='none';
+  overlay.style.pointerEvents='none';
+  overlay.style.visibility='hidden';
+  overlay.style.opacity='0';
+ }
+ function hardShowWelcome(){
+  if(!overlay)return;
+  overlay.removeAttribute('aria-hidden');
+  overlay.style.display='flex';
+  overlay.style.pointerEvents='auto';
+  overlay.style.visibility='visible';
+  overlay.style.opacity='1';
+  overlay.classList.add('show');
+  setTimeout(()=>{if(passInput)passInput.focus()},80);
+ }
+ function closeWelcome(){
+  if(!overlay)return;
+  const entered=(passInput&&passInput.value?passInput.value.trim():'');
+  if(entered!==ACCESS_PASSWORD){flashAccess();return}
+  localStorage.setItem(ACCESS_KEY,'1');
+  localStorage.futWelcomeSeen='1';
+  hardHideWelcome();
+  playTone('flat');
+ }
+ // Fail-safe: when the welcome card is not meant to be shown, it cannot invisibly block mobile taps.
+ hardHideWelcome();
+ if(overlay&&localStorage.getItem(ACCESS_KEY)!=='1')setTimeout(hardShowWelcome,120);
+ if(start){
+  start.onclick=closeWelcome;
+  start.addEventListener('touchend',e=>{e.preventDefault();e.stopPropagation();closeWelcome()},{passive:false});
+ }
+ if(passInput)passInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();closeWelcome()}});
+ if(overlay)overlay.addEventListener('click',e=>{if(e.target===overlay&&document.documentElement.classList.contains('mobileUI'))flashAccess()});
+ // Emergency mobile fallback: hidden overlays remain noninteractive.
+ setTimeout(()=>{if(overlay&&!overlay.classList.contains('show'))hardHideWelcome()},600);
+}
+
+function showReviewBanner(kind,main,sub){let el=$('reviewBanner');if(!el)return;el.className='reviewBanner '+kind;el.innerHTML='<span class="big">'+main+'</span><span class="sub">'+sub+'</span>';requestAnimationFrame(()=>el.classList.add('show'))}
+function hideReviewBanner(){let el=$('reviewBanner');if(el){el.className='reviewBanner';el.innerHTML='<span class="big">REVIEW</span><span class="sub">Result will show here</span>'}}
+function drawExitMarker(){
+ if(!exitInfo)return;
+ let x=xOfTime(exitInfo.t),y=yOf(exitInfo.price),kind=exitInfo.kind;
+ let col=kind==='win'?'#0F8A73':kind==='loss'?'#ff4d5d':'#9ca36b';
+ ctx.save();ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=2;ctx.setLineDash([3,4]);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,wrap.clientHeight-24);ctx.stroke();ctx.setLineDash([]);
+ ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.moveTo(x+11,y-8);ctx.lineTo(x+38,y-23);ctx.stroke();
+ let label=exitInfo.label+' '+money(exitInfo.pl)+' · '+exitInfo.r.toFixed(2)+'R';ctx.font='bold 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';let w=ctx.measureText(label).width+16;let bx=Math.min(Math.max(x+42,54),wrap.clientWidth-58-w),by=Math.max(28,Math.min(y-38,wrap.clientHeight-64));
+ ctx.fillStyle='rgba(11,17,24,.88)';ctx.strokeStyle=col;ctx.fillRect(bx,by,w,25);ctx.strokeRect(bx,by,w,25);ctx.fillStyle=col;ctx.fillText(label,bx+8,by+17);ctx.restore();
+}
+
+function drawDrawings(){
+ ctx.lineWidth=2;
+ const list=drawings.concat(draft?[draft]:[]);
+ for(let idx=0;idx<list.length;idx++){
+  const g=list[idx];
+  let x1=xOfTime(g.t1),x2=xOfTime(g.t2),y1=yOf(g.p1),y2=yOf(g.p2);
+  let hot=(tool==='erase'&&idx===hoverDrawing);
+  const base=g.type==='rect'?'#4d83ff':'#9ca36b';
+  const hotBase=g.type==='rect'?'#8ab4ff':'#d1d78f';
+  const fade=(g===draft)?0:reviewDrawFade;
+  ctx.strokeStyle=hot?hotBase:mixHex(base,'#d49a33',fade);
+  ctx.lineWidth=hot?3:2;
+  ctx.globalAlpha=hot?1:(.92-(.42*fade));
+  if(g.type==='line'){
+   ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+  }else{
+   ctx.strokeRect(Math.min(x1,x2),Math.min(y1,y2),Math.abs(x2-x1),Math.abs(y2-y1));
+   if(fade>0){
+    ctx.globalAlpha=.08*fade;
+    ctx.fillStyle='#d49a33';
+    ctx.fillRect(Math.min(x1,x2),Math.min(y1,y2),Math.abs(x2-x1),Math.abs(y2-y1));
+    ctx.globalAlpha=hot?1:(.92-(.42*fade));
+   }
+  }
+ }
+ ctx.globalAlpha=1;ctx.lineWidth=2;
+}
+function drawCross(){if(mouse.x<48||mouse.x>wrap.clientWidth-54)return;ctx.strokeStyle='rgba(80,90,105,.55)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(mouse.x,0);ctx.lineTo(mouse.x,wrap.clientHeight);ctx.moveTo(48,mouse.y);ctx.lineTo(wrap.clientWidth-54,mouse.y);ctx.stroke();ctx.setLineDash([])}
+function drawOrderClickHint(){if(!order||orderLocked||!orderClickStage||!canTradeNow()||mouse.x<48||mouse.x>wrap.clientWidth-54)return;let label=orderClickStage==='target'?'Set take profit':'Set stop loss';ctx.save();ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';let w=ctx.measureText(label).width+18,x=Math.min(wrap.clientWidth-60-w,mouse.x+14),y=Math.max(34,mouse.y-28);ctx.fillStyle='rgba(11,17,24,.88)';ctx.strokeStyle=orderClickStage==='target'?'#0F8A73':'#ff4d5d';ctx.lineWidth=1;ctx.fillRect(x,y,w,24);ctx.strokeRect(x,y,w,24);ctx.fillStyle='#dbeafe';ctx.fillText(label,x+9,y+16);ctx.restore()}
+function adjustChartSymbolWidth(){
+ const sel=$('chartSymbol');
+ if(!sel)return;
+ const opt=sel.options[sel.selectedIndex];
+ const text=opt?opt.textContent:sel.value;
+ let meter=document.getElementById('chartSymbolMeasure');
+ if(!meter){
+  meter=document.createElement('span');
+  meter.id='chartSymbolMeasure';
+  meter.style.position='fixed';
+  meter.style.left='-9999px';
+  meter.style.top='-9999px';
+  meter.style.whiteSpace='pre';
+  meter.style.visibility='hidden';
+  document.body.appendChild(meter);
+ }
+ const cs=getComputedStyle(sel);
+ meter.style.font=cs.font;
+ meter.style.fontWeight=cs.fontWeight;
+ meter.textContent=text;
+ const max=Math.max(120,Math.min(window.innerWidth||9999,document.documentElement.classList.contains('mobileUI')?260:330));
+ const w=Math.min(max,Math.ceil(meter.getBoundingClientRect().width)+24);
+ sel.style.width=w+'px';
+}
+function updateHead(){let sym=$('symbol').value,sp=specs[sym];if($('chartSymbol'))$('chartSymbol').value=sym;if($('headTf'))$('headTf').textContent='· '+tf;adjustChartSymbolWidth()}
+function updateTradeTxt(){if(!order){for(const id of ['entryTxt','stopTxt','targetTxt','riskTxt','rewardTxt','rrTxt'])$(id).textContent='--';return}let q=+$('contracts').value,sp=specs[$('symbol').value],dir=order.side==='long'?1:-1;let risk=Math.abs(order.entry-order.stop)*sp.pv*q,rew=Math.abs(order.target-order.entry)*sp.pv*q;let ticks=Math.abs(order.entry-order.stop)/sp.tick;$('entryTxt').textContent=order.entry.toFixed(2);$('stopTxt').textContent=order.stop.toFixed(2);$('targetTxt').textContent=order.target.toFixed(2);$('riskTxt').textContent='-$'+risk.toFixed(2)+' / '+ticks.toFixed(0)+' ticks';$('rewardTxt').textContent='$'+rew.toFixed(2);$('rrTxt').textContent=(rew/risk||0).toFixed(2)}
+function money(v){return (v<0?'-$':'$')+Math.abs(v).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function addRecentTrade(label,pl,r){stats.recent=stats.recent||[];stats.recent.unshift({label,pl,r,t:Date.now()});stats.recent=stats.recent.slice(0,4);renderRecent()}
+function renderRecent(){let box=$('recentTrades');if(!box)return;let arr=stats.recent||[];if(!arr.length){box.innerHTML='<div class="recentItem"><span>No trades yet</span><b>--</b></div>';return}box.innerHTML=arr.map((x,i)=>{let cls=x.pl>0?'win':x.pl<0?'loss':'';let glyph=x.pl>0?'✓ ':x.pl<0?'✕ ':'';let val=x.pl===null?'No trade':glyph+money(x.pl);let r=x.r?(' · '+x.r):'';return '<div class="recentItem '+(i===0?'new':'')+'"><span>'+x.label+'</span><b class="'+cls+'">'+val+r+'</b></div>'}).join('')}
+
+const accountPresets={
+  15000:{label:'$15K',intraday:{balance:15000,daily:1500,trail:1500},eod:{balance:15000,daily:1500,trail:1500}},
+  50000:{label:'$50K',intraday:{balance:50000,daily:2500,trail:2500},eod:{balance:50000,daily:2500,trail:2500}},
+  150000:{label:'$150K',intraday:{balance:150000,daily:5000,trail:5000},eod:{balance:150000,daily:5000,trail:5000}},
+  250000:{label:'$250K',intraday:{balance:250000,daily:6500,trail:6500},eod:{balance:250000,daily:6500,trail:6500}}
+};
+function selectedAccountPreset(){
+ let size=+$('accountPlan')?.value||250000;
+ let mode=$('trailMode')?.value||'intraday';
+ let p=accountPresets[size]||accountPresets[250000];
+ return p[mode]||p.intraday;
+}
+function applyAccountPreset(resetPeak=false){
+ let p=selectedAccountPreset();
+ if($('accountSize'))$('accountSize').value=p.balance;
+ if($('loss'))$('loss').value=p.daily;
+ if($('trailLimit'))$('trailLimit').value=p.trail;
+ if($('lossDisplay'))$('lossDisplay').textContent=money(p.daily);
+ if($('trailDisplay'))$('trailDisplay').textContent=money(p.trail);
+ if(resetPeak||!stats.peakEquity||stats.peakEquity<p.balance)stats.peakEquity=p.balance;
+ updateStats();
+ drawAll();
+}
+function accountSize(){return +$('accountSize').value||250000}
+function trailLimit(){return +$('trailLimit').value||0}
+function unrealizedAt(price){if(!trade||!trade.open)return 0;let sp=specs[$('symbol').value],q=+$('contracts').value,dir=trade.side==='long'?1:-1;return (price-trade.entry)*dir*sp.pv*q}
+function currentEquity(extraUnrealized=0){return accountSize()+stats.net+extraUnrealized}
+function syncPeak(){let base=accountSize()+stats.net;if(!stats.peakEquity||stats.peakEquity<accountSize())stats.peakEquity=accountSize();if($('trailMode').value==='eod')stats.peakEquity=Math.max(stats.peakEquity,base)}
+function setStat(id,text,numeric,cls=''){let el=$(id);if(!el)return;let old=el.dataset.val==null?null:+el.dataset.val;el.textContent=text;el.className=cls; if(old!=null&&isFinite(numeric)&&numeric!==old){el.classList.remove('statFlashUp','statFlashDown');void el.offsetWidth;el.classList.add(numeric>old?'statFlashUp':'statFlashDown')} if(isFinite(numeric))el.dataset.val=numeric}
+function updateStats(){syncPeak();let liveUnreal=0;if(trade&&trade.open&&data[Math.max(0,shownEnd-1)])liveUnreal=unrealizedAt(data[Math.max(0,shownEnd-1)].c);let eq=currentEquity(liveUnreal),floor=stats.peakEquity-trailLimit(),room=eq-floor;localStorage.futStats=JSON.stringify(stats);$('trades').textContent=stats.trades;$('wr').textContent=stats.trades?Math.round(stats.wins/stats.trades*100)+'%':'--';$('pf').textContent=stats.grossLoss? (stats.grossWin/stats.grossLoss).toFixed(2):'--';setStat('netpl',money(stats.net),stats.net,stats.net>=0?'green':'red');setStat('daypl',money(stats.net),stats.net);setStat('equity',money(eq),eq);setStat('trailFloor',money(floor),floor);setStat('ddRoom',money(room),room,room>=0?'green':'red');let dailyLimit=+$('loss').value||0;if(room<=0)$('bottomMsg').textContent='Trailing drawdown breached in sim.';else if(dailyLimit&&stats.net<=-dailyLimit)$('bottomMsg').textContent='Daily loss limit breached in sim.'}
+function placeOrder(side,price){
+ orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;
+ let sp=specs[$('symbol').value],entry=roundTick(price);
+ let r=priceRange(),pricePerPixel=(r.hi-r.lo)/Math.max(1,(wrap.clientHeight-28));
+ let stopGap=Math.max(sp.tick*8,pricePerPixel*68),targetGap=Math.max(sp.tick*12,pricePerPixel*136);
+ order={side,entry,stop:roundTick(entry+(side==='long'?-stopGap:stopGap)),target:roundTick(entry+(side==='long'?targetGap:-targetGap))};
+ orderClickStage='target';
+ $('tradeHelp').textContent='Entry set. Click once to set take profit, then click again to set stop loss. You can still drag any line.';drawAll()}
+function lockTradeFromOrder(){
+ if(!order)return false;
+ decisionIndex=Math.max(viewStart,shownEnd-1);
+ decisionTime=timeOfIndex(decisionIndex);
+ decisionSide=order.side;
+ tradeEndIndex=findSessionEnd(decisionIndex);
+ // Entry activation rule:
+ // A confirmed setup starts as a pending limit order, but marketable limits
+ // fill immediately at the decision price. Example: a buy limit at/above the
+ // current price or a sell limit at/below the current price should not wait
+ // for another candle to touch it. Non-marketable limits are checked against
+ // the full high/low range of every revealed candle, with a small tick-sized
+ // tolerance so exact touches are not missed by decimal rounding.
+ trade={...order,open:false,pending:true,entryHit:false,filledIndex:null};
+ orderLocked=true;
+ orderClickStage=null;
+ decisionConfirmed=true;
+ confirmedHadTrade=true;
+ pendingSide=null;
+ $('posCount').textContent='0';
+ $('buyBox').classList.remove('active');
+ $('sellBox').classList.remove('active');
+ hideReviewBanner();
+ if(fillPendingLimit(decisionIndex,true)){
+  $('bottomMsg').textContent='Trade locked: limit order filled at '+trade.entry.toFixed(2)+' — waiting for replay outcome.';
+ }else{
+  $('bottomMsg').innerHTML='Trade locked: limit order pending — waiting for price to reach '+trade.entry.toFixed(2);
+ }
+ setActionState();
+ drawAll();
+ return true;
+}
+function confirmTrade(){
+ if(autoMode&&autoPhase!=='trade'){toast('Wait until the Trade stage starts.');return}
+ if(orderLocked&&trade){toast('Trade already confirmed and locked.');return}
+ if(!order){toast('No trade setup to confirm.','warn');return}
+ let check=validOrder(order);
+ if(!check.ok){toast(check.msg,'warn');$('bottomMsg').textContent=check.msg;return}
+ if(!lockTradeFromOrder())return;
+ if(autoMode&&autoPhase==='trade'){if(isManualDrill())startManualReviewCountdown('Trade confirmed — review starts in five seconds.');else{autoLeft=Math.min(autoLeft,5);updateAuto()}}
+}
+function entryFillTolerance(){let sp=specs[$('symbol').value]||{tick:.25};return Math.max(1e-9,(+sp.tick||.25)*0.51)}
+function entryTouchedByCandle(idx,allowMarketable=false){
+ if(!trade)return false;
+ let b=data[idx];
+ if(!b)return false;
+ let eps=entryFillTolerance(),e=trade.entry;
+ let current=data[Math.max(0,Math.min(data.length-1,decisionIndex??idx))]?.c;
+ if(allowMarketable&&isFinite(current)){
+  if(trade.side==='long'&&e>=current-eps)return true;
+  if(trade.side==='short'&&e<=current+eps)return true;
+ }
+ // For pending limit orders, use side-aware fill logic:
+ // buy limits fill when price trades at or below the limit; sell limits fill
+ // when price trades at or above the limit. This handles touches, wicks, and
+ // candles that open through the limit instead of requiring the exact price to
+ // be bracketed by both the high and low.
+ if(trade.side==='long')return b.l<=e+eps;
+ if(trade.side==='short')return b.h>=e-eps;
+ return b.l<=e+eps&&b.h>=e-eps;
+}
+function fillPendingLimit(idx,allowMarketable=false){if(!trade||!trade.pending||trade.entryHit)return false;if(!entryTouchedByCandle(idx,allowMarketable))return false;trade.pending=false;trade.open=true;trade.entryHit=true;trade.filledIndex=idx;$('posCount').textContent='1';$('bottomMsg').textContent='Limit order filled at '+trade.entry.toFixed(2)+' — checking TP/SL.';return true}
+function closeLimitNotFilled(idx=null){
+ if(!trade||!trade.pending)return false;
+ let exitIdx=idx??Math.max(0,Math.min(data.length-1,shownEnd-1));
+ let t=+(data[exitIdx]?.t||data[Math.max(0,shownEnd-1)]?.t||Date.now());
+ trade.pending=false;trade.open=false;trade.entryHit=false;
+ $('posCount').textContent='0';
+ exitInfo={kind:'flat',label:'Limit order not filled',outcome:'Limit order not filled',bannerLabel:'LIMIT ORDER NOT FILLED',price:trade.entry,pl:0,r:0,t};
+ $('result').textContent='LIMIT ORDER NOT FILLED — price never reached entry '+trade.entry.toFixed(2);
+ $('bottomMsg').textContent='Limit order not filled — entry was never touched before the session ended.';
+ showReviewBanner('flat','LIMIT ORDER NOT FILLED','Entry was never filled');
+ playTone('flat');
+ addRecentTrade('Limit order not filled',0,'0.00R');
+ if(!reviewExitDeadline)reviewExitDeadline=performance.now()+4000;
+ reviewStopIndex=Math.max(shownEnd,exitIdx+1);
+ setActionState();updateStats();drawAll();
+ return true;
+}
+function closeTrade(outcome,price,idx=null){
+ if(!trade||!trade.open||!trade.entryHit)return;
+ let sp=specs[$('symbol').value],q=+$('contracts').value,comm=+$('comm').value*q*2,dir=trade.side==='long'?1:-1;
+ let pl=(price-trade.entry)*dir*sp.pv*q-comm;
+ let risk=Math.abs(trade.entry-trade.stop)*sp.pv*q||1;
+ let r=pl/risk;
+ stats.trades++;stats.net+=pl;
+ if(pl>0){stats.wins++;stats.grossWin+=pl}else stats.grossLoss+=Math.abs(pl);
+ trade.open=false;stats.peakEquity=Math.max(stats.peakEquity,accountSize()+stats.net);
+ $('posCount').textContent='0';
+ let kind=pl>0?'win':pl<0?'loss':'flat';
+ let isLiquidation=outcome==='Session close'||outcome==='Position liquidated';
+ let bannerLabel=isLiquidation?'MARKET CLOSE POSITION LIQUIDATED':(outcome==='Target hit'?'TAKE PROFIT HIT':(outcome==='Stopped'?'STOP LOSS HIT':(pl>=0?'POSITION LIQUIDATED':'POSITION LIQUIDATED')));
+ if(kind==='flat')bannerLabel=isLiquidation?'POSITION LIQUIDATED':'BREAKEVEN';
+ let markerLabel=isLiquidation?'Market close liquidation':(outcome==='Target hit'?'Profit taken':(outcome==='Stopped'?'Stopped out':outcome));
+ let resultOutcome=isLiquidation?'Market close position liquidated':outcome;
+ let exitIdx=idx??Math.max(0,Math.min(data.length-1,shownEnd-1));
+ exitInfo={kind,label:markerLabel,outcome:resultOutcome,bannerLabel,price,pl,r,t:+(data[exitIdx]?.t||data[Math.max(0,shownEnd-1)]?.t||Date.now())};
+ if(revealing){reviewExitDeadline=performance.now()+4000;reviewStopIndex=Math.max(shownEnd,(idx??shownEnd)+1);if(autoScale){manualRange=desiredPriceRange()}autoScale=false;updateAutoScaleButton();$('bottomMsg').textContent=resultOutcome+' — outcome reached. Review will advance after a short pause.';}
+ $('result').textContent=bannerLabel+' — '+resultOutcome+' at '+price.toFixed(2)+' | P/L '+money(pl)+' | '+r.toFixed(2)+'R';
+ $('bottomMsg').textContent='Review: exit marker shows exactly how the trade ended.';
+ showReviewBanner(kind,(pl>0?'✓ ':'✕ ')+bannerLabel+' '+money(pl),resultOutcome+' · '+r.toFixed(2)+'R');
+ playTone(isLiquidation?'flat':(pl>0?'win':pl<0?'loss':'flat'));
+ addRecentTrade((trade.side==='long'?'Long':'Short')+' '+resultOutcome,pl,r.toFixed(2)+'R');
+ updateStats();setActionState();
+}
+function advance(n=1){
+ let lim=revealLimit();
+ let target=Math.max(shownEnd,Math.min(lim,shownEnd+n));
+ for(let i=shownEnd;i<target;i++){
+  let b=data[i];
+  if(!b)continue;
+  if(trade&&trade.pending&&!trade.entryHit){
+   // A pending limit order becomes active only if the candle actually trades through entry.
+   // This uses the full high/low range, not open/close, so wicks count correctly.
+   fillPendingLimit(i);
+  }
+  if(trade&&trade.open&&trade.entryHit){
+   if($('trailMode').value==='intraday'){
+    let fav=trade.side==='long'?b.h:b.l;
+    stats.peakEquity=Math.max(stats.peakEquity,currentEquity(unrealizedAt(fav)));
+   }
+   if(trade.side==='long'){
+    if(b.l<=trade.stop){closeTrade('Stopped',trade.stop,i);break;}
+    else if(b.h>=trade.target){closeTrade('Target hit',trade.target,i);break;}
+   }else{
+    if(b.h>=trade.stop){closeTrade('Stopped',trade.stop,i);break;}
+    else if(b.l<=trade.target){closeTrade('Target hit',trade.target,i);break;}
+   }
+  }
+ }
+ shownEnd=target;
+ followRevealWindow();
+ let atEnd=shownEnd>=revealLimit();
+ if(atEnd&&!reviewExitDeadline){
+  if(trade&&trade.pending&&!trade.entryHit){
+   let li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));
+   closeLimitNotFilled(li);
+   reviewStopIndex=Math.max(shownEnd,li+1);
+  }else if(trade&&trade.open&&trade.entryHit){
+   let li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));
+   closeTrade('Position liquidated',data[li]?.c??trade.entry,li);
+   reviewStopIndex=Math.max(shownEnd,li+1);
+   if(!reviewExitDeadline)reviewExitDeadline=performance.now()+4000;
+   $('bottomMsg').textContent='5:00 PM ET market close reached — open position was liquidated.';
+  }else if(!trade){
+   $('bottomMsg').textContent='No-trade reveal complete.';
+  }
+ }
+ drawAll();
+}
+
+function revealSpeed(){
+ let v=$('speed')?.value||'1';
+ if(v==='instant')return Infinity;
+ let n=parseFloat(v);
+ return isFinite(n)&&n>0?n:1;
+}
+function focusTargetRange(targetStart,targetEnd){
+ const oldVS=viewStart,oldVE=viewEnd,oldMR=manualRange,oldAS=autoScale,oldScale=scaleY,oldOff=priceOffset;
+ viewStart=targetStart;viewEnd=targetEnd;manualRange=null;autoScale=true;scaleY=1;priceOffset=0;
+ let r=desiredPriceRange();
+
+ // Review mode uses a special vertical framing rule: the upper TP/SL boundary
+ // must stay below the result banner so the user can always see what was hit.
+ if(order&&(autoPhase==='review'||revealing)){
+  const vals=[order.entry,order.stop,order.target].filter(v=>isFinite(v));
+  if(vals.length){
+   const upper=Math.max(...vals), lower=Math.min(...vals);
+   const H=Math.max(220,wrap.clientHeight);
+   const plotH=Math.max(1,H-28);
+   const banner=document.getElementById('reviewBanner');
+   const bannerBottom=(banner&&banner.classList.contains('show'))?(banner.offsetTop+banner.offsetHeight+18):168;
+   const topPx=Math.max(42,Math.min(H*0.46,bannerBottom));
+   const bottomPx=Math.max(topPx+80,H-46);
+   const visibleFraction=Math.max(.18,(bottomPx-topPx)/plotH);
+   const minMove=Math.max(Math.abs(upper-lower), (r.hi-r.lo)*0.34, 1);
+   let range=minMove/visibleFraction;
+   range=Math.max(range,(r.hi-r.lo)*0.82,1);
+   // Map the upper order boundary to the safe top pixel, then include extra space.
+   let hi=upper+((topPx-8)/plotH)*range;
+   let lo=hi-range;
+   // If the lower boundary is too close to the bottom, expand downward without moving the upper line upward.
+   const lowerY=8+(hi-lower)/(hi-lo)*plotH;
+   if(lowerY>H-34){
+    const needed=(hi-lower)/Math.max(.01,(H-34-8)/plotH);
+    lo=hi-needed;
+   }
+   r={hi,lo};
+  }
+ }
+
+ viewStart=oldVS;viewEnd=oldVE;manualRange=oldMR;autoScale=oldAS;scaleY=oldScale;priceOffset=oldOff;
+ return r;
+}
+function getRevealFocusTarget(){
+ if(decisionIndex==null||!data.length)return null;
+ const lim=Math.max(decisionIndex+20,sessionLimit());
+ const remaining=Math.max(40,lim-decisionIndex);
+ const span=Math.max(70,Math.min(220,remaining+32));
+ let vs=Math.max(0,decisionIndex-18);
+ let ve=Math.min(data.length-1,vs+span);
+ if(ve-vs<span&&ve>=span)vs=ve-span;
+ return {vs,ve,range:focusTargetRange(vs,ve)};
+}
+function animateRevealFocus(){
+ const target=getRevealFocusTarget();
+ if(!target)return;
+ cancelAnimationFrame(focusRAF);
+ const start={vs:viewStart,ve:viewEnd,range:priceRange()};
+ const dur=260,startT=performance.now();
+ autoScale=false;updateAutoScaleButton();
+ const ease=t=>1-Math.pow(1-t,3);
+ const step=now=>{
+  let t=Math.min(1,(now-startT)/dur),e=ease(t);
+  viewStart=start.vs+(target.vs-start.vs)*e;
+  viewEnd=start.ve+(target.ve-start.ve)*e;
+  manualRange={hi:start.range.hi+(target.range.hi-start.range.hi)*e,lo:start.range.lo+(target.range.lo-start.range.lo)*e};
+  drawAll();
+  if(t<1)focusRAF=requestAnimationFrame(step);
+  else{viewStart=target.vs;viewEnd=target.ve;scaleY=1;priceOffset=0;manualRange=null;autoScale=true;updateAutoScaleButton();stableRange=null;drawAll();}
+ };
+ focusRAF=requestAnimationFrame(step);
+}
+function setReviewDrawingFade(on){
+ const from=reviewDrawFade,to=on?1:0,dur=220,startT=performance.now();
+ cancelAnimationFrame(drawFadeRAF);
+ const ease=t=>1-Math.pow(1-t,3);
+ const step=now=>{let t=Math.min(1,(now-startT)/dur);reviewDrawFade=from+(to-from)*ease(t);drawAll();if(t<1)drawFadeRAF=requestAnimationFrame(step)};
+ drawFadeRAF=requestAnimationFrame(step);
+}
+function mixHex(a,b,t){
+ const pa=[parseInt(a.slice(1,3),16),parseInt(a.slice(3,5),16),parseInt(a.slice(5,7),16)];
+ const pb=[parseInt(b.slice(1,3),16),parseInt(b.slice(3,5),16),parseInt(b.slice(5,7),16)];
+ return 'rgb('+pa.map((v,i)=>Math.round(v+(pb[i]-v)*t)).join(',')+')';
+}
+function followRevealWindow(){
+ if(!revealing||decisionIndex==null)return;
+ const span=viewEnd-viewStart;
+ const rightPad=Math.max(14,Math.floor(span*.12));
+ if(shownEnd>viewEnd-rightPad){
+   viewEnd=Math.min(data.length-1,shownEnd+rightPad);
+   viewStart=Math.max(0,viewEnd-span);
+ }
+}
+function beginReveal(done){
+ clearInterval(revealTimer);
+ revealing=true;
+ playing=false;
+ reviewStopIndex=null;
+ reviewExitDeadline=null;
+ reviewFinishToken++;
+ const thisReviewToken=reviewFinishToken;
+ reviewPrevAutoScale=autoScale;
+ const noTradeReview=!trade;
+ const DECISION_REVEAL_MS=7300;
+ const startShownEnd=shownEnd;
+ // Use a candle-count reveal window instead of a wall-clock-only deadline.
+ // This prevents the timer from closing a pending order before the candle that
+ // visibly touches the entry has actually been processed by the fill logic.
+ let pendingDecisionDeadline=null;
+ let pendingDecisionStopIndex=null;
+ let finished=false;
+ const finish=()=>{
+  if(finished||thisReviewToken!==reviewFinishToken)return;
+  finished=true;
+  clearInterval(revealTimer);
+  revealing=false;
+  reviewExitDeadline=null;
+  drawAll();
+  if(done)done();
+ };
+ const scheduleFinish=(ms)=>{
+  if(reviewExitDeadline)return;
+  reviewExitDeadline=performance.now()+ms;
+ };
+ const maxDecisionCandles=()=>{
+  const sp=revealSpeed();
+  if(sp===Infinity)return 24;
+  const delay=Math.max(38,300/sp);
+  return Math.max(1,Math.floor(DECISION_REVEAL_MS/delay));
+ };
+ if(noTradeReview||(trade&&trade.pending&&!trade.entryHit)){
+  pendingDecisionStopIndex=Math.min(sessionLimit(),shownEnd+maxDecisionCandles());
+  // Fallback only; the primary close condition is the processed candle count.
+  pendingDecisionDeadline=performance.now()+DECISION_REVEAL_MS+1000;
+ }
+ const scanPendingFillThrough=endIdx=>{
+  if(!trade||!trade.pending||trade.entryHit)return false;
+  const first=Math.max(0,Math.min(data.length-1,startShownEnd));
+  const last=Math.max(first,Math.min(data.length-1,endIdx));
+  for(let i=first;i<=last;i++){
+   if(fillPendingLimit(i))return true;
+  }
+  return false;
+ };
+ const closeNoTradeDecisionWindow=()=>{
+  if(reviewExitDeadline)return;
+  $('bottomMsg').textContent='No-trade reveal complete.';
+  showReviewBanner('flat','NO TRADE MADE','7.3-second reveal complete');
+  scheduleFinish(0);
+ };
+ const closePendingDecisionWindow=()=>{
+  if(reviewExitDeadline||!trade||!trade.pending||trade.entryHit)return;
+  const li=Math.max(0,Math.min(data.length-1,shownEnd-1,pendingDecisionStopIndex??shownEnd-1));
+  // Final safety scan: if any candle already revealed inside the 7.3s window
+  // touched or traded through entry, fill the order instead of ending as
+  // "not filled." This matches what the user can visually see on the chart.
+  if(scanPendingFillThrough(li)){
+   pendingDecisionDeadline=null;
+   pendingDecisionStopIndex=null;
+   return;
+  }
+  closeLimitNotFilled(li);
+  $('bottomMsg').textContent='Limit order not filled within the review window.';
+  scheduleFinish(0);
+ };
+ if(revealLimit()<=shownEnd){
+  if(trade&&trade.pending&&!trade.entryHit){
+   const li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));
+   closeLimitNotFilled(li);
+   scheduleFinish(0);
+  }else if(trade&&trade.open&&trade.entryHit){
+   const li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));
+   const px=(data[li]&&isFinite(data[li].c))?data[li].c:trade.entry;
+   closeTrade('Position liquidated',px,li);
+   $('bottomMsg').textContent='End of available reveal reached immediately — position was liquidated.';
+   scheduleFinish(4000);
+  }else if(noTradeReview){
+   $('bottomMsg').textContent='No trade made — no future candles available in this scenario.';
+   showReviewBanner('flat','NO TRADE MADE','No future candles available after this decision.');
+   scheduleFinish(0);
+  }
+ }
+ let revealStallStart=performance.now(), revealLastShown=shownEnd;
+ setReviewDrawingFade(true);
+ animateRevealFocus();
+ setActionState();
+ if($('autoTimer'))$('autoTimer').style.display='none';
+ if(noTradeReview&&!reviewExitDeadline){
+  $('bottomMsg').textContent='No trade made — revealing 7.3 seconds of candles, then moving on.';
+  showReviewBanner('flat','NO TRADE MADE','7.3-second reveal');
+ }
+ if(trade&&trade.pending&&!trade.entryHit&&!reviewExitDeadline){
+  $('bottomMsg').textContent='Limit order pending — it has 7.3 seconds of reveal time to fill.';
+ }
+ const shouldFinish=()=>{
+  if(reviewExitDeadline)return performance.now()>=reviewExitDeadline;
+  if(noTradeReview){
+   if((pendingDecisionStopIndex!=null&&shownEnd>=pendingDecisionStopIndex)||shownEnd>=sessionLimit()){
+    closeNoTradeDecisionWindow();
+    return false;
+   }
+   return false;
+  }
+  if(trade&&trade.pending&&!trade.entryHit){
+   if((pendingDecisionStopIndex!=null&&shownEnd>=pendingDecisionStopIndex)||shownEnd>=sessionLimit()){
+    closePendingDecisionWindow();
+    return false;
+   }
+   return false;
+  }
+  if(trade&&trade.entryHit&&pendingDecisionDeadline){
+   pendingDecisionDeadline=null;
+   pendingDecisionStopIndex=null;
+  }
+  if(shownEnd<revealLimit())return false;
+  // Reached the end of the valid scenario without a terminal result. Force one now.
+  if(trade&&trade.pending&&!trade.entryHit){closeLimitNotFilled(Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1)));scheduleFinish(0);return false;}
+  if(trade&&trade.open&&trade.entryHit){let li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));closeTrade('Position liquidated',data[li]?.c??trade.entry,li);scheduleFinish(4000);return false;}
+  scheduleFinish(0);return false;
+ };
+ if(revealSpeed()===Infinity){
+  if(noTradeReview){
+   pendingDecisionStopIndex=Math.min(sessionLimit(),shownEnd+maxDecisionCandles());
+   while(shownEnd<revealLimit()&&shownEnd<pendingDecisionStopIndex)advance(1);
+   closeNoTradeDecisionWindow();
+   finish();
+   return;
+  }
+  if(trade&&trade.pending&&!trade.entryHit){
+   pendingDecisionStopIndex=Math.min(sessionLimit(),shownEnd+maxDecisionCandles());
+   while(shownEnd<revealLimit()&&shownEnd<pendingDecisionStopIndex&&trade&&trade.pending&&!trade.entryHit)advance(1);
+   if(trade&&trade.pending&&!trade.entryHit){closePendingDecisionWindow();finish();return;}
+   pendingDecisionDeadline=null;
+   pendingDecisionStopIndex=null;
+  }
+  while(shownEnd<revealLimit()){
+   advance(1);
+   if(reviewExitDeadline|| (trade&&!trade.open&&!trade.pending))break;
+  }
+  if(!reviewExitDeadline){
+   if(trade&&trade.pending&&!trade.entryHit)closeLimitNotFilled(Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1)));
+   else if(trade&&trade.open&&trade.entryHit){let li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));closeTrade('Position liquidated',data[li]?.c??trade.entry,li)}
+   scheduleFinish(4000);
+  }
+  setTimeout(finish,Math.max(0,reviewExitDeadline-performance.now()));
+  return;
+ }
+ const delay=Math.max(38,300/revealSpeed());
+ revealTimer=setInterval(()=>{
+  if(thisReviewToken!==reviewFinishToken){clearInterval(revealTimer);return;}
+  if(shownEnd!==revealLastShown){revealLastShown=shownEnd;revealStallStart=performance.now()}
+  if(shouldFinish()){finish();return}
+  if(shownEnd<revealLimit())advance(1);
+  if(shouldFinish()){finish();return}
+  if(performance.now()-revealStallStart>3500){
+   if(trade&&trade.pending&&!trade.entryHit&&pendingDecisionStopIndex!=null&&shownEnd>=pendingDecisionStopIndex){closePendingDecisionWindow()}
+   else if(trade&&trade.open&&trade.entryHit){let li=Math.max(0,Math.min(data.length-1,sessionLimit()-1,shownEnd-1));closeTrade('Position liquidated',data[li]?.c??trade.entry,li);scheduleFinish(4000)}
+   else if(noTradeReview&&pendingDecisionStopIndex!=null&&shownEnd>=pendingDecisionStopIndex){closeNoTradeDecisionWindow()}
+   revealStallStart=performance.now();
+  }
+ },delay);
+}
+
+function setAutoBanner(txt){let el=$('autoTimer');el.style.display='block';el.innerHTML=txt}
+function pauseAuto(){
+ if(isManualDrill()){toast('Manual mode has no countdown to pause.');return}
+ if(!autoMode){toast('Drill is not running.');return}
+ autoPaused=true;clearInterval(autoTimerId);$('autoStart').textContent='▶ Resume';$('autoStop').textContent='Paused';setActionState()
+}
+function stopAuto(){pauseAuto()}
+function startManualReviewCountdown(msg='Manual decision locked — review starts in five seconds.'){
+ clearInterval(autoTimerId);
+ autoPhase='preReview';
+ autoLeft=5;
+ if(msg)$('bottomMsg').textContent=msg;
+ setActionState();
+ updateAuto();
+ autoTimerId=setInterval(()=>{autoLeft--;updateAuto();if(autoLeft<=0){clearInterval(autoTimerId);startPhase('review')}},1000);
+}
+function startAuto(){
+ if(isManualDrill()&&autoMode&&autoPhase==='postreview'){
+  autoPaused=false;hintSteps=0;$('autoStart').textContent='▶ Running';$('autoStop').textContent='Manual';newWindow();startPhase('trade');return;
+ }
+ if(isManualDrill()){
+  autoMode=true;autoPaused=false;hintSteps=0;$('autoStart').textContent='▶ Running';$('autoStop').textContent='Manual';setActionState();newWindow();startPhase('trade');return;
+ }
+ if(autoMode&&autoPaused){autoPaused=false;$('autoStart').textContent='▶ Running';$('autoStop').textContent='⏸ Pause';setActionState();updateAuto();clearInterval(autoTimerId);autoTimerId=setInterval(()=>{autoLeft--;updateAuto();if(autoLeft<=0)nextAutoPhase()},1000);return}
+ autoMode=true;autoPaused=false;hintSteps=0;$('autoStart').textContent='▶ Running';$('autoStop').textContent='⏸ Pause';setActionState();newWindow();startPhase('look')
+}
+function startPhase(phase){
+ autoPhase=phase;hintSteps=0;
+ if(isManualDrill()){
+  clearInterval(autoTimerId);
+  if(phase==='look')phase='trade',autoPhase='trade';
+  if(phase==='trade'){
+   autoLeft=0;
+   $('bottomMsg').textContent='Manual mode: study the chart as long as needed, then choose BUY, SELL, or No Trade.';
+   order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');setActionState();updateAuto();drawAll();return;
+  }
+  if(phase==='review'){
+   autoPhase='review';
+   clearInterval(autoTimerId);
+   if(decisionConfirmed&&confirmedHadTrade&&order&&!trade){lockTradeFromOrder()}
+   if(!decisionConfirmed&&order&&!trade){order=null;orderLocked=false;pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='Unconfirmed setup cleared.';showReviewBanner('flat','NO TRADE MADE','No confirmed trade');addRecentTrade('No trade timeout',null,'');decisionConfirmed=true;confirmedHadTrade=false;setActionState()}
+   if(!trade&&!confirmedHadTrade){decisionIndex=Math.max(viewStart,shownEnd-1);decisionTime=timeOfIndex(decisionIndex);decisionSide=null;tradeEndIndex=findSessionEnd(decisionIndex);if(!$('result').textContent){$('result').textContent='Manual no-trade decision.';showReviewBanner('flat','NO TRADE MADE','No confirmed trade');addRecentTrade('No trade',null,'');decisionConfirmed=true;confirmedHadTrade=false;setActionState()}}
+   const noTradeReview=!trade;
+   $('bottomMsg').textContent=noTradeReview?'Manual review: no-trade decision — brief 7.3-second reveal.':'Manual review: candles reveal until TP, SL, limit-not-filled, or liquidation.';
+   updateAuto();
+   beginReveal(()=>{
+    autoPhase='postreview';
+    $('bottomMsg').textContent=noTradeReview?'Review complete — inspect the chart, then press Next Scenario.':'Review complete — inspect the chart, then press Next Scenario.';
+    setAutoBanner('<b>REVIEW COMPLETE</b>');
+    $('autoStart').textContent='Next Scenario';
+    $('autoStop').textContent='Manual';
+    setActionState();
+   });
+   return;
+  }
+ }
+ let parts=$('autoLen').value.split(',').map(Number);autoLeft=phase==='look'?parts[0]:phase==='trade'?parts[1]:parts[2];
+ if(phase==='look'){$('bottomMsg').textContent='Drill: study the chart. Trading unlocks in the Trade stage.';order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');setActionState();}
+ if(phase==='trade'){$('bottomMsg').textContent='Drill: choose BUY, SELL, or No Trade. You may use up to two Next Candle hints.';}
+ if(phase==='review'){
+   clearInterval(autoTimerId);
+   if(decisionConfirmed&&confirmedHadTrade&&order&&!trade){lockTradeFromOrder()}
+   if(!decisionConfirmed&&order&&!trade){order=null;orderLocked=false;pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='Trade timer expired — unconfirmed setup cleared.';showReviewBanner('flat','NO TRADE MADE','Trade timer expired');addRecentTrade('No trade timeout',null,'');decisionConfirmed=true;confirmedHadTrade=false;setActionState()}
+   if(!trade&&!confirmedHadTrade){decisionIndex=Math.max(viewStart,shownEnd-1);decisionTime=timeOfIndex(decisionIndex);decisionSide=null;tradeEndIndex=findSessionEnd(decisionIndex);if(!$('result').textContent){$('result').textContent='Auto marked this as No Trade.';showReviewBanner('flat','NO TRADE MADE','No confirmed trade');addRecentTrade('No trade',null,'');decisionConfirmed=true;confirmedHadTrade=false;setActionState()}}
+   const noTradeReview=!trade;
+   $('bottomMsg').textContent=noTradeReview?'Review: no-trade decision — brief 7.3-second reveal.':'Review: candles reveal until TP, SL, limit-not-filled, or liquidation.';
+   updateAuto();
+   beginReveal(()=>{
+     $('bottomMsg').textContent=noTradeReview?'No-trade review complete — loading the next scenario.':'Review complete: outcome is marked on the chart.';
+     if($('autoTimer'))$('autoTimer').style.display='none';
+     if(autoMode&&!autoPaused){newWindow();startPhase('look')}
+   });
+   return;
+ }
+ updateAuto();clearInterval(autoTimerId);if(autoMode&&!autoPaused){autoTimerId=setInterval(()=>{autoLeft--;updateAuto();if(autoLeft<=0)nextAutoPhase()},1000)}
+}
+function updateAuto(){
+ let name=autoPhase==='look'?'LOOK':autoPhase==='trade'?'TRADE':autoPhase==='preReview'?'REVIEW IN':autoPhase==='review'?'REVIEW':'REVIEW COMPLETE';
+ if(isManualDrill()){
+  if(autoPhase==='preReview')setAutoBanner('<b>'+name+'</b> · '+Math.max(0,autoLeft)+'s');
+  else setAutoBanner('<b>'+name+'</b>'+(autoPhase==='trade'?' · Manual':''));
+ }else setAutoBanner('<b>'+name+'</b> · '+Math.max(0,autoLeft)+'s')
+}
+function nextAutoPhase(){clearInterval(autoTimerId);if(!autoMode||autoPaused)return;if(isManualDrill())return;if(autoPhase==='look')startPhase('trade');else if(autoPhase==='trade')startPhase('review');else {newWindow();startPhase('look')}}
+wrap.addEventListener('mousemove',e=>{let r=wrap.getBoundingClientRect();mouse={x:e.clientX-r.left,y:e.clientY-r.top};let hoveredEntry=entryControlHit(mouse.x,mouse.y);hoverDrawing=(tool==='erase')?hitDrawingIndex(mouse.x,mouse.y):-1;let hintMsg=hoveredEntry==='check'?'Confirm trade?':(orderClickStage==='target'?'Set take profit':(orderClickStage==='stop'?'Set stop loss':''));showEntryTip(mouse.x,mouse.y,(hoveredEntry==='check'&&order&&!orderLocked&&canTradeNow())||!!(order&&!orderLocked&&canTradeNow()&&orderClickStage),hintMsg);let scaleZone=document.documentElement.classList.contains('mobileUI')?64:124;let inScaleZone=mouse.x>wrap.clientWidth-scaleZone;wrap.style.cursor=hoveredEntry?'pointer':(inScaleZone?'ns-resize':(order&&!orderLocked&&canTradeNow()&&orderClickStage?'crosshair':(tool==='erase'&&hoverDrawing>=0?'pointer':'')));if(drag){if(drag==='pan'){let dx=e.movementX/(wrap.clientWidth-110)*(viewEnd-viewStart);viewStart-=dx;viewEnd-=dx;if(!autoScale){let pr=ensureManualRange();let dy=e.movementY/(wrap.clientHeight-28)*(pr.hi-pr.lo);manualRange={hi:pr.hi+dy,lo:pr.lo+dy}}}else if(drag==='scale'){autoScale=false;updateAutoScaleButton();let pr=ensureManualRange();let mid=(pr.hi+pr.lo)/2;let range=(pr.hi-pr.lo)*Math.exp(e.movementY*0.012);range=Math.max(.5,Math.min(range,2000));manualRange={hi:mid+range/2,lo:mid-range/2}}else if(order&&!orderLocked&&canTradeNow()&&['entry','stop','target'].includes(drag)){orderClickStage=null;order[drag]=roundTick(pOf(mouse.y))}else if(drag==='draw'&&draft){draft.t2=tOfX(mouse.x);draft.p2=pOf(mouse.y)}}drawAll()});
+
+function distToSegment(px,py,x1,y1,x2,y2){let dx=x2-x1,dy=y2-y1,l2=dx*dx+dy*dy;if(!l2)return Math.hypot(px-x1,py-y1);let t=Math.max(0,Math.min(1,((px-x1)*dx+(py-y1)*dy)/l2));return Math.hypot(px-(x1+t*dx),py-(y1+t*dy))}
+function hitDrawingIndex(x,y){let hit=16;for(let n=drawings.length-1;n>=0;n--){let g=drawings[n],x1=xOfTime(g.t1),x2=xOfTime(g.t2),y1=yOf(g.p1),y2=yOf(g.p2);if(g.type==='line'){if(distToSegment(x,y,x1,y1,x2,y2)<=hit)return n}else{let l=Math.min(x1,x2),r=Math.max(x1,x2),t=Math.min(y1,y2),b=Math.max(y1,y2);let nearEdge=(x>=l-hit&&x<=r+hit&&y>=t-hit&&y<=b+hit)&&(Math.min(Math.abs(x-l),Math.abs(x-r),Math.abs(y-t),Math.abs(y-b))<=hit);let insideSmall=(x>=l&&x<=r&&y>=t&&y<=b&&Math.min(r-l,b-t)<32);if(nearEdge||insideSmall)return n}}return -1}
+function deleteDrawingAt(x,y){let n=hitDrawingIndex(x,y);if(n>=0){drawings.splice(n,1);hoverDrawing=-1;return true}return false}
+function entryControlHit(x,y){if(orderLocked||!entryTag)return null;let m=entryTag.minus,p=entryTag.plus,ch=entryTag.check;if(x>=m.x&&x<=m.x+m.w&&y>=m.y&&y<=m.y+m.h)return 'minus';if(x>=p.x&&x<=p.x+p.w&&y>=p.y&&y<=p.y+p.h)return 'plus';if(ch&&x>=ch.x&&x<=ch.x+ch.w&&y>=ch.y&&y<=ch.y+ch.h)return 'check';return null}
+function closeIndicatorPanels(){if($('demaPanel'))$('demaPanel').classList.remove('show');if($('stPanel'))$('stPanel').classList.remove('show')}
+wrap.addEventListener('mousedown',e=>{let r=wrap.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let scaleZone=document.documentElement.classList.contains('mobileUI')?64:124;if(x>wrap.clientWidth-scaleZone){drag='scale';return}if(autoMode&&autoPhase==='review'){drag='pan';return}let qtyHit=entryControlHit(x,y);if(qtyHit&&order&&!orderLocked&&canTradeNow()){if(qtyHit==='check'){confirmTrade();return}let el=$('contracts');let v=+el.value||1;el.value=Math.max(1,Math.min(50,v+(qtyHit==='plus'?1:-1)));drawAll();return}if(tool==='erase'){if(!deleteDrawingAt(x,y))toast('Click closer to a line or box to delete it.');drawAll();return}if(pendingSide){if(!canTradeNow()){toast('Wait until the Trade stage starts.');pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');return}setToolMode('cursor');placeOrder(pendingSide,pOf(y));pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');return}if(order&&!orderLocked&&canTradeNow()){for(const k of ['entry','stop','target'])if(Math.abs(y-yOf(order[k]))<8){orderDragRange=priceRange();orderClickStage=null;drag=k;return}if(orderClickStage==='target'){order.target=roundTick(pOf(y));orderClickStage='stop';$('tradeHelp').textContent='Take profit set. Now click to set stop loss, or drag any line.';drawAll();return}else if(orderClickStage==='stop'){order.stop=roundTick(pOf(y));orderClickStage=null;$('tradeHelp').textContent='Stop loss set. Review the setup and confirm when ready.';drawAll();return}}if(tool==='line'||tool==='rect'){let tt=tOfX(x),pp=pOf(y);draft={type:tool,t1:tt,p1:pp,t2:tt,p2:pp};drag='draw';return}drag='pan'});addEventListener('mouseup',()=>{if(draft){drawings.push(draft);draft=null}drag=null;orderDragRange=null;stableRange=null;drawAll()});wrap.addEventListener('mouseleave',()=>{hoverDrawing=-1;drawAll()});wrap.addEventListener('wheel',e=>{e.preventDefault();if(orderDragRange)return;let mid=(viewStart+viewEnd)/2,span=(viewEnd-viewStart)*(e.deltaY>0?1.12:.88);span=Math.max(25,Math.min(data.length,span));viewStart=mid-span/2;viewEnd=mid+span/2;stableRange=null;drawAll()},{passive:false});
+$('csv').onchange=e=>{let f=e.target.files[0];if(!f)return;let rd=new FileReader();rd.onload=()=>{parseCSV(rd.result);$('loaded').textContent=raw.length+' rows';resetData()};rd.readAsText(f)};$('sample').onclick=()=>{loadEmbeddedMarket($('symbol').value)};$('random').onclick=newWindow;$('tf').onchange=e=>{changeTimeframePreserve(+e.target.value);setTimeframeUI();};document.querySelectorAll('#tfBtns button').forEach(b=>b.onclick=()=>{$('tf').value=b.dataset.tf;$('tf').onchange({target:$('tf')})});if($('mobileTfSelect'))$('mobileTfSelect').onchange=e=>{$('tf').value=e.target.value;$('tf').onchange({target:$('tf')})};if($('mobileThemeBtn'))$('mobileThemeBtn').onclick=()=>$('darkToggle').click();$('symbol').onchange=()=>{if($('chartSymbol'))$('chartSymbol').value=$('symbol').value;order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='';setActionState();$('bottomMsg').textContent='Contract changed — loading matching market data.';loadEmbeddedMarket($('symbol').value);updateHead();if(autoMode){startPhase(isManualDrill()?'trade':'look')}drawAll()};if($('chartSymbol'))$('chartSymbol').onchange=e=>{$('symbol').value=e.target.value;$('symbol').onchange()};$('hide').onclick=()=>{const mainEl=document.querySelector('.main');const closing=!mainEl.classList.contains('sideClosed');if(closing){mainEl.dataset.openSideW=getComputedStyle(mainEl).getPropertyValue('--sideW').trim()||'300px';mainEl.style.setProperty('--sideW','0px');}else{mainEl.style.setProperty('--sideW',mainEl.dataset.openSideW||'300px');}mainEl.classList.toggle('sideClosed');$('side').classList.toggle('collapsed');$('hide').textContent=mainEl.classList.contains('sideClosed')?'⚙':'×';if(!mainEl.classList.contains('sideClosed'))showSettingsResizeHint();resize();smoothDesktopRerender(280);setTimeout(resize,320)};$('darkToggle').onclick=()=>{wrap.classList.toggle('dark');$('darkToggle').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';if($('mobileThemeBtn'))$('mobileThemeBtn').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';drawAll()};$('autoScaleBtn').onclick=()=>{autoScale=!autoScale;if(autoScale){manualRange=null;priceOffset=0}else{manualRange=desiredPriceRange()}updateAutoScaleButton();drawAll()};$('buyBox').onclick=()=>{if(!canTradeNow()){toast('Wait until the Trade stage starts.');return}setToolMode('cursor');closeIndicatorPanels();pendingSide='long';$('buyBox').classList.add('active');$('sellBox').classList.remove('active');$('tradeHelp').textContent='BUY selected: click the chart for your limit entry. Next clicks set TP, then SL.'};$('sellBox').onclick=()=>{if(!canTradeNow()){toast('Wait until the Trade stage starts.');return}setToolMode('cursor');closeIndicatorPanels();pendingSide='short';$('sellBox').classList.add('active');$('buyBox').classList.remove('active');$('tradeHelp').textContent='SELL selected: click the chart for your limit entry. Next clicks set TP, then SL.'};$('confirm').onclick=confirmTrade;$('flat').onclick=()=>{if(autoMode&&autoPhase!=='trade'){toast('Wait until the Trade stage starts.');return}decisionIndex=Math.max(viewStart,shownEnd-1);decisionTime=timeOfIndex(decisionIndex);decisionSide=null;tradeEndIndex=findSessionEnd(decisionIndex);decisionConfirmed=true;confirmedHadTrade=false;orderLocked=false;setActionState();order=null;orderClickStage=null;trade=null;pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='No trade selected.';$('bottomMsg').textContent='No trade selected — review will show about five seconds of candles.';showReviewBanner('flat','NO TRADE MADE','Manual no-trade decision');addRecentTrade('No trade',null,'');setActionState();if(autoMode&&autoPhase==='trade'){if(isManualDrill())startManualReviewCountdown('No-trade decision locked — review starts in five seconds.');else{autoLeft=Math.min(autoLeft,5);updateAuto()}}else{beginReveal()}drawAll()};$('step').onclick=()=>{if(revealing){toast('Reveal is already running.');return}if(autoMode&&autoPhase!=='review'){if(hintSteps>=2){toast('Two Next Candle hints used.');return}hintSteps++;advance(1);$('bottomMsg').textContent='Hint '+hintSteps+'/2 used. Choose BUY, SELL, or No Trade.'}else advance(1)};$('autoStart').onclick=startAuto;$('autoStop').onclick=pauseAuto;$('autoLen').onchange=()=>{order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='';setActionState();$('bottomMsg').textContent='Timer changed — new scenario loaded.';if(autoMode){newWindow();startPhase(isManualDrill()?'trade':'look')}else{newWindow()}};$('resetStats').onclick=()=>{stats={trades:0,wins:0,grossWin:0,grossLoss:0,net:0,peakEquity:accountSize(),recent:[]};renderRecent();updateStats()};document.querySelectorAll('.tool[data-tool]').forEach(b=>b.onclick=()=>{setToolMode(b.dataset.tool);closeIndicatorPanels()});if($('clearDrawings'))$('clearDrawings').onclick=()=>{drawings=[];draft=null;hoverDrawing=-1;drawAll();toast('All drawings cleared.');};['contracts','comm','gapPts','gapBuffer','gapMode','demaOn2','demaLen2','stOn2','stAtr2','stMult2','tzSelect'].forEach(id=>{if($(id))$(id).oninput=drawAll});
+['accountPlan','trailMode'].forEach(id=>{if($(id))$(id).onchange=()=>applyAccountPreset(true)});
+
+$('demaBtn').onclick=(e)=>{e.stopPropagation();$('stPanel').classList.remove('show');$('demaPanel').classList.toggle('show')};$('stBtn').onclick=(e)=>{e.stopPropagation();$('demaPanel').classList.remove('show');$('stPanel').classList.toggle('show')};['demaPanel','stPanel'].forEach(id=>$(id).addEventListener('pointerdown',e=>e.stopPropagation()));$('closeDema').onclick=()=>$('demaPanel').classList.remove('show');$('closeSt').onclick=()=>$('stPanel').classList.remove('show');document.addEventListener('pointerdown',e=>{if(e.target.closest&&e.target.closest('.settingsPanel,.indTool'))return;closeIndicatorPanels()});
+
+
+const bottomResize=$('bottomResize');
+if(bottomResize){
+ let resizingBottom=false, bottomRAF=0, pendingBottomH=null;
+ const mainEl=document.querySelector('.main');
+ const applyBottomHeight=()=>{
+   bottomRAF=0;
+   if(pendingBottomH==null)return;
+   const max=Math.max(170, window.innerHeight-46-280);
+   const val=Math.max(190, Math.min(max, pendingBottomH));
+   mainEl.style.setProperty('--bottomH', val+'px');
+   resize();
+ };
+ const setBottomHeight=h=>{
+   pendingBottomH=h;
+   if(!bottomRAF)bottomRAF=requestAnimationFrame(applyBottomHeight);
+ };
+ bottomResize.addEventListener('mousedown',e=>{resizingBottom=true;bottomResize.classList.add('dragging');if($('bottomHint'))$('bottomHint').classList.remove('show');document.body.style.cursor='row-resize';document.body.style.userSelect='none';e.preventDefault();e.stopPropagation();});
+ bottomResize.addEventListener('mousemove',e=>{if(resizingBottom)e.stopPropagation();});
+ window.addEventListener('mousemove',e=>{if(!resizingBottom)return;e.preventDefault();setBottomHeight(window.innerHeight-46-e.clientY);}, true);
+ window.addEventListener('mouseup',e=>{if(resizingBottom){resizingBottom=false;bottomResize.classList.remove('dragging');document.body.style.cursor='';document.body.style.userSelect='';if(bottomRAF){cancelAnimationFrame(bottomRAF);bottomRAF=0;}if(pendingBottomH!=null){const max=Math.max(170,window.innerHeight-46-280);const val=Math.max(190,Math.min(max,pendingBottomH));mainEl.style.setProperty('--bottomH',val+'px');}resize();e.preventDefault();}}, true);
+}
+const sideResize=$('sideResize');
+if(sideResize){
+ let resizingSide=false, sideRAF=0, pendingSideW=null;
+ const mainEl=document.querySelector('.main');
+ const applySideWidth=()=>{
+   sideRAF=0;
+   if(pendingSideW==null)return;
+   const val=Math.max(280, Math.min(520, pendingSideW));
+   mainEl.style.setProperty('--sideW', val+'px');
+   resize();
+ };
+ const setSideWidth=w=>{
+   pendingSideW=w;
+   if(!sideRAF)sideRAF=requestAnimationFrame(applySideWidth);
+ };
+ sideResize.addEventListener('mousedown',e=>{
+   if(mainEl.classList.contains('sideClosed'))return;
+   resizingSide=true;
+   mainEl.classList.add('resizingSide');
+   sideResize.classList.add('dragging');
+   document.body.style.cursor='col-resize';
+   document.body.style.userSelect='none';
+   if($('settingsResizeHint'))$('settingsResizeHint').classList.remove('show');
+   e.preventDefault();
+   e.stopPropagation();
+ });
+ window.addEventListener('mousemove',e=>{
+   if(!resizingSide)return;
+   e.preventDefault();
+   setSideWidth(window.innerWidth-e.clientX);
+ }, true);
+ window.addEventListener('mouseup',e=>{
+   if(resizingSide){
+     resizingSide=false;
+     mainEl.classList.remove('resizingSide');
+     sideResize.classList.remove('dragging');
+     document.body.style.cursor='';
+     document.body.style.userSelect='';
+     if(sideRAF){cancelAnimationFrame(sideRAF);sideRAF=0;}
+     if(pendingSideW!=null){const val=Math.max(280,Math.min(520,pendingSideW));mainEl.style.setProperty('--sideW',val+'px');}
+     resize();
+     e.preventDefault();
+   }
+ }, true);
+}
+document.addEventListener('keydown',e=>{if(e.target&&['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName))return;let k=e.key.toLowerCase();if(e.ctrlKey&&k==='z'){e.preventDefault();if(drawings.length){drawings.pop();hoverDrawing=-1;drawAll();toast('Last drawing undone.')}return}if(k===' '){e.preventDefault();if(autoMode&&!autoPaused)$('autoStop').click();else $('autoStart').click()}else if(k==='b'){$('buyBox').click()}else if(k==='s'){$('sellBox').click()}else if(k==='n'){$('flat').click()}else if(k==='enter'){$('confirm').click()}else if(k==='arrowright'){e.preventDefault();$('step').click()}else if(k==='delete'||k==='backspace'){if(tool==='erase'&&hoverDrawing>=0){drawings.splice(hoverDrawing,1);hoverDrawing=-1;drawAll();toast('Drawing deleted.')}}else if(k==='escape'){if(orderLocked)return;draft=null;order=null;orderClickStage=null;pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');setToolMode('cursor');drawAll()}else if(k==='l'){document.querySelector('[data-tool="line"]').click()}else if(k==='r'){document.querySelector('[data-tool="rect"]').click()}else if(k==='v'){document.querySelector('[data-tool="cursor"]').click()}else if(k==='e'){document.querySelector('[data-tool="erase"]').click()}});
+
+function closeSidebarWithHint(){
+ const main=document.querySelector('.main'), side=$('side'), hide=$('hide'), hint=$('sideHint');
+ if(!main||!side||!hide)return;
+ main.dataset.openSideW=getComputedStyle(main).getPropertyValue('--sideW').trim()||'300px';
+ main.style.setProperty('--sideW','0px');
+ main.classList.add('sideClosed');
+ side.classList.add('collapsed');
+ hide.textContent='⚙';
+ if(hint){
+   hint.classList.add('show');
+   setTimeout(()=>hint.classList.remove('show'),4200);
+ }
+ hide.classList.add('pulse');
+ setTimeout(()=>hide.classList.remove('pulse'),1900);
+ resize();
+ smoothDesktopRerender(280);
+ setTimeout(resize,320);
+}
+
+function showBottomResizeHint(){const h=$('bottomHint');if(!h)return;h.classList.add('show');clearTimeout(showBottomResizeHint._t);showBottomResizeHint._t=setTimeout(()=>h.classList.remove('show'),5200)}
+function showSettingsResizeHint(){const h=$('settingsResizeHint');if(!h)return;h.classList.add('show');clearTimeout(showSettingsResizeHint._t);showSettingsResizeHint._t=setTimeout(()=>h.classList.remove('show'),5200)}
+
+const PREF_KEY='futureSimulator_v50_step3_prefs';
+let prefsLoading=false;
+function safeSetValue(id,val){
+ const el=$(id); if(!el||val==null)return;
+ if(el.type==='checkbox')el.checked=!!val;
+ else if([...el.options||[]].some(o=>String(o.value)===String(val))||el.tagName!=='SELECT')el.value=val;
+}
+function gatherPrefs(){
+ return {
+  symbol:$('symbol')?.value,
+  contracts:$('contracts')?.value,
+  accountPlan:$('accountPlan')?.value,
+  accountSize:$('accountSize')?.value,
+  loss:$('loss')?.value,
+  trailLimit:$('trailLimit')?.value,
+  trailMode:$('trailMode')?.value,
+  comm:$('comm')?.value,
+  days:$('days')?.value,
+  reveal:$('reveal')?.value,
+  gapMode:$('gapMode')?.value,
+  gapPts:$('gapPts')?.value,
+  gapBuffer:$('gapBuffer')?.value,
+  autoLen:$('autoLen')?.value,
+  speed:$('speed')?.value,
+  theme:wrap?.classList.contains('dark')?'dark':'light',
+  autoScale:!!autoScale,
+  demaOn:$('demaOn2')?.checked,
+  demaLen:$('demaLen2')?.value,
+  stOn:$('stOn2')?.checked,
+  stAtr:$('stAtr2')?.value,
+  stMult:$('stMult2')?.value,
+  soundEnabled:!!soundEnabled
+ };
+}
+function savePrefs(){
+ if(prefsLoading)return;
+ try{localStorage.setItem(PREF_KEY,JSON.stringify(gatherPrefs()))}catch(e){}
+}
+function loadPrefs(){
+ prefsLoading=true;
+ try{
+  const prefs=JSON.parse(localStorage.getItem(PREF_KEY)||'{}');
+  ['symbol','contracts','accountPlan','trailMode','comm','autoLen','speed'].forEach(id=>safeSetValue(id,prefs[id]));
+  applyAccountPreset(false);
+  safeSetValue('demaOn2',prefs.demaOn);safeSetValue('demaLen2',prefs.demaLen);
+  safeSetValue('stOn2',prefs.stOn);safeSetValue('stAtr2',prefs.stAtr);safeSetValue('stMult2',prefs.stMult);
+  if(prefs.theme==='light')wrap.classList.remove('dark'); else if(prefs.theme==='dark')wrap.classList.add('dark');
+  if($('darkToggle'))$('darkToggle').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';if($('mobileThemeBtn'))$('mobileThemeBtn').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';
+  if(typeof prefs.autoScale==='boolean')autoScale=prefs.autoScale;
+  if(typeof prefs.soundEnabled==='boolean'){soundEnabled=prefs.soundEnabled;localStorage.futSoundMuted=soundEnabled?'0':'1'}
+  if($('chartSymbol')&&$('symbol'))$('chartSymbol').value=$('symbol').value;
+ }catch(e){}
+ prefsLoading=false;
+}
+function attachPrefsAutosave(){
+ ['symbol','contracts','accountPlan','trailMode','comm','autoLen','speed','demaOn2','demaLen2','stOn2','stAtr2','stMult2','tzSelect'].forEach(id=>{
+  const el=$(id); if(!el)return;
+  el.addEventListener('change',()=>setTimeout(savePrefs,0));
+  el.addEventListener('input',()=>setTimeout(savePrefs,0));
+ });
+ ['hide','darkToggle','autoScaleBtn','soundToggle','sample','random'].forEach(id=>{const el=$(id);if(el)el.addEventListener('click',()=>setTimeout(savePrefs,80))});
+}
+
+
+
+function initMobileGui(){
+ const root=document.documentElement;
+ const nav=document.getElementById('mobileNav');
+ const tabButtons=[...document.querySelectorAll('.mobileTabBtn')];
+ const mq=window.matchMedia('(max-width: 768px), (hover: none) and (pointer: coarse)');
+ let currentTab='chart';
+ const speedSelect=document.getElementById('speed');
+ const desktopSpeedLabels={};
+ if(speedSelect){[...speedSelect.options].forEach(o=>desktopSpeedLabels[o.value]=o.textContent)}
+ const mobileSpeedLabels={'0.5':'0.5× reveal speed','1':'1× reveal speed','1.5':'1.5× reveal speed','2':'2× reveal speed','instant':'Instant reveal speed'};
+ function updateSpeedLabels(on){
+  if(!speedSelect)return;
+  [...speedSelect.options].forEach(o=>{o.textContent=(on?(mobileSpeedLabels[o.value]||desktopSpeedLabels[o.value]):desktopSpeedLabels[o.value])||o.textContent});
+ }
+ function isMobile(){return mq.matches}
+ let mobileResizeAnim=0;
+ function smoothMobileRerender(duration=300){
+  if(mobileResizeAnim)cancelAnimationFrame(mobileResizeAnim);
+  const start=performance.now();
+  const frame=now=>{
+   if(!root.classList.contains('mobileUI'))return;
+   if(typeof resize==='function')resize();
+   else if(typeof drawAll==='function')drawAll();
+   if(now-start<duration)mobileResizeAnim=requestAnimationFrame(frame);
+   else{mobileResizeAnim=0;if(typeof resize==='function')resize();else if(typeof drawAll==='function')drawAll()}
+  };
+  mobileResizeAnim=requestAnimationFrame(frame);
+ }
+ function setMobileTab(tab){
+  if(!['chart','setup','replay','trades','settings'].includes(tab))tab='chart';
+  currentTab=tab;
+  ['chart','setup','replay','trades','settings'].forEach(t=>root.classList.remove('mobile-tab-'+t));
+  root.classList.add('mobile-tab-'+tab);
+  root.classList.toggle('mobilePanelOpen',tab==='setup'||tab==='replay'||tab==='trades');
+  tabButtons.forEach(b=>b.classList.toggle('active',b.dataset.mobileTab===tab));
+  smoothMobileRerender(330);
+ }
+ function closeMobilePanel(){setMobileTab('chart')}
+ function apply(){
+  const on=isMobile();
+  updateSpeedLabels(on);
+  root.classList.toggle('mobileUI',on);
+  if(on){
+   if(!root.className.match(/mobile-tab-(chart|setup|replay|trades|settings)/))setMobileTab(currentTab||'chart');
+  }else{
+   root.classList.remove('mobilePanelOpen','mobile-tab-chart','mobile-tab-setup','mobile-tab-replay','mobile-tab-trades','mobile-tab-settings');
+  }
+  smoothMobileRerender(360);
+ }
+ let lastMobileTabTouch=0;
+ tabButtons.forEach(btn=>{
+  const activate=e=>{
+   if(!root.classList.contains('mobileUI'))return;
+   if(e.type==='click'&&Date.now()-lastMobileTabTouch<550){e.preventDefault();e.stopPropagation();return;}
+   if(e.type==='touchend')lastMobileTabTouch=Date.now();
+   e.preventDefault();
+   e.stopPropagation();
+   const requested=btn.dataset.mobileTab;
+   if(requested===currentTab&&requested!=='chart')closeMobilePanel();
+   else setMobileTab(requested);
+  };
+  btn.addEventListener('touchend',activate,{passive:false});
+  btn.addEventListener('click',activate);
+ });
+
+ // Mobile-only touch helpers. They call the existing desktop handlers instead of replacing them.
+ function mobileActive(){return root.classList.contains('mobileUI')}
+ function bindMobileTap(selector){
+  document.querySelectorAll(selector).forEach(el=>{
+   let sx=0,sy=0,moved=false;
+   el.addEventListener('touchstart',e=>{if(!mobileActive())return;const t=e.changedTouches[0];sx=t.clientX;sy=t.clientY;moved=false;},{passive:true});
+   el.addEventListener('touchmove',e=>{if(!mobileActive())return;const t=e.changedTouches[0];if(Math.hypot(t.clientX-sx,t.clientY-sy)>12)moved=true;},{passive:true});
+   el.addEventListener('touchend',e=>{if(!mobileActive()||moved)return;e.preventDefault();e.stopPropagation();setTimeout(()=>el.click(),0);},{passive:false});
+  });
+ }
+ bindMobileTap('#buyBox,#sellBox,#autoScaleBtn,#darkToggle,#mobileThemeBtn,#soundToggle,#clearDrawings,.tool[data-tool],.tool.indTool,#confirm,#flat,#autoStart,#autoStop,#step,#sample,#random,#resetStats,#tfBtns button');
+ const orient=document.createElement('div');
+ orient.className='mobileOrientationLock';
+ orient.innerHTML='<div><b>Landscape mode</b>Chart-first mobile landscape is enabled.</div>';
+ document.body.appendChild(orient);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&root.classList.contains('mobileUI'))closeMobilePanel()});
+ const chartWrapEl=document.getElementById('wrap');
+ if(chartWrapEl){
+  if('ResizeObserver' in window){
+   let roQueued=false;
+   const ro=new ResizeObserver(()=>{
+    if(!root.classList.contains('mobileUI')||roQueued)return;
+    roQueued=true;
+    requestAnimationFrame(()=>{roQueued=false;if(typeof resize==='function')resize();else if(typeof drawAll==='function')drawAll()});
+   });
+   ro.observe(chartWrapEl);
+  }
+  const closeFromChart=()=>{if(root.classList.contains('mobileUI')&&(currentTab==='setup'||currentTab==='replay'||currentTab==='trades'||currentTab==='settings')){closeMobilePanel();smoothMobileRerender(330)}};
+  chartWrapEl.addEventListener('dblclick',closeFromChart);
+  chartWrapEl.addEventListener('click',closeFromChart);
+ }
+ if(mq.addEventListener)mq.addEventListener('change',apply);else mq.addListener(apply);
+ addEventListener('orientationchange',()=>setTimeout(apply,250));
+ window.setMobileSimulatorTab=setMobileTab;
+ apply();
+}
+
+
+function initMobileTouchControls(){
+ const root=document.documentElement;
+ if(!wrap)return;
+ let touchMode=null,lastTouch=null,pinch=null;
+ function mobileOn(){return root.classList.contains('mobileUI')}
+ function pt(t){return {x:t.clientX,y:t.clientY}}
+ function mouse(type,p,dx=0,dy=0,target=wrap){
+  const ev=new MouseEvent(type,{bubbles:true,cancelable:true,clientX:p.x,clientY:p.y,button:0,buttons:type==='mouseup'?0:1});
+  try{Object.defineProperty(ev,'movementX',{get:()=>dx});Object.defineProperty(ev,'movementY',{get:()=>dy})}catch(e){}
+  target.dispatchEvent(ev);
+ }
+ function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+ wrap.addEventListener('touchstart',e=>{
+  if(!mobileOn())return;
+  if(e.target&&e.target.closest&&e.target.closest('button,select,input,.box,.tool,.leftTools,.autoScaleBtn,.tzSelect,.symbol,.mobileTabBtn'))return;
+  if(document.documentElement.classList.contains('mobilePanelOpen')){
+   e.preventDefault();
+   if(typeof window.setMobileSimulatorTab==='function')window.setMobileSimulatorTab('chart');
+   touchMode=null;lastTouch=null;pinch=null;
+   return;
+  }
+  if(e.touches.length===1){
+   e.preventDefault();
+   const p=pt(e.touches[0]);lastTouch=p;touchMode='mouse';mouse('mousedown',p,0,0,wrap);
+  }else if(e.touches.length===2){
+   e.preventDefault();
+   const a=pt(e.touches[0]),b=pt(e.touches[1]);
+   touchMode='pinch';lastTouch=null;pinch={d:dist(a,b),startA:viewStart,startB:viewEnd};
+   mouse('mouseup',{x:(a.x+b.x)/2,y:(a.y+b.y)/2},0,0,window);
+  }
+ },{passive:false});
+ wrap.addEventListener('touchmove',e=>{
+  if(!mobileOn())return;
+  if(touchMode==='mouse'&&e.touches.length===1&&lastTouch){
+   e.preventDefault();
+   const p=pt(e.touches[0]);mouse('mousemove',p,p.x-lastTouch.x,p.y-lastTouch.y,wrap);lastTouch=p;
+  }else if(touchMode==='pinch'&&e.touches.length===2&&pinch){
+   e.preventDefault();
+   const a=pt(e.touches[0]),b=pt(e.touches[1]);
+   const d=Math.max(20,dist(a,b));
+   const mid=(pinch.startA+pinch.startB)/2;
+   let span=(pinch.startB-pinch.startA)*(pinch.d/d);
+   span=Math.max(25,Math.min(data.length,span));
+   viewStart=mid-span/2;viewEnd=mid+span/2;stableRange=null;
+   if(typeof drawAll==='function')drawAll();
+  }
+ },{passive:false});
+ function endTouch(e){
+  if(!mobileOn())return;
+  if(touchMode==='mouse'&&lastTouch){mouse('mouseup',lastTouch,0,0,window)}
+  touchMode=null;lastTouch=null;pinch=null;
+ }
+ wrap.addEventListener('touchend',endTouch,{passive:false});
+ wrap.addEventListener('touchcancel',endTouch,{passive:false});
+}
+
+
+function mobileOverlayFailsafe(){
+ const root=document.documentElement;
+ const overlay=document.getElementById('welcomeOverlay');
+ if(root.classList.contains('mobileUI')&&overlay&&!overlay.classList.contains('show')){
+  overlay.style.display='none';
+  overlay.style.pointerEvents='none';
+  overlay.style.visibility='hidden';
+  overlay.style.opacity='0';
+ }
+}
+setInterval(mobileOverlayFailsafe,500);
+
+
+function initManualMobileNextButton(){
+ const root=document.documentElement;
+ const banner=document.getElementById('reviewBanner');
+ if(!banner)return;
+ function ensureButton(){
+  let btn=banner.querySelector('.reviewNextMobile');
+  if(!btn){
+   btn=document.createElement('button');
+   btn.type='button';
+   btn.className='reviewNextMobile';
+   btn.textContent='Next Scenario';
+   btn.addEventListener('click',e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    if(typeof window.setMobileSimulatorTab==='function')window.setMobileSimulatorTab('chart');
+    if(typeof startAuto==='function')startAuto();
+   });
+   banner.appendChild(btn);
+  }
+  return btn;
+ }
+ function update(){
+  const show=root.classList.contains('mobileUI') && typeof isManualDrill==='function' && isManualDrill() && typeof autoPhase!=='undefined' && autoPhase==='postreview' && banner.classList.contains('show');
+  if(show){ensureButton();banner.classList.add('manualNextReady')}
+  else{banner.classList.remove('manualNextReady');const btn=banner.querySelector('.reviewNextMobile');if(btn)btn.remove()}
+ }
+ const oldShow=window.showReviewBanner||showReviewBanner;
+ if(typeof oldShow==='function'&&!oldShow._manualNextWrapped){
+  const wrapped=function(){const r=oldShow.apply(this,arguments);setTimeout(update,0);return r};
+  wrapped._manualNextWrapped=true;
+  showReviewBanner=wrapped;
+ }
+ const oldHide=window.hideReviewBanner||hideReviewBanner;
+ if(typeof oldHide==='function'&&!oldHide._manualNextWrapped){
+  const wrapped=function(){const r=oldHide.apply(this,arguments);setTimeout(update,0);return r};
+  wrapped._manualNextWrapped=true;
+  hideReviewBanner=wrapped;
+ }
+ setInterval(update,250);
+ update();
+}
+
+loadPrefs();stats.peakEquity=Math.max(stats.peakEquity,accountSize());renderRecent();updateAutoScaleButton();loadEmbeddedMarket($('symbol').value);initMobileGui();initWelcomeAndSound();attachPrefsAutosave();setActionState();resize();setTimeout(closeSidebarWithHint,5000);setTimeout(showBottomResizeHint,60000);initMobileTouchControls();initManualMobileNextButton();
+
+</script>
+</body>
+</html>
