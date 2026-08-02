@@ -224,7 +224,7 @@ html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:s
 .logSummary{display:grid;grid-template-columns:repeat(6,minmax(125px,1fr));gap:8px;margin-bottom:12px}
 .logCard{background:#111b27;border:1px solid #293646;border-radius:9px;padding:10px 11px;min-width:0}.logCard span{display:block;color:#8d99aa;font-size:10px;text-transform:uppercase;letter-spacing:.45px}.logCard b{display:block;margin-top:4px;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .logAnalytics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.logGroup{background:#0e1722;border:1px solid #293646;border-radius:10px;padding:10px}.logGroup h3{margin:0 0 7px;font-size:11px;text-transform:uppercase;color:#cbd5e1}.logGroup table{width:100%;border-collapse:collapse;font-size:11px}.logGroup th,.logGroup td{padding:4px 5px;border-bottom:1px solid #233040;text-align:right}.logGroup th:first-child,.logGroup td:first-child{text-align:left}.logGroup tr:last-child td{border-bottom:0}
-.tradeLogTableWrap{overflow:auto;border:1px solid #293646;border-radius:10px;background:#0b121b}.tradeLogTable{width:100%;min-width:1450px;border-collapse:collapse;font-size:11px}.tradeLogTable th{position:sticky;top:0;z-index:2;background:#172231;color:#cbd5e1;text-transform:uppercase;font-size:10px;letter-spacing:.35px}.tradeLogTable th,.tradeLogTable td{padding:7px 8px;border-bottom:1px solid #223040;text-align:right;white-space:nowrap}.tradeLogTable th:first-child,.tradeLogTable td:first-child{text-align:left}.tradeLogTable tbody tr:hover{background:#111b27}.logEmpty{padding:38px;text-align:center;color:#8d99aa}.logWin{color:var(--green)}.logLoss{color:var(--red)}.logFlat{color:var(--yellow)}
+.tradeLogTableWrap{overflow:auto;border:1px solid #293646;border-radius:10px;background:#0b121b}.tradeLogTable{width:100%;min-width:1450px;border-collapse:collapse;font-size:11px}.tradeLogTable th{position:sticky;top:0;z-index:2;background:#172231;color:#cbd5e1;text-transform:uppercase;font-size:10px;letter-spacing:.35px}.tradeLogTable th,.tradeLogTable td{padding:7px 8px;border-bottom:1px solid #223040;text-align:right;white-space:nowrap}.tradeLogTable th:first-child,.tradeLogTable td:first-child{text-align:left}.tradeLogTable tbody tr:hover{background:#111b27}.logDeleteBtn{padding:4px 7px;border-color:#71303a;background:#33141b;color:#fb7185;font-size:11px;line-height:1}.logDeleteBtn:hover{background:#4a1a23}.logEmpty{padding:38px;text-align:center;color:#8d99aa}.logWin{color:var(--green)}.logLoss{color:var(--red)}.logFlat{color:var(--yellow)}
 @media(max-width:900px){.tradeLogOverlay{padding:0}.tradeLogPanel{width:100vw;height:100dvh;max-height:none;border-radius:0;border:0}.tradeLogHead{padding:11px 12px}.tradeLogHead h2{font-size:17px}.tradeLogBody{padding:10px}.logSummary{grid-template-columns:repeat(2,1fr)}.logAnalytics{grid-template-columns:1fr}.tradeLogActions button{padding:7px 8px}.tradeLogActions .clearLogText{display:none}}
 
 </style>
@@ -265,7 +265,7 @@ html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:s
   <div class="tradeLogBody">
    <div class="logSummary" id="logSummary"></div>
    <div class="logAnalytics"><div class="logGroup"><h3>Performance by timeframe</h3><div id="logByTimeframe"></div></div><div class="logGroup"><h3>Performance by time of day</h3><div id="logByTime"></div></div><div class="logGroup"><h3>Performance by direction</h3><div id="logBySide"></div></div></div>
-   <div class="tradeLogTableWrap"><table class="tradeLogTable"><thead><tr><th>Date</th><th>Time</th><th>Day</th><th>Symbol</th><th>TF</th><th>Side</th><th>Qty</th><th>Entry</th><th>Stop</th><th>Target</th><th>$ Risk</th><th>Planned R:R</th><th>Outcome</th><th>Exit</th><th>Net P/L</th><th>R</th><th>Duration</th><th>TF candles</th><th>1m bars</th><th>Mode</th></tr></thead><tbody id="tradeLogRows"></tbody></table></div>
+   <div class="tradeLogTableWrap"><table class="tradeLogTable"><thead><tr><th>Date</th><th>Time</th><th>Day</th><th>Symbol</th><th>TF</th><th>Side</th><th>Qty</th><th>Entry</th><th>Stop</th><th>Target</th><th>$ Risk</th><th>Planned R:R</th><th>Outcome</th><th>Exit</th><th>Net P/L</th><th>R</th><th>Duration</th><th>TF candles</th><th>1m bars</th><th>Mode</th><th>Actions</th></tr></thead><tbody id="tradeLogRows"></tbody></table></div>
   </div>
  </section>
 </div>
@@ -282,7 +282,7 @@ html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:s
   <div class="section"><h3>Session</h3><div style="display:none"><select id="tf"><option value="1">1m</option><option value="5" selected>5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select><select id="days"><option value="1" selected>1 day</option></select><input id="reveal" type="hidden" value="50"><select id="gapMode"><option value="include" selected>Include all gaps</option></select><input id="gapPts" type="hidden" value="999999"><input id="gapBuffer" type="hidden" value="0"></div><p class="help">Timeframe is controlled from the chart toolbar. Every scenario uses about 24 hours of lookback on the selected timeframe, and the continuous data sampler can choose from anywhere in the loaded NQ/ES data.</p><button id="random" class="primary" style="width:100%">New random window</button></div>
 
   <div class="section"><h3>Data <span id="loaded" class="status">external continuous futures data ready</span></h3><input class="file" type="file" id="csv" accept=".csv"><p class="help">This build loads continuous NQ1 data for MNQ/NQ and continuous ES1 data for MES/ES from CSV files in the /data folder. You can still import another CSV if you want.</p><button id="sample" class="primary" style="width:100%">Reload selected embedded data</button></div>
-  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.00<br>Build: Trade Journal & Analytics<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" style="color:#8d99aa;text-decoration:none">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>The simulator may display historical, imported, sample, or market-style data for practice. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
+  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.03<br>Build: Session Close & Time Awareness<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" style="color:#8d99aa;text-decoration:none">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
   <div class="legalBlock"><h3>Terms of use / disclaimer</h3><p>This simulator is provided only for private education, chart replay, journaling, and practice. It is not a brokerage platform, signal service, financial adviser, investment adviser, prop-firm service, or trading recommendation system. Nothing in this simulator should be interpreted as financial, investment, tax, legal, brokerage, prop-firm, or trading advice.</p><p>Historical, simulated, and hypothetical results are not real trading results and are not guarantees or predictions of future performance. Simulated trading cannot fully account for slippage, liquidity, commissions, execution delays, emotional pressure, live-market conditions, or real financial risk. Market data may be incomplete, delayed, inaccurate, adjusted, imported from third-party files, or provided only for private educational testing. Do not copy, resell, republish, or redistribute market data from this site. Futures, stocks, options, and other financial instruments involve substantial risk, including the risk of losing more than expected. You are solely responsible for any real trading decisions you make outside this simulator.</p><p>This software is provided “as is” and “as available,” without warranties of any kind. Use it at your own risk. The author is not responsible for trading losses, missed trades, data errors, software bugs, browser issues, or decisions made based on simulator output.</p><h3>Privacy</h3><p>This browser-based simulator is hosted as a static site. It does not create accounts, collect payments, sell personal information, or intentionally send your trades, settings, or performance stats to the site owner. Settings, simulator preferences, and performance statistics may be saved locally in your browser storage so the simulator can remember them on this computer. Your browser and hosting provider may still process standard technical data needed to load the site.</p><p>If you clear browser data, use another browser, or open the simulator on another computer, locally saved settings and stats may not carry over.</p><h3>Cookies / local storage</h3><p>This site does not intentionally use advertising cookies, tracking cookies, analytics cookies, or third-party marketing pixels. It may use browser local storage or similar local browser storage only to remember simulator settings and practice statistics. If this site is modified later or connected to third-party services, this notice should be updated to accurately describe those changes.</p></div>
 </aside>
  <button class="hideBtn" id="hide" title="Simulator settings">⚙</button>
@@ -317,7 +317,7 @@ html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:s
       <div class="metric"><span>R:R</span><b id="rrTxt">--</b></div>
     </div>
     <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="small" style="margin-top:7px;color:#8d99aa;text-decoration:none;align-self:flex-start">Created by @_aidan_w</a>
-    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.00</div>
+    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.03</div>
   </div>
   <div class="bottomBlock">
     <div class="bottomTitle">Replay controls</div>
@@ -388,6 +388,59 @@ function tOfX(x){return timeOfIndex(iOf(x))}
 function isGapAt(i){return false}
 function dayKey(t){let d=new Date(t);return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
 function etParts(t){try{const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).formatToParts(new Date(t));const get=k=>parts.find(p=>p.type===k).value;let h=(+get('hour'))%24,m=+get('minute');return {y:+get('year'),mo:+get('month'),d:+get('day'),h,m,min:h*60+m}}catch(e){let d=new Date(t);return {y:d.getFullYear(),mo:d.getMonth()+1,d:d.getDate(),h:d.getHours(),m:d.getMinutes(),min:d.getHours()*60+d.getMinutes()}}}
+function etLocalToUtc(y,mo,d,h,m){
+ let guess=Date.UTC(y,mo-1,d,h,m);
+ const target=Date.UTC(y,mo-1,d,h,m);
+ for(let i=0;i<4;i++){
+  const p=etParts(guess);
+  const represented=Date.UTC(p.y,p.mo-1,p.d,p.h,p.m);
+  const diff=target-represented;
+  guess+=diff;
+  if(Math.abs(diff)<60000)break;
+ }
+ return guess;
+}
+function parseIsoDateKey(key){let a=String(key||'').split('-').map(Number);return {y:a[0],mo:a[1],d:a[2]}}
+function sessionCloseTimestampFor(t){let q=parseIsoDateKey(tradingSessionKey(t));return etLocalToUtc(q.y,q.mo,q.d,16,59)}
+function sessionReopenTimestampFor(t){let q=parseIsoDateKey(tradingSessionKey(t));return etLocalToUtc(q.y,q.mo,q.d,18,0)}
+function isMaintenanceTime(t){let m=etMinutes(t);return m>=1019&&m<1080}
+function dataLowerBound(ms){let lo=0,hi=data.length;while(lo<hi){let mid=(lo+hi)>>1;if(+data[mid].t<ms)lo=mid+1;else hi=mid}return lo}
+function visibleEtDateKeys(){
+ if(!data.length)return [];
+ let a=timeOfIndex(Math.max(0,viewStart))-86400000,b=timeOfIndex(Math.min(data.length-1,viewEnd))+86400000;
+ let set=new Set();
+ for(let t=a;t<=b;t+=21600000){let p=etParts(t);set.add(isoDateKey(p.y,p.mo,p.d))}
+ return [...set];
+}
+function drawMaintenanceBreaks(){
+ if(!data.length)return;
+ const H=wrap.clientHeight,W=wrap.clientWidth,dark=wrap.classList.contains('dark');
+ ctx.save();
+ for(const key of visibleEtDateKeys()){
+  const q=parseIsoDateKey(key),start=etLocalToUtc(q.y,q.mo,q.d,17,0),end=etLocalToUtc(q.y,q.mo,q.d,18,0);
+  let x1=xOfTime(start),x2=xOfTime(end);
+  if(x2<0||x1>W)continue;
+  x1=Math.max(0,x1);x2=Math.min(W,x2);
+  if(x2<=x1)x2=x1+3;
+  ctx.fillStyle=dark?'rgba(202,149,75,.085)':'rgba(161,98,7,.08)';
+  ctx.fillRect(x1,0,Math.max(3,x2-x1),H-24);
+  ctx.strokeStyle=dark?'rgba(251,191,36,.42)':'rgba(161,98,7,.42)';ctx.lineWidth=1;ctx.setLineDash([4,5]);
+  ctx.beginPath();ctx.moveTo(x1,0);ctx.lineTo(x1,H-24);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x2,0);ctx.lineTo(x2,H-24);ctx.stroke();ctx.setLineDash([]);
+  if(x2-x1>62){ctx.fillStyle=dark?'rgba(251,191,36,.72)':'rgba(120,74,0,.75)';ctx.font='10px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';ctx.textAlign='center';ctx.fillText('5–6 PM ET maintenance',(x1+x2)/2,18)}
+ }
+ ctx.restore();
+}
+function drawCurrentTimeMarker(){
+ if(!data.length||shownEnd<=0)return;
+ let idx=Math.max(0,Math.min(data.length-1,shownEnd-1)),bar=data[idx];if(!bar)return;
+ let x=xOf(idx),H=wrap.clientHeight,W=wrap.clientWidth;
+ if(x<0||x>W)return;
+ let currentTs=+bar.t+(+tf||1)*60000;
+ ctx.save();ctx.strokeStyle='rgba(96,165,250,.82)';ctx.lineWidth=1.5;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H-25);ctx.stroke();ctx.setLineDash([]);
+ let text=displayTime(currentTs),pad=7;ctx.font='700 11px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';let tw=ctx.measureText(text).width+pad*2;let tx=Math.max(2,Math.min(W-tw-2,x-tw/2)),ty=H-28;
+ ctx.fillStyle='#2563eb';ctx.beginPath();if(ctx.roundRect)ctx.roundRect(tx,ty,tw,23,5);else ctx.rect(tx,ty,tw,23);ctx.fill();ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText(text,tx+tw/2,ty+15);ctx.restore();
+}
 function isoDateKey(y,mo,d){return y+'-'+String(mo).padStart(2,'0')+'-'+String(d).padStart(2,'0')}
 function nextDateKey(y,mo,d){let dt=new Date(Date.UTC(y,mo-1,d)+86400000);return isoDateKey(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate())}
 function tradingSessionKey(t){let p=etParts(t);return p.min>=1020?nextDateKey(p.y,p.mo,p.d):isoDateKey(p.y,p.mo,p.d)}
@@ -398,8 +451,11 @@ function recentLateBlocked(){return recentLateStarts.slice(0,10).some(Boolean)}
 function findSessionEnd(idx){
  if(!data.length)return viewEnd;
  idx=Math.max(0,Math.min(data.length-1,Math.floor(idx||0)));
- const forwardBars=Math.max(12,Math.ceil(1440/(+tf||1)));
- return Math.min(data.length,idx+forwardBars);
+ const closeTs=sessionCloseTimestampFor(+data[idx].t);
+ const bucketMs=(+tf||1)*60000;
+ const closeBucket=Math.floor(closeTs/bucketMs)*bucketMs;
+ const closeBar=dataLowerBound(closeBucket);
+ return Math.max(idx+1,Math.min(data.length,closeBar+1));
 }
 function sessionLimit(){let base=Math.max(viewStart,shownEnd-1);return tradeEndIndex??findSessionEnd(decisionIndex??base)}
 function revealLimit(){let lim=sessionLimit();return reviewStopIndex!=null?Math.min(reviewStopIndex,lim):lim}
@@ -408,7 +464,7 @@ function setActionState(){let run=$('autoStart'),pause=$('autoStop'),flat=$('fla
 function showEntryTip(x,y,show,msg='Confirm trade?'){let el=$('entryTip');if(!el)return;if(show){el.textContent=msg;el.style.left=(x-40)+'px';el.style.top=(y-34)+'px';el.classList.add('show')}else el.classList.remove('show')}
 function displayTime(t){let tz=$('tzSelect')?.value||'local';let opts={hour:'2-digit',minute:'2-digit'};if(tz&&tz!=='local')opts.timeZone=tz;try{return new Date(t).toLocaleTimeString([],opts)}catch(e){return new Date(t).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}}
 function isManualDrill(){return $('autoLen')?.value==='manual'}
-function canTradeNow(){return !autoMode||autoPhase==='trade'}
+function canTradeNow(){let stage=!autoMode||autoPhase==='trade';let t=timeOfIndex(Math.max(0,shownEnd-1));return stage&&!isMaintenanceTime(t)}
 function validOrder(o=order){if(!o)return{ok:false,msg:'No trade setup.'};let e=o.entry,t=o.target,s=o.stop;let distinct=Math.abs(t-s)>1e-9&&Math.abs(e-t)>1e-9&&Math.abs(e-s)>1e-9;if(!distinct)return{ok:false,msg:'Improper trade setup: entry, target, and stop must be different.'};if(o.side==='long' && t>e && e>s)return{ok:true};if(o.side==='short' && t<e && e<s)return{ok:true};return{ok:false,msg:'Improper trade setup: entry must be between take profit and stop loss.'}}
 function setToolMode(next){tool=next;document.querySelectorAll('.tool[data-tool]').forEach(x=>x.classList.toggle('active',x.dataset.tool===next))}
 function gapNearDecision(idx){return false}
@@ -417,7 +473,7 @@ function rememberScenario(key){if(!key)return;recentScenarios=recentScenarios.fi
 function etMinutes(t){return etParts(t).min}
 function sessionBucketForTime(t){let m=etMinutes(t);if(m>=240&&m<570)return 'pre';if(m>=570&&m<630)return 'open';if(m>=630&&m<720)return 'mid';if(m>=720&&m<810)return 'lunch';if(m>=810&&m<900)return 'afternoon';if(m>=900&&m<1019)return 'power';if(m>=1020&&m<1200)return 'after';return 'other'}
 function weightedSessionBucket(){const bag=['open','open','open','mid','mid','lunch','afternoon','afternoon','power','power','pre','after'];return bag[Math.floor(Math.random()*bag.length)]}
-function pickScenarioStart(total){let maxStart=Math.max(0,data.length-total-1);let best=0,bestKey='';for(let a=0;a<800;a++){let st=Math.floor(Math.random()*Math.max(1,maxStart));let key=scenarioKey(st,total);if(!recentScenarios.includes(key)){rememberScenario(key);return st}if(!bestKey){best=st;bestKey=key}}rememberScenario(bestKey||scenarioKey(best,total));return best}
+function pickScenarioStart(total){let maxStart=Math.max(0,data.length-total-1);let best=0,bestKey='';for(let a=0;a<1200;a++){let st=Math.floor(Math.random()*Math.max(1,maxStart));let pct=+$('reveal').value/100,dec=Math.min(data.length-1,st+Math.floor(total*pct));if(isMaintenanceTime(data[dec]?.t))continue;let key=scenarioKey(st,total);if(!recentScenarios.includes(key)){rememberScenario(key);return st}if(!bestKey){best=st;bestKey=key}}rememberScenario(bestKey||scenarioKey(best,total));return best}
 function setTimeframeUI(){if($('tf'))$('tf').value=String(tf);if($('mobileTfSelect'))$('mobileTfSelect').value=String(tf);document.querySelectorAll('#tfBtns button').forEach(b=>b.classList.toggle('active',+b.dataset.tf===tf));}
 function initialVisibleBarCount(){
  const mobile=document.documentElement.classList.contains('mobileUI');
@@ -441,7 +497,7 @@ function priceRange(){return orderDragRange||(autoScale?desiredPriceRange():(man
 function ensureManualRange(){if(!manualRange)manualRange=desiredPriceRange();return manualRange}
 function updateAutoScaleButton(){let b=$('autoScaleBtn');if(!b)return;b.classList.toggle('active',autoScale);b.title=autoScale?'Auto-scale price: ON':'Auto-scale price: OFF'}
 function xOf(i){let mob=document.documentElement.classList.contains('mobileUI'),L=mob?0:48,R=mob?wrap.clientWidth-1:wrap.clientWidth-54,W=Math.max(1,R-L);return L+(i-viewStart)/(viewEnd-viewStart)*W}function iOf(x){let mob=document.documentElement.classList.contains('mobileUI'),L=mob?0:48,R=mob?wrap.clientWidth-1:wrap.clientWidth-54,W=Math.max(1,R-L);return viewStart+(x-L)/W*(viewEnd-viewStart)}function yOf(p){let H=wrap.clientHeight;let r=priceRange();return 8+(r.hi-p)/(r.hi-r.lo)*(H-28)}function pOf(y){let H=wrap.clientHeight;let r=priceRange();return r.hi-(y-8)/(H-28)*(r.hi-r.lo)}function roundTick(p){let sp=specs[$('symbol').value];return Math.round(p/sp.tick)*sp.tick}
-function drawAll(){ctx.clearRect(0,0,wrap.clientWidth,wrap.clientHeight);dtx.clearRect(0,0,wrap.clientWidth,wrap.clientHeight);drawChartBackground();drawGrid();drawGaps();drawCandles();drawIndicators();drawDecisionMarker();drawExitMarker();drawDrawings();drawCross();drawOrderClickHint();drawOrder();updateTradeTxt();updateStats();}
+function drawAll(){ctx.clearRect(0,0,wrap.clientWidth,wrap.clientHeight);dtx.clearRect(0,0,wrap.clientWidth,wrap.clientHeight);drawChartBackground();drawGrid();drawMaintenanceBreaks();drawGaps();drawCandles();drawIndicators();drawDecisionMarker();drawExitMarker();drawDrawings();drawCross();drawCurrentTimeMarker();drawOrderClickHint();drawOrder();updateTradeTxt();updateStats();}
 function drawChartBackground(){let W=wrap.clientWidth,H=wrap.clientHeight;if(wrap.classList.contains('dark')){let g=ctx.createRadialGradient(W*.5,H*.35,20,W*.5,H*.5,Math.max(W,H)*.72);g.addColorStop(0,'#18222f');g.addColorStop(.42,'#111923');g.addColorStop(.73,'#0d131b');g.addColorStop(1,'#070b10');ctx.fillStyle=g;}else{let g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#f8fafc');g.addColorStop(.52,'#d9dee6');g.addColorStop(1,'#9aa4b2');ctx.fillStyle=g;}ctx.fillRect(0,0,W,H)}
 function drawGrid(){let W=wrap.clientWidth,H=wrap.clientHeight,isMob=document.documentElement.classList.contains('mobileUI'),gridL=isMob?0:48,gridR=isMob?W-2:W;ctx.strokeStyle='rgba(120,135,155,.17)';ctx.lineWidth=1;for(let x=gridL;x<gridR;x+=70){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=28;y<H-24;y+=42){ctx.beginPath();ctx.moveTo(gridL,y);ctx.lineTo(gridR,y);ctx.stroke()}ctx.fillStyle=wrap.classList.contains('dark')?'#b8c0cc':'#111827';ctx.font='12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';let r=priceRange();if(isMob){ctx.textAlign='right';for(let y=40;y<H-30;y+=42){let p=pOf(y);ctx.fillText(p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}),W-4,y+4)}ctx.textAlign='left'}else{for(let y=40;y<H-30;y+=42){let p=pOf(y);ctx.fillText(p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}),W-96,y+4)}}ctx.fillStyle=wrap.classList.contains('dark')?'#aeb7c5':'#1f2937';for(let x=isMob?36:70;x<W-70;x+=95){let i=Math.round(iOf(x));if(data[i])ctx.fillText(displayTime(data[i].t),x,H-14)}}
 function drawGaps(){let start=Math.max(1,Math.floor(viewStart)-2),end=Math.min(data.length,Math.ceil(shownEnd));ctx.save();ctx.font='11px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';for(let i=start;i<end;i++){if(!isGapAt(i))continue;let x=xOf(i);ctx.strokeStyle='rgba(154,122,85,.28)';ctx.lineWidth=1;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,wrap.clientHeight-24);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(154,122,85,.035)';ctx.fillRect(x-2,0,4,wrap.clientHeight-24);ctx.fillStyle='rgba(203,213,225,.38)';ctx.fillText('gap',x+5,24)}ctx.restore()}
@@ -618,7 +674,8 @@ function makeTradeLogBase(){if(!order)return null;let sp=specs[$('symbol').value
 function appendTradeLog(rec){if(!rec||rec.logged)return;rec.logged=true;tradeLog.unshift(rec);tradeLog=tradeLog.slice(0,5000);persistTradeLog();if($('tradeLogOverlay')?.classList.contains('show'))renderTradeLog()}
 function groupTradeStats(records,keyFn){let m=new Map();for(const r of records){let k=keyFn(r);if(!m.has(k))m.set(k,{name:k,trades:0,wins:0,net:0,rSum:0});let g=m.get(k);g.trades++;if((r.pnl||0)>0)g.wins++;g.net+=+r.pnl||0;g.rSum+=+r.realizedR||0}return [...m.values()].sort((a,b)=>b.trades-a.trades)}
 function statsMiniTable(groups){if(!groups.length)return '<div class="small muted">No completed trades yet.</div>';return '<table><thead><tr><th>Group</th><th>N</th><th>Win%</th><th>Net</th><th>Avg R</th></tr></thead><tbody>'+groups.map(g=>'<tr><td>'+escapeHtml(g.name)+'</td><td>'+g.trades+'</td><td>'+Math.round(g.wins/g.trades*100)+'%</td><td class="'+(g.net>=0?'logWin':'logLoss')+'">'+money(g.net)+'</td><td>'+((g.rSum/g.trades)||0).toFixed(2)+'</td></tr>').join('')+'</tbody></table>'}
-function renderTradeLog(){let filled=tradeLog.filter(r=>r.filled&&r.pnl!==null),wins=filled.filter(r=>r.pnl>0),net=filled.reduce((a,r)=>a+(+r.pnl||0),0),avgR=filled.length?filled.reduce((a,r)=>a+(+r.realizedR||0),0)/filled.length:0,avgRR=filled.length?filled.reduce((a,r)=>a+(+r.plannedRR||0),0)/filled.length:0,avgMin=filled.length?filled.reduce((a,r)=>a+(+r.durationMinutes||0),0)/filled.length:0;let unfilled=tradeLog.filter(r=>!r.filled&&r.outcome==='Limit order not filled').length;let cards=[['Logged attempts',tradeLog.length],['Filled trades',filled.length],['Win rate',filled.length?Math.round(wins.length/filled.length*100)+'%':'--'],['Net P/L',money(net)],['Average R',filled.length?avgR.toFixed(2)+'R':'--'],['Avg duration',filled.length?Math.round(avgMin)+' min':'--']];$('logSummary').innerHTML=cards.map(x=>'<div class="logCard"><span>'+x[0]+'</span><b>'+x[1]+'</b></div>').join('');$('logByTimeframe').innerHTML=statsMiniTable(groupTradeStats(filled,r=>(r.timeframe>=60?(r.timeframe/60)+'h':r.timeframe+'m')));$('logByTime').innerHTML=statsMiniTable(groupTradeStats(filled,r=>timeBucket(r.decisionTs)));$('logBySide').innerHTML=statsMiniTable(groupTradeStats(filled,r=>r.side==='long'?'Long':'Short'));let rows=$('tradeLogRows');if(!tradeLog.length){rows.innerHTML='<tr><td colspan="20" class="logEmpty">No trades have been logged yet.</td></tr>';return}rows.innerHTML=tradeLog.map(r=>{let p=dateParts(r.decisionTs),cls=r.pnl>0?'logWin':r.pnl<0?'logLoss':'logFlat',tfLabel=r.timeframe>=60?(r.timeframe/60)+'h':r.timeframe+'m';return '<tr><td>'+p.date+'</td><td>'+p.time+'</td><td>'+p.day+'</td><td>'+escapeHtml(r.symbol)+'</td><td>'+tfLabel+'</td><td>'+escapeHtml(r.side==='long'?'Long':'Short')+'</td><td>'+r.contracts+'</td><td>'+Number(r.entry).toFixed(2)+'</td><td>'+Number(r.stop).toFixed(2)+'</td><td>'+Number(r.target).toFixed(2)+'</td><td>'+money(r.dollarRisk||0)+'</td><td>'+Number(r.plannedRR||0).toFixed(2)+'</td><td>'+escapeHtml(r.outcome)+'</td><td>'+(r.exitPrice==null?'--':Number(r.exitPrice).toFixed(2))+'</td><td class="'+cls+'">'+(r.pnl==null?'--':money(r.pnl))+'</td><td>'+(r.realizedR==null?'--':Number(r.realizedR).toFixed(2)+'R')+'</td><td>'+(r.durationMinutes==null?'--':Math.round(r.durationMinutes)+'m')+'</td><td>'+(r.timeframeCandles??'--')+'</td><td>'+(r.oneMinuteBars??'--')+'</td><td>'+escapeHtml(r.mode)+'</td></tr>'}).join('')}
+function renderTradeLog(){let filled=tradeLog.filter(r=>r.filled&&r.pnl!==null),wins=filled.filter(r=>r.pnl>0),net=filled.reduce((a,r)=>a+(+r.pnl||0),0),avgR=filled.length?filled.reduce((a,r)=>a+(+r.realizedR||0),0)/filled.length:0,avgRR=filled.length?filled.reduce((a,r)=>a+(+r.plannedRR||0),0)/filled.length:0,avgMin=filled.length?filled.reduce((a,r)=>a+(+r.durationMinutes||0),0)/filled.length:0;let unfilled=tradeLog.filter(r=>!r.filled&&r.outcome==='Limit order not filled').length;let cards=[['Logged attempts',tradeLog.length],['Filled trades',filled.length],['Win rate',filled.length?Math.round(wins.length/filled.length*100)+'%':'--'],['Net P/L',money(net)],['Average R',filled.length?avgR.toFixed(2)+'R':'--'],['Avg duration',filled.length?Math.round(avgMin)+' min':'--']];$('logSummary').innerHTML=cards.map(x=>'<div class="logCard"><span>'+x[0]+'</span><b>'+x[1]+'</b></div>').join('');$('logByTimeframe').innerHTML=statsMiniTable(groupTradeStats(filled,r=>(r.timeframe>=60?(r.timeframe/60)+'h':r.timeframe+'m')));$('logByTime').innerHTML=statsMiniTable(groupTradeStats(filled,r=>timeBucket(r.decisionTs)));$('logBySide').innerHTML=statsMiniTable(groupTradeStats(filled,r=>r.side==='long'?'Long':'Short'));let rows=$('tradeLogRows');if(!tradeLog.length){rows.innerHTML='<tr><td colspan="21" class="logEmpty">No trades have been logged yet.</td></tr>';return}rows.innerHTML=tradeLog.map(r=>{let p=dateParts(r.decisionTs),cls=r.pnl>0?'logWin':r.pnl<0?'logLoss':'logFlat',tfLabel=r.timeframe>=60?(r.timeframe/60)+'h':r.timeframe+'m';return '<tr><td>'+p.date+'</td><td>'+p.time+'</td><td>'+p.day+'</td><td>'+escapeHtml(r.symbol)+'</td><td>'+tfLabel+'</td><td>'+escapeHtml(r.side==='long'?'Long':'Short')+'</td><td>'+r.contracts+'</td><td>'+Number(r.entry).toFixed(2)+'</td><td>'+Number(r.stop).toFixed(2)+'</td><td>'+Number(r.target).toFixed(2)+'</td><td>'+money(r.dollarRisk||0)+'</td><td>'+Number(r.plannedRR||0).toFixed(2)+'</td><td>'+escapeHtml(r.outcome)+'</td><td>'+(r.exitPrice==null?'--':Number(r.exitPrice).toFixed(2))+'</td><td class="'+cls+'">'+(r.pnl==null?'--':money(r.pnl))+'</td><td>'+(r.realizedR==null?'--':Number(r.realizedR).toFixed(2)+'R')+'</td><td>'+(r.durationMinutes==null?'--':Math.round(r.durationMinutes)+'m')+'</td><td>'+(r.timeframeCandles??'--')+'</td><td>'+(r.oneMinuteBars??'--')+'</td><td>'+escapeHtml(r.mode)+'</td><td><button class="logDeleteBtn" data-delete-trade="'+escapeHtml(r.id)+'" title="Remove this trade from the saved log">Delete</button></td></tr>'}).join('')}
+function deleteLoggedTrade(id){let i=tradeLog.findIndex(r=>String(r.id)===String(id));if(i<0)return;if(!confirm('Remove this trade from the saved log? This only changes the journal and analytics.'))return;tradeLog.splice(i,1);persistTradeLog();renderTradeLog();toast('Trade removed from log.')}
 function openTradeLog(){renderTradeLog();$('tradeLogOverlay').classList.add('show');$('tradeLogOverlay').setAttribute('aria-hidden','false')}
 function closeTradeLogModal(){$('tradeLogOverlay').classList.remove('show');$('tradeLogOverlay').setAttribute('aria-hidden','true')}
 function exportTradeLogCSV(){if(!tradeLog.length){toast('No logged trades to export.','warn');return}let cols=['decision_time','day','symbol','contract','timeframe_minutes','side','contracts','entry','stop','target','dollar_risk','planned_reward','planned_rr','filled','fill_time','outcome','exit_time','exit_price','net_pnl','realized_r','duration_minutes','timeframe_candles','one_minute_bars','drill_mode','reveal_speed','account_size','trail_mode'];let q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';let lines=[cols.join(',')];for(const r of tradeLog){let p=dateParts(r.decisionTs);let obj={decision_time:new Date(r.decisionTs).toISOString(),day:p.day,symbol:r.symbol,contract:r.contract,timeframe_minutes:r.timeframe,side:r.side,contracts:r.contracts,entry:r.entry,stop:r.stop,target:r.target,dollar_risk:r.dollarRisk,planned_reward:r.plannedReward,planned_rr:r.plannedRR,filled:r.filled,fill_time:r.fillTs?new Date(r.fillTs).toISOString():'',outcome:r.outcome,exit_time:r.exitTs?new Date(r.exitTs).toISOString():'',exit_price:r.exitPrice,net_pnl:r.pnl,realized_r:r.realizedR,duration_minutes:r.durationMinutes,timeframe_candles:r.timeframeCandles,one_minute_bars:r.oneMinuteBars,drill_mode:r.mode,reveal_speed:r.revealSpeed,account_size:r.accountSize,trail_mode:r.trailMode};lines.push(cols.map(c=>q(obj[c])).join(','))}let blob=new Blob([lines.join('\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='replay-trader-trade-log-'+new Date().toISOString().slice(0,10)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
@@ -698,7 +755,7 @@ function lockTradeFromOrder(){
  const firstFutureTime=+(data[Math.min(data.length-1,decisionIndex+1)]?.t||(+decisionTime+(+tf||1)*60000));
  const firstFutureRawIndex=rawLowerBound(firstFutureTime);
  trade={...order,state:'pending',open:false,pending:true,entryHit:false,filledIndex:null,filledRawTime:null,
-  firstFutureTime,firstFutureRawIndex,lastProcessedRawIndex:firstFutureRawIndex-1,log:null};
+  firstFutureTime,firstFutureRawIndex,lastProcessedRawIndex:firstFutureRawIndex-1,sessionCloseTime:sessionCloseTimestampFor(decisionTime),log:null};
  trade.log=makeTradeLogBase();
  orderLocked=true;
  orderClickStage=null;
@@ -737,18 +794,58 @@ function activateTrade(idx,rawTime=null){
  $('bottomMsg').textContent='Entry filled at '+trade.entry.toFixed(2)+' — position is now open.';
  return true;
 }
+function revealedRawEndIndex(){
+ const lastVisible=Math.max(0,Math.min(data.length-1,shownEnd-1));
+ const endTime=+(data[lastVisible]?.t||0)+(+tf||1)*60000;
+ return rawLowerBound(endTime);
+}
+function displayIndexForRawBar(bar){
+ if(!bar)return Math.max(0,shownEnd-1);
+ return Math.max(0,Math.min(data.length-1,Math.floor(indexOfTime(+bar.t)+1e-7)));
+}
+function firstRawEntryTouch(startRaw,endRaw){
+ if(!trade||trade.state!=='pending')return -1;
+ const start=Math.max(0,startRaw|0),end=Math.min(raw.length,Math.max(start,endRaw|0));
+ for(let ri=start;ri<end;ri++){
+  const b=raw[ri];
+  if(b&&levelInsideRange(trade.entry,b.l,b.h))return ri;
+ }
+ return -1;
+}
+function reconcileTradeWithRevealedRaw(){
+ if(!trade||trade.state==='closed'||trade.state==='unfilled'||!raw.length)return false;
+ const start=Math.max(0,trade.firstFutureRawIndex??rawLowerBound(trade.firstFutureTime||0));
+ const end=revealedRawEndIndex();
+ if(end<=start)return false;
+ if(trade.state==='pending'){
+  const hit=firstRawEntryTouch(start,end);
+  if(hit<0)return false;
+  // Rebuild processing from the objectively earliest revealed 1-minute candle
+  // that contains the entry. This intentionally ignores the old cursor so a
+  // UI/reveal timing issue can never hide a visible fill.
+  trade.lastProcessedRawIndex=hit-1;
+  for(let ri=hit;ri<end;ri++){
+   processOneMinuteBar(raw[ri],displayIndexForRawBar(raw[ri]),ri);
+   if(!trade||trade.state==='closed'||trade.state==='unfilled')break;
+  }
+  return true;
+ }
+ if(trade.state==='open'){
+  let ri=Math.max(start,(trade.lastProcessedRawIndex??start-1)+1);
+  for(;ri<end;ri++){
+   processOneMinuteBar(raw[ri],displayIndexForRawBar(raw[ri]),ri);
+   if(!trade||trade.state==='closed'||trade.state==='unfilled')break;
+  }
+  return true;
+ }
+ return false;
+}
 function closeLimitNotFilled(idx=null){
  if(!trade||trade.state!=='pending')return false;
- // Absolute fail-safe: before declaring an order unfilled, rescan every raw
- // one-minute candle that has actually been revealed since the decision.
- // A single candle whose low/high contains the entry MUST transition the
- // order to OPEN, regardless of chart timeframe or animation timing.
- const revealedEndTime=+(data[Math.min(data.length-1,Math.max(0,shownEnd-1))]?.t||0)+(+tf||1)*60000;
- const rawEnd=rawLowerBound(revealedEndTime);
- const rawStart=Math.max(0,trade.firstFutureRawIndex??rawLowerBound(trade.firstFutureTime||0));
- for(let ri=rawStart;ri<rawEnd&&trade.state==='pending';ri++){
-  processOneMinuteBar(raw[ri],idx??Math.max(0,shownEnd-1),ri);
- }
+ // Final invariant check: an order may be called unfilled only after an
+ // independent scan of every revealed one-minute candle confirms that none
+ // contained the entry price.
+ reconcileTradeWithRevealedRaw();
  if(trade.state!=='pending')return false;
  let exitIdx=idx??Math.max(0,Math.min(data.length-1,shownEnd-1));
  let t=+(data[exitIdx]?.t||data[Math.max(0,shownEnd-1)]?.t||Date.now());
@@ -765,6 +862,19 @@ function closeLimitNotFilled(idx=null){
  reviewStopIndex=Math.max(shownEnd,exitIdx+1);
  setActionState();updateStats();drawAll();
  return true;
+}
+function closePendingAtSessionClose(idx=null,rawTime=null){
+ if(!trade||trade.state!=='pending')return false;
+ let exitIdx=idx??Math.max(0,Math.min(data.length-1,shownEnd-1));
+ let t=+rawTime||+(data[exitIdx]?.t||Date.now());
+ trade.state='unfilled';trade.pending=false;trade.open=false;trade.entryHit=false;
+ $('posCount').textContent='0';
+ exitInfo={kind:'flat',label:'Market close — order canceled',outcome:'Market close order canceled',bannerLabel:'MARKET CLOSE — ORDER CANCELED',price:trade.entry,pl:0,r:0,t};
+ $('result').textContent='MARKET CLOSE — pending limit order canceled at 4:59 PM ET.';
+ $('bottomMsg').textContent='Apex-style close: all pending orders are canceled and positions must be flat before 4:59 PM ET.';
+ showReviewBanner('flat','MARKET CLOSE — ORDER CANCELED','Pending entry was not filled before 4:59 PM ET');playTone('flat');
+ if(trade.log&&!trade.log.logged){trade.log.outcome='Market close order canceled';trade.log.exitTs=t;trade.log.exitPrice=null;trade.log.pnl=0;trade.log.realizedR=0;appendTradeLog(trade.log)}
+ addRecentTrade('Market close order canceled',0,'0.00R');if(!reviewExitDeadline)reviewExitDeadline=performance.now()+4000;reviewStopIndex=Math.max(shownEnd,exitIdx+1);setActionState();updateStats();drawAll();return true;
 }
 function closeTrade(outcome,price,idx=null,rawTime=null,rawIndex=null){
  if(!trade||trade.state!=='open'||!trade.open||!trade.entryHit)return false;
@@ -812,15 +922,34 @@ function firstExitOnSegment(a,b){
 function processOneMinuteBar(bar,displayIdx,rawIndex){
  if(!trade||!bar||trade.state==='closed'||trade.state==='unfilled')return;
  if(rawIndex!=null&&rawIndex<=trade.lastProcessedRawIndex)return;
+ const prevClose=(rawIndex!=null&&rawIndex>0&&raw[rawIndex-1])?+raw[rawIndex-1].c:(Number.isFinite(trade.lastRawClose)?trade.lastRawClose:null);
  if(rawIndex!=null)trade.lastProcessedRawIndex=rawIndex;
+ const closeTs=+trade.sessionCloseTime||sessionCloseTimestampFor(+bar.t);
+ if(+bar.t>=closeTs){
+  if(trade.state==='pending'){closePendingAtSessionClose(displayIdx,+bar.t);return;}
+  if(trade.state==='open'){closeTrade('Session close',+bar.o,displayIdx,+bar.t,rawIndex);return;}
+ }
  const path=assumedPath(bar);
+ // Explicitly process the discontinuity between the previous 1-minute close and
+ // this minute's open. Without this segment, a gap could jump across entry, TP,
+ // or SL without any candle high/low containing the crossed level.
+ if(Number.isFinite(prevClose)&&Number.isFinite(+bar.o)&&Math.abs(prevClose-(+bar.o))>1e-12){
+  if(trade.state==='pending'&&levelInsideRange(trade.entry,prevClose,+bar.o)){
+   activateTrade(displayIdx,+bar.t);
+   let gapExit=firstExitOnSegment(trade.entry,+bar.o);
+   if(gapExit){trade.lastRawClose=+bar.c;closeTrade(gapExit.kind,gapExit.price,displayIdx,+bar.t,rawIndex);return;}
+  }else if(trade.state==='open'){
+   let gapExit=firstExitOnSegment(prevClose,+bar.o);
+   if(gapExit){trade.lastRawClose=+bar.c;closeTrade(gapExit.kind,gapExit.price,displayIdx,+bar.t,rawIndex);return;}
+  }
+ }
  if(trade.state==='pending'){
-  // Entry is deliberately simple and timeframe-independent: if the entry lies
-  // anywhere between this ONE-MINUTE candle's low and high, the order is filled.
-  if(!rawBarTouchesEntry(bar))return;
+  // Timeframe-independent fill: entry is filled whenever the ONE-MINUTE bar
+  // trades through it, including wick touches.
+  if(!rawBarTouchesEntry(bar)){trade.lastRawClose=+bar.c;return;}
   activateTrade(displayIdx,+bar.t);
-  // Find the first path segment that reaches entry, then inspect only the
-  // remainder of that minute. Pre-entry movement can never hit TP or SL.
+  // Find the first intraminute path segment that reaches entry, then evaluate
+  // TP/SL only after that point. Pre-entry movement cannot close the trade.
   let entered=false;
   for(let s=0;s<path.length-1;s++){
    let a=path[s],b=path[s+1];
@@ -829,16 +958,18 @@ function processOneMinuteBar(bar,displayIdx,rawIndex){
     entered=true;a=trade.entry;
    }
    let exit=firstExitOnSegment(a,b);
-   if(exit){closeTrade(exit.kind,exit.price,displayIdx,+bar.t,rawIndex);return;}
+   if(exit){trade.lastRawClose=+bar.c;closeTrade(exit.kind,exit.price,displayIdx,+bar.t,rawIndex);return;}
   }
+  trade.lastRawClose=+bar.c;
   return;
  }
  if(trade.state==='open'){
   for(let s=0;s<path.length-1;s++){
    let exit=firstExitOnSegment(path[s],path[s+1]);
-   if(exit){closeTrade(exit.kind,exit.price,displayIdx,+bar.t,rawIndex);return;}
+   if(exit){trade.lastRawClose=+bar.c;closeTrade(exit.kind,exit.price,displayIdx,+bar.t,rawIndex);return;}
   }
  }
+ trade.lastRawClose=+bar.c;
 }
 function processTradeCandle(idx){
  if(!trade||trade.state==='closed'||trade.state==='unfilled')return;
@@ -873,6 +1004,9 @@ function advance(n=1){
   if(trade&&(trade.state==='closed'||trade.state==='unfilled'))break;
  }
  shownEnd=target;
+ // Reconcile against the complete raw interval represented by every candle now visible.
+ // This makes visual price contact and fill state mathematically identical.
+ reconcileTradeWithRevealedRaw();
  followRevealWindow();
  let atEnd=shownEnd>=revealLimit();
  if(atEnd&&!reviewExitDeadline){
@@ -1241,8 +1375,8 @@ function instantNoTradeFinish(){
  }
  drawAll();
 }
-if($('openTradeLog'))$('openTradeLog').onclick=openTradeLog;if($('closeTradeLog'))$('closeTradeLog').onclick=closeTradeLogModal;if($('exportTradeLog'))$('exportTradeLog').onclick=exportTradeLogCSV;if($('clearTradeLog'))$('clearTradeLog').onclick=()=>{if(confirm('Clear the entire saved trade log on this browser?')){tradeLog=[];persistTradeLog();renderTradeLog();toast('Trade log cleared.')}};if($('tradeLogOverlay'))$('tradeLogOverlay').onclick=e=>{if(e.target===$('tradeLogOverlay'))closeTradeLogModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('tradeLogOverlay')?.classList.contains('show'))closeTradeLogModal()});
-$('csv').onchange=e=>{let f=e.target.files[0];if(!f)return;let rd=new FileReader();rd.onload=()=>{parseCSV(rd.result);$('loaded').textContent=raw.length+' rows';resetData()};rd.readAsText(f)};$('sample').onclick=()=>{loadEmbeddedMarket($('symbol').value)};$('random').onclick=newWindow;$('tf').onchange=e=>{changeTimeframePreserve(+e.target.value);setTimeframeUI();};document.querySelectorAll('#tfBtns button').forEach(b=>b.onclick=()=>{$('tf').value=b.dataset.tf;$('tf').onchange({target:$('tf')})});if($('mobileTfSelect'))$('mobileTfSelect').onchange=e=>{$('tf').value=e.target.value;$('tf').onchange({target:$('tf')})};if($('mobileThemeBtn'))$('mobileThemeBtn').onclick=()=>$('darkToggle').click();$('symbol').onchange=()=>{if($('chartSymbol'))$('chartSymbol').value=$('symbol').value;order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='';setActionState();$('bottomMsg').textContent='Contract changed — loading matching market data.';loadEmbeddedMarket($('symbol').value);updateHead();if(autoMode){startPhase(isManualDrill()?'trade':'look')}drawAll()};if($('chartSymbol'))$('chartSymbol').onchange=e=>{$('symbol').value=e.target.value;$('symbol').onchange()};$('hide').onclick=()=>{const mainEl=document.querySelector('.main');const closing=!mainEl.classList.contains('sideClosed');if(closing){mainEl.dataset.openSideW=getComputedStyle(mainEl).getPropertyValue('--sideW').trim()||'300px';mainEl.style.setProperty('--sideW','0px');}else{mainEl.style.setProperty('--sideW',mainEl.dataset.openSideW||'300px');}mainEl.classList.toggle('sideClosed');$('side').classList.toggle('collapsed');$('hide').textContent=mainEl.classList.contains('sideClosed')?'⚙':'×';if(!mainEl.classList.contains('sideClosed'))showSettingsResizeHint();resize();smoothDesktopRerender(280);setTimeout(resize,320)};$('darkToggle').onclick=()=>{wrap.classList.toggle('dark');$('darkToggle').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';if($('mobileThemeBtn'))$('mobileThemeBtn').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';drawAll()};$('autoScaleBtn').onclick=()=>{autoScale=!autoScale;if(autoScale){manualRange=null;priceOffset=0}else{manualRange=desiredPriceRange()}updateAutoScaleButton();drawAll()};$('buyBox').onclick=()=>{if(!canTradeNow()){toast('Wait until the Trade stage starts.');return}setToolMode('cursor');closeIndicatorPanels();pendingSide='long';$('buyBox').classList.add('active');$('sellBox').classList.remove('active');$('tradeHelp').textContent='BUY selected: click the chart for your limit entry. Next clicks set TP, then SL.'};$('sellBox').onclick=()=>{if(!canTradeNow()){toast('Wait until the Trade stage starts.');return}setToolMode('cursor');closeIndicatorPanels();pendingSide='short';$('sellBox').classList.add('active');$('buyBox').classList.remove('active');$('tradeHelp').textContent='SELL selected: click the chart for your limit entry. Next clicks set TP, then SL.'};$('confirm').onclick=confirmTrade;$('flat').onclick=()=>{if(accountBlown)return;if(autoMode&&autoPhase!=='trade'){toast('Wait until the Trade stage starts.');return}decisionIndex=Math.max(viewStart,shownEnd-1);decisionTime=timeOfIndex(decisionIndex);decisionSide=null;tradeEndIndex=findSessionEnd(decisionIndex);decisionConfirmed=true;confirmedHadTrade=false;orderLocked=false;setActionState();order=null;orderClickStage=null;trade=null;pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='No trade selected.';addRecentTrade('No trade',null,'');instantNoTradeFinish()};$('step').onclick=()=>{if(accountBlown)return;if(revealing){toast('Reveal is already running.');return}advance(1);hintSteps++;$('bottomMsg').textContent='Next candle advanced ('+hintSteps+'). Continue stepping or choose BUY, SELL, or No Trade.'};$('autoStart').onclick=startAuto;$('autoStop').onclick=pauseAuto;$('autoLen').onchange=()=>{order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='';setActionState();$('bottomMsg').textContent='Timer changed — new scenario loaded.';if(autoMode){newWindow();startPhase(isManualDrill()?'trade':'look')}else{newWindow()}};$('restartBlownAccount').onclick=restartBlownAccount;$('resetStats').onclick=()=>{accountBlown=false;if($('accountBlownOverlay'))$('accountBlownOverlay').classList.remove('show');stats={trades:0,wins:0,grossWin:0,grossLoss:0,net:0,peakEquity:accountSize(),accountSize:accountSize(),accountMode:$('trailMode')?.value||'eod',recent:[]};renderRecent();updateStats()};document.querySelectorAll('.tool[data-tool]').forEach(b=>b.onclick=()=>{setToolMode(b.dataset.tool);closeIndicatorPanels()});if($('clearDrawings'))$('clearDrawings').onclick=()=>{drawings=[];draft=null;hoverDrawing=-1;drawAll();toast('All drawings cleared.');};['contracts','comm','gapPts','gapBuffer','gapMode','demaOn2','demaLen2','stOn2','stAtr2','stMult2','tzSelect'].forEach(id=>{if($(id))$(id).oninput=drawAll});
+if($('openTradeLog'))$('openTradeLog').onclick=openTradeLog;if($('closeTradeLog'))$('closeTradeLog').onclick=closeTradeLogModal;if($('tradeLogRows'))$('tradeLogRows').onclick=e=>{let b=e.target.closest?.('[data-delete-trade]');if(b)deleteLoggedTrade(b.dataset.deleteTrade)};if($('exportTradeLog'))$('exportTradeLog').onclick=exportTradeLogCSV;if($('clearTradeLog'))$('clearTradeLog').onclick=()=>{if(confirm('Clear the entire saved trade log on this browser?')){tradeLog=[];persistTradeLog();renderTradeLog();toast('Trade log cleared.')}};if($('tradeLogOverlay'))$('tradeLogOverlay').onclick=e=>{if(e.target===$('tradeLogOverlay'))closeTradeLogModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('tradeLogOverlay')?.classList.contains('show'))closeTradeLogModal()});
+$('csv').onchange=e=>{let f=e.target.files[0];if(!f)return;let rd=new FileReader();rd.onload=()=>{parseCSV(rd.result);$('loaded').textContent=raw.length+' rows';resetData()};rd.readAsText(f)};$('sample').onclick=()=>{loadEmbeddedMarket($('symbol').value)};$('random').onclick=newWindow;$('tf').onchange=e=>{changeTimeframePreserve(+e.target.value);setTimeframeUI();};document.querySelectorAll('#tfBtns button').forEach(b=>b.onclick=()=>{$('tf').value=b.dataset.tf;$('tf').onchange({target:$('tf')})});if($('mobileTfSelect'))$('mobileTfSelect').onchange=e=>{$('tf').value=e.target.value;$('tf').onchange({target:$('tf')})};if($('mobileThemeBtn'))$('mobileThemeBtn').onclick=()=>$('darkToggle').click();$('symbol').onchange=()=>{if($('chartSymbol'))$('chartSymbol').value=$('symbol').value;order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='';setActionState();$('bottomMsg').textContent='Contract changed — loading matching market data.';loadEmbeddedMarket($('symbol').value);updateHead();if(autoMode){startPhase(isManualDrill()?'trade':'look')}drawAll()};if($('chartSymbol'))$('chartSymbol').onchange=e=>{$('symbol').value=e.target.value;$('symbol').onchange()};$('hide').onclick=()=>{const mainEl=document.querySelector('.main');const closing=!mainEl.classList.contains('sideClosed');if(closing){mainEl.dataset.openSideW=getComputedStyle(mainEl).getPropertyValue('--sideW').trim()||'300px';mainEl.style.setProperty('--sideW','0px');}else{mainEl.style.setProperty('--sideW',mainEl.dataset.openSideW||'300px');}mainEl.classList.toggle('sideClosed');$('side').classList.toggle('collapsed');$('hide').textContent=mainEl.classList.contains('sideClosed')?'⚙':'×';if(!mainEl.classList.contains('sideClosed'))showSettingsResizeHint();resize();smoothDesktopRerender(280);setTimeout(resize,320)};$('darkToggle').onclick=()=>{wrap.classList.toggle('dark');$('darkToggle').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';if($('mobileThemeBtn'))$('mobileThemeBtn').textContent=wrap.classList.contains('dark')?'☾ Theme':'☀ Theme';drawAll()};$('autoScaleBtn').onclick=()=>{autoScale=!autoScale;if(autoScale){manualRange=null;priceOffset=0}else{manualRange=desiredPriceRange()}updateAutoScaleButton();drawAll()};$('buyBox').onclick=()=>{if(!canTradeNow()){let t=timeOfIndex(Math.max(0,shownEnd-1));toast(isMaintenanceTime(t)?'Market closed: 4:59–6:00 PM ET maintenance.':'Wait until the Trade stage starts.');return}setToolMode('cursor');closeIndicatorPanels();pendingSide='long';$('buyBox').classList.add('active');$('sellBox').classList.remove('active');$('tradeHelp').textContent='BUY selected: click the chart for your limit entry. Next clicks set TP, then SL.'};$('sellBox').onclick=()=>{if(!canTradeNow()){let t=timeOfIndex(Math.max(0,shownEnd-1));toast(isMaintenanceTime(t)?'Market closed: 4:59–6:00 PM ET maintenance.':'Wait until the Trade stage starts.');return}setToolMode('cursor');closeIndicatorPanels();pendingSide='short';$('sellBox').classList.add('active');$('buyBox').classList.remove('active');$('tradeHelp').textContent='SELL selected: click the chart for your limit entry. Next clicks set TP, then SL.'};$('confirm').onclick=confirmTrade;$('flat').onclick=()=>{if(accountBlown)return;if(autoMode&&autoPhase!=='trade'){toast('Wait until the Trade stage starts.');return}decisionIndex=Math.max(viewStart,shownEnd-1);decisionTime=timeOfIndex(decisionIndex);decisionSide=null;tradeEndIndex=findSessionEnd(decisionIndex);decisionConfirmed=true;confirmedHadTrade=false;orderLocked=false;setActionState();order=null;orderClickStage=null;trade=null;pendingSide=null;$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='No trade selected.';addRecentTrade('No trade',null,'');instantNoTradeFinish()};$('step').onclick=()=>{if(accountBlown)return;if(revealing){toast('Reveal is already running.');return}advance(1);hintSteps++;$('bottomMsg').textContent='Next candle advanced ('+hintSteps+'). Continue stepping or choose BUY, SELL, or No Trade.'};$('autoStart').onclick=startAuto;$('autoStop').onclick=pauseAuto;$('autoLen').onchange=()=>{order=null;orderClickStage=null;orderLocked=false;decisionConfirmed=false;confirmedHadTrade=false;trade=null;pendingSide=null;decisionIndex=null;decisionTime=null;decisionSide=null;tradeEndIndex=null;exitInfo=null;reviewStopIndex=null;reviewExitDeadline=null;hideReviewBanner();$('buyBox').classList.remove('active');$('sellBox').classList.remove('active');$('result').textContent='';setActionState();$('bottomMsg').textContent='Timer changed — new scenario loaded.';if(autoMode){newWindow();startPhase(isManualDrill()?'trade':'look')}else{newWindow()}};$('restartBlownAccount').onclick=restartBlownAccount;$('resetStats').onclick=()=>{accountBlown=false;if($('accountBlownOverlay'))$('accountBlownOverlay').classList.remove('show');stats={trades:0,wins:0,grossWin:0,grossLoss:0,net:0,peakEquity:accountSize(),accountSize:accountSize(),accountMode:$('trailMode')?.value||'eod',recent:[]};renderRecent();updateStats()};document.querySelectorAll('.tool[data-tool]').forEach(b=>b.onclick=()=>{setToolMode(b.dataset.tool);closeIndicatorPanels()});if($('clearDrawings'))$('clearDrawings').onclick=()=>{drawings=[];draft=null;hoverDrawing=-1;drawAll();toast('All drawings cleared.');};['contracts','comm','gapPts','gapBuffer','gapMode','demaOn2','demaLen2','stOn2','stAtr2','stMult2','tzSelect'].forEach(id=>{if($(id))$(id).oninput=drawAll});
 ['accountPlan','trailMode'].forEach(id=>{if($(id))$(id).onchange=()=>applyAccountPreset(true)});
 
 $('demaBtn').onclick=(e)=>{e.stopPropagation();$('stPanel').classList.remove('show');$('demaPanel').classList.toggle('show')};$('stBtn').onclick=(e)=>{e.stopPropagation();$('demaPanel').classList.remove('show');$('stPanel').classList.toggle('show')};['demaPanel','stPanel'].forEach(id=>$(id).addEventListener('pointerdown',e=>e.stopPropagation()));$('closeDema').onclick=()=>$('demaPanel').classList.remove('show');$('closeSt').onclick=()=>$('stPanel').classList.remove('show');document.addEventListener('pointerdown',e=>{if(e.target.closest&&e.target.closest('.settingsPanel,.indTool'))return;closeIndicatorPanels()});
