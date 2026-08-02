@@ -282,7 +282,7 @@ html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:s
   <div class="section"><h3>Session</h3><div style="display:none"><select id="tf"><option value="1">1m</option><option value="5" selected>5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select><select id="days"><option value="1" selected>1 day</option></select><input id="reveal" type="hidden" value="50"><select id="gapMode"><option value="include" selected>Include all gaps</option></select><input id="gapPts" type="hidden" value="999999"><input id="gapBuffer" type="hidden" value="0"></div><p class="help">Timeframe is controlled from the chart toolbar. Every scenario uses about 24 hours of lookback on the selected timeframe, and the continuous data sampler can choose from anywhere in the loaded NQ/ES data.</p><button id="random" class="primary" style="width:100%">New random window</button></div>
 
   <div class="section"><h3>Data <span id="loaded" class="status">external continuous futures data ready</span></h3><input class="file" type="file" id="csv" accept=".csv"><p class="help">This build loads continuous NQ1 data for MNQ/NQ and continuous ES1 data for MES/ES from CSV files in the /data folder. You can still import another CSV if you want.</p><button id="sample" class="primary" style="width:100%">Reload selected embedded data</button></div>
-  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.04<br>Build: Maintenance Break Navigation<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" style="color:#8d99aa;text-decoration:none">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
+  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.05<br>Build: Scenario Diversity Guard<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" style="color:#8d99aa;text-decoration:none">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
   <div class="legalBlock"><h3>Terms of use / disclaimer</h3><p>This simulator is provided only for private education, chart replay, journaling, and practice. It is not a brokerage platform, signal service, financial adviser, investment adviser, prop-firm service, or trading recommendation system. Nothing in this simulator should be interpreted as financial, investment, tax, legal, brokerage, prop-firm, or trading advice.</p><p>Historical, simulated, and hypothetical results are not real trading results and are not guarantees or predictions of future performance. Simulated trading cannot fully account for slippage, liquidity, commissions, execution delays, emotional pressure, live-market conditions, or real financial risk. Market data may be incomplete, delayed, inaccurate, adjusted, imported from third-party files, or provided only for private educational testing. Do not copy, resell, republish, or redistribute market data from this site. Futures, stocks, options, and other financial instruments involve substantial risk, including the risk of losing more than expected. You are solely responsible for any real trading decisions you make outside this simulator.</p><p>This software is provided “as is” and “as available,” without warranties of any kind. Use it at your own risk. The author is not responsible for trading losses, missed trades, data errors, software bugs, browser issues, or decisions made based on simulator output.</p><h3>Privacy</h3><p>This browser-based simulator is hosted as a static site. It does not create accounts, collect payments, sell personal information, or intentionally send your trades, settings, or performance stats to the site owner. Settings, simulator preferences, and performance statistics may be saved locally in your browser storage so the simulator can remember them on this computer. Your browser and hosting provider may still process standard technical data needed to load the site.</p><p>If you clear browser data, use another browser, or open the simulator on another computer, locally saved settings and stats may not carry over.</p><h3>Cookies / local storage</h3><p>This site does not intentionally use advertising cookies, tracking cookies, analytics cookies, or third-party marketing pixels. It may use browser local storage or similar local browser storage only to remember simulator settings and practice statistics. If this site is modified later or connected to third-party services, this notice should be updated to accurately describe those changes.</p></div>
 </aside>
  <button class="hideBtn" id="hide" title="Simulator settings">⚙</button>
@@ -317,7 +317,7 @@ html.mobileUI .reviewBanner.manualNextReady .reviewNextMobile:active{transform:s
       <div class="metric"><span>R:R</span><b id="rrTxt">--</b></div>
     </div>
     <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="small" style="margin-top:7px;color:#8d99aa;text-decoration:none;align-self:flex-start">Created by @_aidan_w</a>
-    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.04</div>
+    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.05</div>
   </div>
   <div class="bottomBlock">
     <div class="bottomTitle">Replay controls</div>
@@ -473,7 +473,34 @@ function rememberScenario(key){if(!key)return;recentScenarios=recentScenarios.fi
 function etMinutes(t){return etParts(t).min}
 function sessionBucketForTime(t){let m=etMinutes(t);if(m>=240&&m<570)return 'pre';if(m>=570&&m<630)return 'open';if(m>=630&&m<720)return 'mid';if(m>=720&&m<810)return 'lunch';if(m>=810&&m<900)return 'afternoon';if(m>=900&&m<1019)return 'power';if(m>=1020&&m<1200)return 'after';return 'other'}
 function weightedSessionBucket(){const bag=['open','open','open','mid','mid','lunch','afternoon','afternoon','power','power','pre','after'];return bag[Math.floor(Math.random()*bag.length)]}
-function pickScenarioStart(total){let maxStart=Math.max(0,data.length-total-1);let best=0,bestKey='';for(let a=0;a<1200;a++){let st=Math.floor(Math.random()*Math.max(1,maxStart));let pct=+$('reveal').value/100,dec=Math.min(data.length-1,st+Math.floor(total*pct));if(isMaintenanceTime(data[dec]?.t))continue;let key=scenarioKey(st,total);if(!recentScenarios.includes(key)){rememberScenario(key);return st}if(!bestKey){best=st;bestKey=key}}rememberScenario(bestKey||scenarioKey(best,total));return best}
+const LOG_SCENARIO_EXCLUSION_MS=3*60*60*1000;
+function recentLoggedDecisionTimes(){
+ return tradeLog.slice(0,20).map(x=>Number(x&&x.decisionTs)).filter(Number.isFinite);
+}
+function scenarioBlockedByRecentLog(t){
+ const ts=+new Date(t);
+ if(!Number.isFinite(ts))return false;
+ return recentLoggedDecisionTimes().some(prev=>Math.abs(ts-prev)<LOG_SCENARIO_EXCLUSION_MS);
+}
+function pickScenarioStart(total){
+ let maxStart=Math.max(0,data.length-total-1),best=0,bestKey='',bestDistance=-1;
+ const loggedTimes=recentLoggedDecisionTimes();
+ for(let a=0;a<5000;a++){
+  let st=Math.floor(Math.random()*Math.max(1,maxStart));
+  let pct=+$('reveal').value/100,dec=Math.min(data.length-1,st+Math.floor(total*pct));
+  let decisionTs=+data[dec]?.t;
+  if(isMaintenanceTime(data[dec]?.t))continue;
+  let key=scenarioKey(st,total);
+  let minLogDistance=loggedTimes.length?Math.min(...loggedTimes.map(prev=>Math.abs(decisionTs-prev))):Infinity;
+  if(minLogDistance>bestDistance){best=st;bestKey=key;bestDistance=minLogDistance}
+  if(minLogDistance<LOG_SCENARIO_EXCLUSION_MS)continue;
+  if(!recentScenarios.includes(key)){rememberScenario(key);return st}
+ }
+ // If the available dataset is unusually constrained, prefer the candidate farthest
+ // from the most recent 20 logged trades rather than failing to load a scenario.
+ rememberScenario(bestKey||scenarioKey(best,total));
+ return best;
+}
 function setTimeframeUI(){if($('tf'))$('tf').value=String(tf);if($('mobileTfSelect'))$('mobileTfSelect').value=String(tf);document.querySelectorAll('#tfBtns button').forEach(b=>b.classList.toggle('active',+b.dataset.tf===tf));}
 function initialVisibleBarCount(){
  const mobile=document.documentElement.classList.contains('mobileUI');
