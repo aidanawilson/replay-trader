@@ -298,10 +298,13 @@ html.mobileUI .tool[data-tip]::after{display:none}
 .recentItem[data-trade-id]:hover{border-color:#3b5b83;background:#152235}
 .recentItem[data-trade-id]:active{transform:scale(.995)}
 .recentTagMark{display:inline-flex;margin-left:6px;padding:1px 5px;border-radius:9px;background:#1f3a62;color:#9cc0ff;font-size:9px;font-weight:800;vertical-align:1px}.recentTagMark.addTagsPrompt{background:#163052;color:#9cc8ff;border:1px solid #315b8d;padding:0 5px;animation:addTagsPulse .8s ease-in-out 2}@keyframes addTagsPulse{0%,100%{box-shadow:0 0 0 rgba(96,165,250,0);background:#163052}50%{box-shadow:0 0 10px rgba(96,165,250,.6),0 0 0 1px rgba(96,165,250,.25);background:#214875;color:#c7dcff}}
-.tagPopup{position:fixed;z-index:10100;width:min(350px,calc(100vw - 20px));background:#0c131d;border:1px solid #38506b;border-radius:13px;padding:12px;box-shadow:0 20px 55px #000c;display:none}
-.tagPopup.show{display:block;animation:tagPop .12s ease-out}@keyframes tagPop{from{opacity:0;transform:translateY(5px) scale(.98)}to{opacity:1;transform:none}}
-.tagPopupHead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.tagPopupHead b{color:#eef4fc}.tagPopupHead button{padding:4px 7px}
-.tagChipWrap{display:flex;flex-wrap:wrap;gap:6px}.tagChip{padding:6px 9px;border-radius:999px;background:#131e2b;border:1px solid #344558;color:#b9c4d2;font-size:11px;font-weight:700}.tagChip:hover{background:#1a2838}.tagChip.active{background:#1d4ed8;border-color:#60a5fa;color:#fff;box-shadow:0 0 0 1px #60a5fa33 inset}
+.tagPopup{position:fixed;z-index:10100;width:min(440px,calc(100vw - 20px));max-height:min(650px,calc(100dvh - 20px));background:#0c131d;border:1px solid #38506b;border-radius:13px;padding:12px;box-shadow:0 20px 55px #000c;display:none;overflow:hidden}
+.tagPopup.show{display:flex;flex-direction:column;animation:tagPop .12s ease-out}@keyframes tagPop{from{opacity:0;transform:translateY(5px) scale(.98)}to{opacity:1;transform:none}}
+.tagPopupHead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;flex:0 0 auto}.tagPopupHead b{color:#eef4fc}.tagPopupHead button{padding:4px 7px}
+.tagSearch{position:relative;flex:0 0 auto;margin-bottom:9px}.tagSearch input{width:100%;height:36px;border-radius:9px;border:1px solid #33465d;background:#111b27;color:#e7eef8;padding:7px 10px;font-size:12px;outline:none}.tagSearch input::placeholder{color:#718096}.tagSearch input:focus{border-color:#5793db;box-shadow:0 0 0 2px #3b82f622}
+.tagPopupScroll{overflow-y:auto;overscroll-behavior:contain;min-height:0;max-height:min(485px,calc(100dvh - 150px));padding:1px 5px 4px 0;scrollbar-gutter:stable}.tagPopupScroll::-webkit-scrollbar{width:8px}.tagPopupScroll::-webkit-scrollbar-thumb{background:#34465b;border-radius:8px}.tagPopupScroll::-webkit-scrollbar-track{background:transparent}
+.tagSection{padding:3px 0 10px}.tagSection+.tagSection{border-top:1px solid #233244;padding-top:10px}.tagSectionTitle{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#8fa0b5;font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;margin:0 0 7px}.tagSectionTitle .tagSectionHint{font-size:9px;font-weight:650;letter-spacing:0;text-transform:none;color:#65758a}.tagChips{display:flex;flex-wrap:wrap;gap:6px}.tagChip{padding:6px 9px;border-radius:999px;background:#131e2b;border:1px solid #344558;color:#b9c4d2;font-size:11px;font-weight:700}.tagChip:hover{background:#1a2838}.tagChip.active{background:#1d4ed8;border-color:#60a5fa;color:#fff;box-shadow:0 0 0 1px #60a5fa33 inset}.tagEmpty{padding:8px 2px 10px;color:#738399;font-size:11px}.tagPopupFoot{margin-top:8px;flex:0 0 auto}
+@media(max-width:699px){.tagPopup{width:min(370px,calc(100vw - 16px));max-height:calc(100dvh - 16px);padding:10px}.tagPopupScroll{max-height:calc(100dvh - 142px)}}
 .logTagCell{max-width:280px;white-space:normal!important;text-align:left!important}.logTagPill{display:inline-block;padding:2px 5px;margin:1px 2px 1px 0;border-radius:8px;background:#183052;color:#a9c9ff;font-size:9px}
 .logAnalytics{grid-template-columns:repeat(5,1fr)}
 .tradeLogTable{min-width:1640px}
@@ -350,6 +353,8 @@ html.mobileUI .bottom{overflow:auto}
 html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.widePanel{top:58px;max-height:calc(100dvh - var(--mobileNavH) - var(--mobileToolH) - 70px)}
 @media(max-width:380px){html.mobileUI .controlRow.mainReplay{grid-template-columns:1fr}html.mobileUI .controlRow.mainReplay #step{grid-column:auto}.focusFilterBtn{min-height:40px}}
 
+
+.chartTextEditor{position:absolute;z-index:26;min-width:92px;min-height:34px;resize:none;overflow:auto;border:1px solid #60a5fa;border-radius:6px;padding:5px 7px;outline:none;background:rgba(11,17,24,.92);color:#f8fafc;font:600 16px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.42),0 0 0 1px rgba(96,165,250,.16);caret-color:currentColor}.chartTextEditor.lightTextEditor{background:rgba(248,250,252,.94);color:#111827}.chartTextEditor::placeholder{color:#94a3b8;font-weight:500}.chartTextEditor:focus{border-color:#93c5fd;box-shadow:0 8px 24px rgba(0,0,0,.42),0 0 0 2px rgba(96,165,250,.22)}
 </style>
 </head>
 <body>
@@ -407,8 +412,9 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
 
 <div class="tagPopup" id="tagPopup" aria-hidden="true">
  <div class="tagPopupHead"><b>Tag this setup</b><button id="tagPopupClose" type="button" aria-label="Close setup tags">✕</button></div>
- <div class="tagChipWrap" id="tagChipWrap"></div>
- <div class="small" style="margin-top:8px">Tags save automatically to this trade.</div>
+ <div class="tagSearch"><input id="tagSearchInput" type="search" autocomplete="off" spellcheck="false" placeholder="Search tags…" aria-label="Search setup tags"></div>
+ <div class="tagPopupScroll" id="tagChipWrap"></div>
+ <div class="small tagPopupFoot">Tags save automatically to this trade.</div>
 </div>
 
 <div class="tradeLogOverlay" id="tradeLogOverlay" aria-hidden="true">
@@ -437,7 +443,7 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
   <div class="section"><h3>Session</h3><div style="display:none"><select id="tf"><option value="1">1m</option><option value="5" selected>5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select><select id="days"><option value="1" selected>1 day</option></select><input id="reveal" type="hidden" value="50"><select id="gapMode"><option value="include" selected>Include all gaps</option></select><input id="gapPts" type="hidden" value="999999"><input id="gapBuffer" type="hidden" value="0"></div><p class="help">Timeframe is controlled from the chart toolbar. Scenarios open at a readable zoom, while additional pre-decision history is available for context: about 1 day on 1m, 2 days on 5m, 3 days on 15m, and 4 days on 1h/4h. Scenario selection never starts inside the maintenance break.</p><button id="random" class="primary" style="width:100%">New random window</button></div>
 
   <div class="section"><h3>Data <span id="loaded" class="status">built-in futures data ready</span></h3><div class="dataBuiltIn"><div class="dataLine"><b>NQ1 Continuous Futures</b><span>40,108 · 1-minute candles</span></div><div class="dataLine"><b>ES1 Continuous Futures</b><span>40,112 · 1-minute candles</span></div></div><input class="file" type="file" id="csv" accept=".csv"><div id="customDataMeta" class="customDataMeta">User Uploaded: Empty</div><div id="dataError" class="dataError"></div><p class="help">Upload a compatible 1-minute OHLC CSV to the separate <b>User Uploaded</b> slot. Uploading does not modify or replace the built-in NQ1 or ES1 data. After importing, choose <b>User Uploaded</b> from the contract dropdown on the chart. A later upload replaces only the User Uploaded slot.</p><button id="sample" class="primary" style="width:100%">Reload selected data</button></div>
-  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.11.7<br>Build: Popup Scroll Fix<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="footerLink">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>Trade-log bias is calculated at entry using the last completed 1-hour Supertrend candle with ATR length 12 and multiplier 3.5. The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
+  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.11.9<br>Build: Tag Library & Search<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="footerLink">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>Trade-log bias is calculated at entry using the last completed 1-hour Supertrend candle with ATR length 12 and multiplier 3.5. The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, and practice statistics may be saved locally in your browser storage. The creator does not receive your simulator stats from this static site.</p></div>
   <div class="legalBlock"><h3>Terms of use / disclaimer</h3><p>This simulator is provided only for private education, chart replay, journaling, and practice. It is not a brokerage platform, signal service, financial adviser, investment adviser, prop-firm service, or trading recommendation system. Nothing in this simulator should be interpreted as financial, investment, tax, legal, brokerage, prop-firm, or trading advice.</p><p>Historical, simulated, and hypothetical results are not real trading results and are not guarantees or predictions of future performance. Simulated trading cannot fully account for slippage, liquidity, commissions, execution delays, emotional pressure, live-market conditions, or real financial risk. Market data may be incomplete, delayed, inaccurate, adjusted, imported from third-party files, or provided only for private educational testing. Do not copy, resell, republish, or redistribute market data from this site. Futures, stocks, options, and other financial instruments involve substantial risk, including the risk of losing more than expected. You are solely responsible for any real trading decisions you make outside this simulator.</p><p>This software is provided “as is” and “as available,” without warranties of any kind. Use it at your own risk. The author is not responsible for trading losses, missed trades, data errors, software bugs, browser issues, or decisions made based on simulator output.</p><h3>Privacy</h3><p>This browser-based simulator is hosted as a static site. It does not create accounts, collect payments, sell personal information, or intentionally send your trades, settings, or performance stats to the site owner. Settings, simulator preferences, and performance statistics may be saved locally in your browser storage so the simulator can remember them on this computer. Your browser and hosting provider may still process standard technical data needed to load the site.</p><p>If you clear browser data, use another browser, or open the simulator on another computer, locally saved settings and stats may not carry over.</p><h3>Cookies / local storage</h3><p>This site does not intentionally use advertising cookies, tracking cookies, analytics cookies, or third-party marketing pixels. It may use browser local storage or similar local browser storage only to remember simulator settings and practice statistics. If this site is modified later or connected to third-party services, this notice should be updated to accurately describe those changes.</p></div>
 </aside>
  <button class="hideBtn" id="hide" title="Simulator settings">⚙</button>
@@ -448,7 +454,7 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
  <div class="sideResize" id="sideResize" title="Drag to resize settings panel"></div>
  <section class="chartWrap dark" id="wrap">
   <canvas id="chart"></canvas><canvas id="draw"></canvas>
-  <div class="leftTools"><button class="tool active" data-tool="cursor" data-tip="Cursor"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3"/></svg></button><button class="tool" data-tool="line" data-tip="Trend line"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5"/><circle cx="5" cy="19" r="1.6"/><circle cx="19" cy="5" r="1.6"/></svg></button><button class="tool" data-tool="rect" data-tip="Rectangle"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6" width="14" height="12" rx="1"/></svg></button><button class="tool" data-tool="erase" data-tip="Eraser: delete one drawing"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.2 13.7 5.5a2.1 2.1 0 0 1 3 0l2.1 2.1a2.1 2.1 0 0 1 0 3L10.6 18.8H4v-3.6Z"/><path d="M10.6 18.8h9"/></svg></button><button class="tool" id="clearDrawings" data-tip="Clear all drawings"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l-.7 11.2A2 2 0 0 1 14.3 21H9.7a2 2 0 0 1-2-1.8L7 8Z"/><path d="M5 8h14M9 8V5.8A1.8 1.8 0 0 1 10.8 4h2.4A1.8 1.8 0 0 1 15 5.8V8M10 11v6M14 11v6"/></svg></button><button class="tool indTool panelTool" id="emaBtn" data-ind="ema" data-tip="EMA / DEMA">EMA</button><button class="tool indTool panelTool" id="stBtn" data-ind="st" data-tip="Supertrend">ST</button><button class="tool indTool panelTool" id="sessionsBtn" data-ind="sessions" data-tip="Sessions">SES</button><button class="tool soundOn utilityTool" id="soundToggle" data-tip="Sound on/off"><svg class="toolIcon soundOnIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="M15 9a4 4 0 0 1 0 6M17.5 6.5a8 8 0 0 1 0 11"/></svg><svg class="toolIcon soundOffIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="m16 9 5 5M21 9l-5 5"/></svg></button><button class="tool chartSettingsTool panelTool" id="chartSettingsBtn" data-tip="Chart Settings" aria-label="Chart Settings"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a2 2 0 0 1 2 2v.2a7.2 7.2 0 0 1 1.7 1l.2-.1a2 2 0 0 1 2.7.7l.4.7a2 2 0 0 1-.7 2.7l-.2.1c.1.5.1 1 .1 1.5s0 1-.1 1.5l.2.1a2 2 0 0 1 .7 2.7l-.4.7a2 2 0 0 1-2.7.7l-.2-.1a7.2 7.2 0 0 1-1.7 1v.2a2 2 0 0 1-2 2h-.8a2 2 0 0 1-2-2v-.2a7.2 7.2 0 0 1-1.7-1l-.2.1a2 2 0 0 1-2.7-.7l-.4-.7a2 2 0 0 1 .7-2.7l.2-.1A7.8 7.8 0 0 1 5 12c0-.5 0-1 .1-1.5l-.2-.1a2 2 0 0 1-.7-2.7l.4-.7a2 2 0 0 1 2.7-.7l.2.1a7.2 7.2 0 0 1 1.7-1v-.2a2 2 0 0 1 2-2H12Z"/><circle cx="11.6" cy="12" r="3"/></svg></button><div class="mobileLandscapeControls" aria-label="Landscape chart controls"><select id="mobileTfSelect" data-tip="Timeframe"><option value="1">1m</option><option value="5">5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select></div></div>
+  <div class="leftTools"><button class="tool active" data-tool="cursor" data-tip="Cursor"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3"/></svg></button><button class="tool" data-tool="line" data-tip="Trend line"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5"/><circle cx="5" cy="19" r="1.6"/><circle cx="19" cy="5" r="1.6"/></svg></button><button class="tool" data-tool="rect" data-tip="Rectangle"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6" width="14" height="12" rx="1"/></svg></button><button class="tool" data-tool="text" data-tip="Text"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14M12 5v14M8.5 19h7"/></svg></button><button class="tool" data-tool="erase" data-tip="Eraser: delete one drawing"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.2 13.7 5.5a2.1 2.1 0 0 1 3 0l2.1 2.1a2.1 2.1 0 0 1 0 3L10.6 18.8H4v-3.6Z"/><path d="M10.6 18.8h9"/></svg></button><button class="tool" id="clearDrawings" data-tip="Clear all drawings"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10l-.7 11.2A2 2 0 0 1 14.3 21H9.7a2 2 0 0 1-2-1.8L7 8Z"/><path d="M5 8h14M9 8V5.8A1.8 1.8 0 0 1 10.8 4h2.4A1.8 1.8 0 0 1 15 5.8V8M10 11v6M14 11v6"/></svg></button><button class="tool indTool panelTool" id="emaBtn" data-ind="ema" data-tip="EMA / DEMA">EMA</button><button class="tool indTool panelTool" id="stBtn" data-ind="st" data-tip="Supertrend">ST</button><button class="tool indTool panelTool" id="sessionsBtn" data-ind="sessions" data-tip="Sessions">SES</button><button class="tool soundOn utilityTool" id="soundToggle" data-tip="Sound on/off"><svg class="toolIcon soundOnIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="M15 9a4 4 0 0 1 0 6M17.5 6.5a8 8 0 0 1 0 11"/></svg><svg class="toolIcon soundOffIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="m16 9 5 5M21 9l-5 5"/></svg></button><button class="tool chartSettingsTool panelTool" id="chartSettingsBtn" data-tip="Chart Settings" aria-label="Chart Settings"><svg class="toolIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a2 2 0 0 1 2 2v.2a7.2 7.2 0 0 1 1.7 1l.2-.1a2 2 0 0 1 2.7.7l.4.7a2 2 0 0 1-.7 2.7l-.2.1c.1.5.1 1 .1 1.5s0 1-.1 1.5l.2.1a2 2 0 0 1 .7 2.7l-.4.7a2 2 0 0 1-2.7.7l-.2-.1a7.2 7.2 0 0 1-1.7 1v.2a2 2 0 0 1-2 2h-.8a2 2 0 0 1-2-2v-.2a7.2 7.2 0 0 1-1.7-1l-.2.1a2 2 0 0 1-2.7-.7l-.4-.7a2 2 0 0 1 .7-2.7l.2-.1A7.8 7.8 0 0 1 5 12c0-.5 0-1 .1-1.5l-.2-.1a2 2 0 0 1-.7-2.7l.4-.7a2 2 0 0 1 2.7-.7l.2.1a7.2 7.2 0 0 1 1.7-1v-.2a2 2 0 0 1 2-2H12Z"/><circle cx="11.6" cy="12" r="3"/></svg></button><div class="mobileLandscapeControls" aria-label="Landscape chart controls"><select id="mobileTfSelect" data-tip="Timeframe"><option value="1">1m</option><option value="5">5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select></div></div>
   <div class="chartHead"><span class="symbol" id="headSym"><select id="chartSymbol" class="chartSymbolSelect"><option value="MNQ">Micro E-mini Nasdaq-100 Index Futures</option><option value="NQ" selected>E-mini Nasdaq-100 Index Futures</option><option value="MES">Micro E-mini S&amp;P 500 Index Futures</option><option value="ES">E-mini S&amp;P 500 Index Futures</option><option value="CUSTOM">User Uploaded</option></select><span id="headTf" class="headTf">· 5</span></span></div>
   <div class="bidask"><div class="box sell" id="sellBox">SELL<br>--</div><div style="align-self:center">0.50</div><div class="box buy" id="buyBox">BUY<br>--</div></div>
   <div class="autoTimer" id="autoTimer">Manual</div>
@@ -472,7 +478,7 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
       <div class="metric"><span>R:R</span><b id="rrTxt">--</b></div>
     </div>
     <div class="small" style="margin-top:7px;color:#8d99aa;align-self:flex-start">Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="footerLink">@_aidan_w</a><span style="color:#657184"> -- </span><a href="https://discord.gg/P9Akxd2epU" target="_blank" rel="noopener noreferrer" class="footerLink">Join Trading Discord</a></div>
-    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.11.7</div>
+    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.11.9</div>
   </div>
   <div class="bottomBlock">
     <div class="bottomTitle">Replay controls</div>
@@ -2051,7 +2057,14 @@ const CUSTOM_META_KEY='replayTraderCustomDataMetaV1';
 const CUSTOM_DB_NAME='ReplayTraderCustomData';
 const CUSTOM_DB_STORE='datasets';
 const HOW_IT_WORKS_KEY='replayTraderHowItWorksSeenV1';
-const SETUP_TAGS=['Liquidity Sweep','IFVG','Opening Range Breakout','Continuation','Reversal','Order Block','Rejection Block','Break of Structure','Protected High','Protected Low','Unprotected High','Unprotected Low'];
+const TAG_CATEGORIES=[
+ {name:'Liquidity',tags:['Liquidity Sweep','Key Level Sweep','Order Block Mitigation','Order Block Target','Protected Key Level','Unprotected Key Level']},
+ {name:'Setup',tags:['IFVG','Opening Range Breakout']},
+ {name:'Direction',tags:['Continuation','Reversal']},
+ {name:'Structure',tags:['Break of Structure','Double Top','Double Bottom','Head & Shoulders','Inverse Head & Shoulders','Bull Flag','Bear Flag','Choppy','Consolidation','Trending','High Volatility']}
+];
+const SETUP_TAGS=TAG_CATEGORIES.flatMap(g=>g.tags);
+const TAG_ALIASES={'Protected High':'Protected Key Level','Protected Low':'Protected Key Level','Unprotected High':'Unprotected Key Level','Unprotected Low':'Unprotected Key Level','Order Block':'Order Block Target'};
 let focusFilterValue='any';
 let customDataText=null;
 let customDataMeta=null;
@@ -2262,9 +2275,19 @@ function setupStatsByTag(records){let m=new Map();for(const r of records){let ta
 function tagsHtml(tags){if(!Array.isArray(tags)||!tags.length)return'<span class="muted">--</span>';return tags.map(t=>'<span class="logTagPill">'+escapeHtml(t)+'</span>').join('')}
 renderTradeLog=function(){let filled=tradeLog.filter(r=>r.filled&&r.pnl!==null),wins=filled.filter(r=>r.pnl>0),net=filled.reduce((a,r)=>a+(+r.pnl||0),0),avgR=filled.length?filled.reduce((a,r)=>a+(+r.realizedR||0),0)/filled.length:0,avgMin=filled.length?filled.reduce((a,r)=>a+(+r.durationMinutes||0),0)/filled.length:0;let cards=[['Logged attempts',tradeLog.length],['Filled trades',filled.length],['Win rate',filled.length?Math.round(wins.length/filled.length*100)+'%':'--'],['Net P/L',money(net)],['Average R',filled.length?avgR.toFixed(2)+'R':'--'],['Avg duration',filled.length?Math.round(avgMin)+' min':'--']];$('logSummary').innerHTML=cards.map(x=>'<div class="logCard"><span>'+x[0]+'</span><b>'+x[1]+'</b></div>').join('');$('logByTimeframe').innerHTML=statsMiniTable(groupTradeStats(filled,r=>(r.timeframe>=60?(r.timeframe/60)+'h':r.timeframe+'m')));$('logByTime').innerHTML=statsMiniTable(groupTradeStats(filled,r=>timeBucket(r.decisionTs)));$('logBySide').innerHTML=statsMiniTable(groupTradeStats(filled,r=>r.side==='long'?'Long':'Short'));$('logByBias').innerHTML=statsMiniTable(groupTradeStats(filled,r=>r.bias||'Unknown'));if($('logBySetup'))$('logBySetup').innerHTML=statsMiniTable(setupStatsByTag(filled));let rows=$('tradeLogRows');if(!tradeLog.length){rows.innerHTML='<tr><td colspan="23" class="logEmpty">No trades have been logged yet.</td></tr>';return}rows.innerHTML=tradeLog.map(r=>{let p=dateParts(r.decisionTs),cls=r.pnl>0?'logWin':r.pnl<0?'logLoss':'logFlat',tfLabel=r.timeframe>=60?(r.timeframe/60)+'h':r.timeframe+'m';return '<tr><td>'+p.date+'</td><td>'+p.time+'</td><td>'+p.day+'</td><td>'+escapeHtml(r.symbol)+'</td><td>'+tfLabel+'</td><td>'+escapeHtml(r.side==='long'?'Long':'Short')+'</td><td>'+escapeHtml(r.bias||'--')+'</td><td class="logTagCell">'+tagsHtml(r.tags)+'</td><td>'+r.contracts+'</td><td>'+Number(r.entry).toFixed(2)+'</td><td>'+Number(r.stop).toFixed(2)+'</td><td>'+Number(r.target).toFixed(2)+'</td><td>'+money(r.dollarRisk||0)+'</td><td>'+Number(r.plannedRR||0).toFixed(2)+'</td><td>'+escapeHtml(r.outcome)+'</td><td>'+(r.exitPrice==null?'--':Number(r.exitPrice).toFixed(2))+'</td><td class="'+cls+'">'+(r.pnl==null?'--':money(r.pnl))+'</td><td>'+(r.realizedR==null?'--':Number(r.realizedR).toFixed(2)+'R')+'</td><td>'+(r.durationMinutes==null?'--':Math.round(r.durationMinutes)+'m')+'</td><td>'+(r.timeframeCandles??'--')+'</td><td>'+(r.oneMinuteBars??'--')+'</td><td>'+escapeHtml(r.mode)+'</td><td><button class="logDeleteBtn" data-delete-trade="'+escapeHtml(r.id)+'" title="Remove this trade from the saved log">Delete</button></td></tr>'}).join('')}
 exportTradeLogCSV=function(){if(!tradeLog.length){toast('No logged trades to export.','warn');return}let cols=['decision_time','day','symbol','contract','timeframe_minutes','side','bias_1h','setup_tags','bias_atr_length','bias_multiplier','contracts','entry','stop','target','dollar_risk','planned_reward','planned_rr','filled','fill_time','outcome','exit_time','exit_price','net_pnl','realized_r','duration_minutes','timeframe_candles','one_minute_bars','drill_mode','reveal_speed','account_size','trail_mode'];let q=v=>'"'+String(v??'').replace(/"/g,'""')+'"',lines=[cols.join(',')];for(const r of tradeLog){let p=dateParts(r.decisionTs),obj={decision_time:new Date(r.decisionTs).toISOString(),day:p.day,symbol:r.symbol,contract:r.contract,timeframe_minutes:r.timeframe,side:r.side,bias_1h:r.bias||'',setup_tags:(Array.isArray(r.tags)?r.tags:[]).join('; '),bias_atr_length:r.biasAtrLength||12,bias_multiplier:r.biasMultiplier||3.5,contracts:r.contracts,entry:r.entry,stop:r.stop,target:r.target,dollar_risk:r.dollarRisk,planned_reward:r.plannedReward,planned_rr:r.plannedRR,filled:r.filled,fill_time:r.fillTs?new Date(r.fillTs).toISOString():'',outcome:r.outcome,exit_time:r.exitTs?new Date(r.exitTs).toISOString():'',exit_price:r.exitPrice,net_pnl:r.pnl,realized_r:r.realizedR,duration_minutes:r.durationMinutes,timeframe_candles:r.timeframeCandles,one_minute_bars:r.oneMinuteBars,drill_mode:r.mode,reveal_speed:r.revealSpeed,account_size:r.accountSize,trail_mode:r.trailMode};lines.push(cols.map(c=>q(obj[c])).join(','))}let blob=new Blob([lines.join('\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='replay-trader-trade-log-'+new Date().toISOString().slice(0,10)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
-function openTagPopup(tradeId,anchor){let rec=tradeById(tradeId),pop=$('tagPopup'),wrapTags=$('tagChipWrap');if(!rec||!pop||!wrapTags)return;if(!Array.isArray(rec.tags))rec.tags=[];pop.dataset.tradeId=rec.id;wrapTags.innerHTML=SETUP_TAGS.map(tag=>'<button type="button" class="tagChip '+(rec.tags.includes(tag)?'active':'')+'" data-tag="'+escapeHtml(tag)+'">'+escapeHtml(tag)+'</button>').join('');pop.classList.add('show');pop.setAttribute('aria-hidden','false');let r=anchor.getBoundingClientRect(),pw=Math.min(350,innerWidth-20);pop.style.width=pw+'px';requestAnimationFrame(()=>{let ph=pop.offsetHeight,left=Math.max(10,Math.min(innerWidth-pw-10,r.right-pw)),top=r.top-ph-7;if(top<10)top=Math.min(innerHeight-ph-10,r.bottom+7);pop.style.left=left+'px';pop.style.top=Math.max(10,top)+'px'})}
-function closeTagPopup(){let pop=$('tagPopup');if(pop){pop.classList.remove('show');pop.setAttribute('aria-hidden','true');delete pop.dataset.tradeId}}
-function toggleTradeTag(tag){let pop=$('tagPopup'),rec=pop?tradeById(pop.dataset.tradeId):null;if(!rec)return;if(!Array.isArray(rec.tags))rec.tags=[];if(rec.tags.includes(tag))rec.tags=rec.tags.filter(t=>t!==tag);else rec.tags.push(tag);persistTradeLog();renderRecent();if($('tradeLogOverlay')?.classList.contains('show'))renderTradeLog();pop.querySelectorAll('.tagChip').forEach(b=>b.classList.toggle('active',rec.tags.includes(b.dataset.tag)))}
+function canonicalTagName(tag){return TAG_ALIASES[tag]||tag}
+function migrateRenamedSetupTags(){let changed=false;for(const rec of tradeLog){if(!Array.isArray(rec.tags))continue;let next=[];for(const rawTag of rec.tags){let tag=canonicalTagName(rawTag);if(!next.includes(tag))next.push(tag)}if(next.length!==rec.tags.length||next.some((t,i)=>t!==rec.tags[i])){rec.tags=next;changed=true}}if(changed)persistTradeLog()}
+function tagUsageCounts(){let counts=new Map(SETUP_TAGS.map(t=>[t,0]));for(const rec of tradeLog){if(!Array.isArray(rec.tags))continue;for(const rawTag of rec.tags){let tag=canonicalTagName(rawTag);if(counts.has(tag))counts.set(tag,(counts.get(tag)||0)+1)}}return counts}
+function tagChipHtml(tag,rec){return '<button type="button" class="tagChip '+(rec.tags.includes(tag)?'active':'')+'" data-tag="'+escapeHtml(tag)+'">'+escapeHtml(tag)+'</button>'}
+function renderTagPopupContent(){let pop=$('tagPopup'),wrapTags=$('tagChipWrap'),input=$('tagSearchInput'),rec=pop?tradeById(pop.dataset.tradeId):null;if(!pop||!wrapTags||!rec)return;if(!Array.isArray(rec.tags))rec.tags=[];let q=String(input?.value||'').trim().toLowerCase();if(q){let matches=SETUP_TAGS.filter(tag=>tag.toLowerCase().includes(q));wrapTags.innerHTML='<section class="tagSection"><div class="tagSectionTitle"><span>Search Results</span><span class="tagSectionHint">'+matches.length+' found</span></div>'+(matches.length?'<div class="tagChips">'+matches.map(tag=>tagChipHtml(tag,rec)).join('')+'</div>':'<div class="tagEmpty">No tags match your search.</div>')+'</section>';return}
+ let counts=tagUsageCounts(),frequent=SETUP_TAGS.filter(tag=>(counts.get(tag)||0)>0).sort((a,b)=>(counts.get(b)||0)-(counts.get(a)||0)||a.localeCompare(b)).slice(0,6);
+ let html='<section class="tagSection"><div class="tagSectionTitle"><span>Frequently Used</span><span class="tagSectionHint">Top 6</span></div>'+(frequent.length?'<div class="tagChips">'+frequent.map(tag=>tagChipHtml(tag,rec)).join('')+'</div>':'<div class="tagEmpty">Your most-used tags will appear here.</div>')+'</section>';
+ for(const group of TAG_CATEGORIES)html+='<section class="tagSection"><div class="tagSectionTitle"><span>'+escapeHtml(group.name)+'</span></div><div class="tagChips">'+group.tags.map(tag=>tagChipHtml(tag,rec)).join('')+'</div></section>';
+ wrapTags.innerHTML=html
+}
+function openTagPopup(tradeId,anchor){let rec=tradeById(tradeId),pop=$('tagPopup'),wrapTags=$('tagChipWrap'),search=$('tagSearchInput');if(!rec||!pop||!wrapTags)return;if(!Array.isArray(rec.tags))rec.tags=[];pop.dataset.tradeId=rec.id;if(search)search.value='';renderTagPopupContent();pop.classList.add('show');pop.setAttribute('aria-hidden','false');wrapTags.scrollTop=0;let r=anchor.getBoundingClientRect(),pw=Math.min(innerWidth>=700?440:370,innerWidth-(innerWidth>=700?20:16));pop.style.width=pw+'px';requestAnimationFrame(()=>{let ph=pop.offsetHeight,left=Math.max(8,Math.min(innerWidth-pw-8,r.right-pw)),top=r.top-ph-7;if(top<8)top=Math.min(innerHeight-ph-8,r.bottom+7);pop.style.left=left+'px';pop.style.top=Math.max(8,top)+'px'})}
+function closeTagPopup(){let pop=$('tagPopup');if(pop){pop.classList.remove('show');pop.setAttribute('aria-hidden','true');delete pop.dataset.tradeId}if($('tagSearchInput'))$('tagSearchInput').value=''}
+function toggleTradeTag(tag){let pop=$('tagPopup'),rec=pop?tradeById(pop.dataset.tradeId):null;if(!rec||!SETUP_TAGS.includes(tag))return;if(!Array.isArray(rec.tags))rec.tags=[];if(rec.tags.includes(tag))rec.tags=rec.tags.filter(t=>t!==tag);else rec.tags.push(tag);persistTradeLog();renderRecent();if($('tradeLogOverlay')?.classList.contains('show'))renderTradeLog();pop.querySelectorAll('.tagChip').forEach(b=>b.classList.toggle('active',rec.tags.includes(b.dataset.tag)))}
 
 /* Account/log synchronization ------------------------------------- */
 applyAccountPreset=function(resetPeak=false){let p=selectedAccountPreset(),mode=$('trailMode')?.value||'eod';if($('accountSize'))$('accountSize').value=p.balance;if($('loss'))$('loss').value=p.daily;if($('trailLimit'))$('trailLimit').value=p.trail;if($('lossDisplay'))$('lossDisplay').textContent=p.daily?money(p.daily):'None';if($('trailDisplay'))$('trailDisplay').textContent=money(p.trail);const changed=stats.accountSize!==p.balance||stats.accountMode!==mode;if(resetPeak||changed||!stats.peakEquity){stats.accountSize=p.balance;stats.accountMode=mode;stats.peakEquity=p.balance+Math.max(0,+stats.net||0)}updateStats();drawAll();savePrefs()};
@@ -2297,7 +2320,7 @@ function initV711Ui(){
  $('howWorksTop').onclick=()=>openHowItWorks(false);$('howWorksClose').onclick=()=>closeHowItWorks(false);$('howWorksStart').onclick=()=>closeHowItWorks(true);$('howWorksOverlay').onclick=e=>{if(e.target===$('howWorksOverlay')&&!$('howWorksOverlay').classList.contains('firstRun'))closeHowItWorks(false)};
  $('welcomeStart')?.addEventListener('click',()=>setTimeout(maybeShowFirstRunGuide,80));$('welcomePassword')?.addEventListener('keydown',e=>{if(e.key==='Enter')setTimeout(maybeShowFirstRunGuide,80)});setTimeout(maybeShowFirstRunGuide,260);
  // Tags.
- $('recentTrades').onclick=e=>{let row=e.target.closest?.('.recentItem[data-trade-id]');if(row)openTagPopup(row.dataset.tradeId,row)};$('tagChipWrap').onclick=e=>{let b=e.target.closest?.('.tagChip');if(b)toggleTradeTag(b.dataset.tag)};$('tagPopupClose').onclick=closeTagPopup;document.addEventListener('pointerdown',e=>{let pop=$('tagPopup');if(pop?.classList.contains('show')&&!e.target.closest('#tagPopup')&&!e.target.closest('.recentItem[data-trade-id]'))closeTagPopup()});
+ $('recentTrades').onclick=e=>{let row=e.target.closest?.('.recentItem[data-trade-id]');if(row)openTagPopup(row.dataset.tradeId,row)};$('tagChipWrap').onclick=e=>{let b=e.target.closest?.('.tagChip');if(b)toggleTradeTag(b.dataset.tag)};if($('tagSearchInput'))$('tagSearchInput').addEventListener('input',renderTagPopupContent);$('tagPopupClose').onclick=closeTagPopup;document.addEventListener('pointerdown',e=>{let pop=$('tagPopup');if(pop?.classList.contains('show')&&!e.target.closest('#tagPopup')&&!e.target.closest('.recentItem[data-trade-id]'))closeTagPopup()});
  // Focus filter.
  $('focusFilterBtn').onclick=e=>{e.stopPropagation();setFocusMenu(!$('focusFilterMenu').classList.contains('show'))};$('focusFilterMenu').onclick=e=>{let b=e.target.closest?.('.focusOption');if(!b)return;focusFilterValue=b.dataset.focus||'any';syncFocusFilterUi();setFocusMenu(false);savePrefs();$('bottomMsg').textContent='Focus changed to '+focusLabel(focusFilterValue)+' — new scenario loaded.';if(newWindow()&&autoMode)startPhase(isManualDrill()?'trade':'look')};document.addEventListener('pointerdown',e=>{if(!e.target.closest('#focusFilterWrap')&&!e.target.closest('#focusFilterMenu'))setFocusMenu(false)});addEventListener('resize',positionFocusMenu);
  // Indicator + chart settings panels.
@@ -2424,7 +2447,148 @@ function initV7114Ui(){
 }
 /* ================== end v7.11.5 account bookkeeping ================= */
 
-loadPrefs();stats.peakEquity=Math.max(stats.peakEquity,accountSize());renderRecent();updateAutoScaleButton();loadSelectedMarket($('symbol').value);initMobileGui();initWelcomeAndSound();initV711Ui();initV7114Ui();attachPrefsAutosave();setActionState();resize();setTimeout(closeSidebarWithHint,5000);setTimeout(showBottomResizeHint,60000);initMobileTouchControls();initManualMobileNextButton();
+
+
+/* ==================== v7.11.8 text drawing tool ==================== */
+let activeTextEditor=null,activeTextEditorIndex=-1,activeTextEditorNew=false,activeTextEditorOriginal='';
+
+// Text drawings carry a little more state than line/rectangle drawings.
+// Keep clone/copy/undo generic so all current and future drawing fields survive.
+cloneDrawing=function(g){return g?{...g}:null};
+cloneDrawingList=function(){return drawings.map(cloneDrawing)};
+
+function textDrawingBounds(g){
+ let x1=xOfTime(g.t1),x2=xOfTime(g.t2),y1=yOf(g.p1),y2=yOf(g.p2);
+ return{l:Math.min(x1,x2),r:Math.max(x1,x2),t:Math.min(y1,y2),b:Math.max(y1,y2),w:Math.max(1,Math.abs(x2-x1)),h:Math.max(1,Math.abs(y2-y1))};
+}
+function textFontSize(g){let b=textDrawingBounds(g);return Math.max(10,Math.min(72,16*(b.h/48)))}
+function canvasLuminanceAt(x,y){
+ try{
+  let px=ctx.getImageData(Math.max(0,Math.min(ctx.canvas.width-1,Math.round(x))),Math.max(0,Math.min(ctx.canvas.height-1,Math.round(y))),1,1).data;
+  let vals=[px[0],px[1],px[2]].map(v=>{v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4)});
+  return .2126*vals[0]+.7152*vals[1]+.0722*vals[2];
+ }catch(e){return wrap.classList.contains('dark')?.12:.75}
+}
+function autoTextColors(g){
+ let b=textDrawingBounds(g),lum=canvasLuminanceAt((b.l+b.r)/2,(b.t+b.b)/2);
+ return lum>.44?{fill:'#111827',outline:'rgba(255,255,255,.72)',editorLight:true}:{fill:'#f8fafc',outline:'rgba(0,0,0,.78)',editorLight:false};
+}
+function wrappedTextLines(text,maxWidth,fontSize){
+ let out=[],paras=String(text||'').replace(/\r/g,'').split('\n');
+ ctx.font=`600 ${fontSize}px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif`;
+ for(let pi=0;pi<paras.length;pi++){
+  let para=paras[pi];
+  if(!para){out.push('');continue}
+  let words=para.split(/\s+/),line='';
+  for(const word of words){
+   let test=line?line+' '+word:word;
+   if(line&&ctx.measureText(test).width>maxWidth){out.push(line);line=word}else line=test;
+  }
+  if(line)out.push(line);
+ }
+ return out;
+}
+function drawTextDrawing(g,idx,hot,selected,fade){
+ let b=textDrawingBounds(g),fs=textFontSize(g),pad=Math.max(3,fs*.22),lineH=fs*1.18,colors=autoTextColors(g),editing=activeTextEditor&&activeTextEditorIndex===idx;
+ ctx.save();
+ ctx.globalAlpha=hot?1:(.96-(.42*fade));
+ // Only show a box when the text object is selected/targeted. Otherwise it is true chart text.
+ if(selected||hot){
+  ctx.strokeStyle=hot?'#dbeafe':'#60a5fa';ctx.lineWidth=selected?1.5:2;ctx.setLineDash(selected?[4,4]:[]);ctx.strokeRect(b.l,b.t,b.w,b.h);ctx.setLineDash([]);
+ }
+ if(!editing&&String(g.text||'').length){
+  ctx.beginPath();ctx.rect(b.l,b.t,b.w,b.h);ctx.clip();
+  let lines=wrappedTextLines(g.text,Math.max(8,b.w-pad*2),fs),y=b.t+pad+fs;
+  ctx.font=`600 ${fs}px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif`;
+  ctx.textBaseline='alphabetic';ctx.lineJoin='round';ctx.lineWidth=Math.max(2,fs*.16);
+  for(const line of lines){
+   if(y>b.b+fs*.15)break;
+   ctx.strokeStyle=colors.outline;ctx.strokeText(line,b.l+pad,y);
+   ctx.fillStyle=colors.fill;ctx.fillText(line,b.l+pad,y);y+=lineH;
+  }
+ }
+ ctx.restore();
+}
+
+// Extend the existing drawing renderer without changing line/rectangle behavior.
+drawDrawings=function(){
+ ctx.lineWidth=2;const p=appearancePalette(),list=drawings.concat(draft?[draft]:[]);
+ for(let idx=0;idx<list.length;idx++){
+  const g=list[idx];let x1=xOfTime(g.t1),x2=xOfTime(g.t2),y1=yOf(g.p1),y2=yOf(g.p2),hot=(tool==='erase'&&idx===hoverDrawing),selected=(idx===selectedDrawing&&g!==draft),fade=(g===draft)?0:reviewDrawFade;
+  if(g.type==='text'){drawTextDrawing(g,idx,hot,selected,fade);continue}
+  const base=g.type==='rect'?p.rect:p.line;
+  ctx.strokeStyle=hot?'#dbeafe':(selected?'#60a5fa':mixHex(base,'#d49a33',fade));ctx.lineWidth=(hot||selected)?3:2;ctx.globalAlpha=hot?1:(.92-(.42*fade));
+  if(g.type==='line'){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
+  else{let l=Math.min(x1,x2),t=Math.min(y1,y2),w=Math.abs(x2-x1),h=Math.abs(y2-y1);if(+p.rectOpacity>0){ctx.save();ctx.globalAlpha=Math.max(0,Math.min(.25,+p.rectOpacity));ctx.fillStyle=p.rect;ctx.fillRect(l,t,w,h);ctx.restore();ctx.globalAlpha=hot?1:(.92-(.42*fade))}ctx.strokeRect(l,t,w,h);if(fade>0){ctx.globalAlpha=.08*fade;ctx.fillStyle='#d49a33';ctx.fillRect(l,t,w,h);ctx.globalAlpha=hot?1:(.92-(.42*fade))}}
+ }
+ ctx.globalAlpha=1;ctx.lineWidth=2;
+ if(selectedDrawing>=0&&selectedDrawing<drawings.length){ctx.save();ctx.lineWidth=2;ctx.strokeStyle='#60a5fa';ctx.fillStyle='#f8fafc';for(const h of drawingHandlePoints(drawings[selectedDrawing])){ctx.beginPath();ctx.arc(h.x,h.y,5,0,Math.PI*2);ctx.fill();ctx.stroke()}ctx.restore()}
+};
+
+function closeTextEditor({commit=true,cancelNew=false}={}){
+ if(!activeTextEditor)return;
+ let editor=activeTextEditor,index=activeTextEditorIndex,isNew=activeTextEditorNew,original=activeTextEditorOriginal,value=editor.value;
+ activeTextEditor=null;activeTextEditorIndex=-1;activeTextEditorNew=false;activeTextEditorOriginal='';
+ editor.remove();
+ if(index<0||index>=drawings.length){drawAll();return}
+ if(cancelNew&&isNew){drawings.splice(index,1);selectedDrawing=-1;if(drawingHistory.length)drawingHistory.pop();drawAll();return}
+ if(!commit){drawAll();return}
+ let trimmed=value.replace(/[ \t]+$/gm,'').trim();
+ if(!trimmed){
+  if(isNew){drawings.splice(index,1);selectedDrawing=-1;if(drawingHistory.length)drawingHistory.pop()}
+  else if(String(drawings[index].text||'')!==trimmed){pushDrawingHistory();drawings.splice(index,1);selectedDrawing=-1}
+  drawAll();return;
+ }
+ if(!isNew&&trimmed!==original)pushDrawingHistory();
+ if(index<drawings.length){drawings[index].text=trimmed;selectedDrawing=index}
+ drawAll();
+}
+function positionTextEditor(){
+ if(!activeTextEditor)return;
+ if(activeTextEditorIndex<0||activeTextEditorIndex>=drawings.length){let ed=activeTextEditor;activeTextEditor=null;activeTextEditorIndex=-1;ed.remove();return}
+ let g=drawings[activeTextEditorIndex],b=textDrawingBounds(g),fs=textFontSize(g),colors=autoTextColors(g),ed=activeTextEditor;
+ ed.style.left=Math.round(b.l)+'px';ed.style.top=Math.round(b.t)+'px';ed.style.width=Math.max(92,Math.round(b.w))+'px';ed.style.height=Math.max(34,Math.round(b.h))+'px';ed.style.fontSize=fs+'px';ed.style.lineHeight='1.18';ed.classList.toggle('lightTextEditor',colors.editorLight);
+}
+function startTextEditor(index,isNew=false){
+ if(index<0||index>=drawings.length||drawings[index].type!=='text')return;
+ if(activeTextEditor)closeTextEditor({commit:true});
+ selectedDrawing=index;activeTextEditorIndex=index;activeTextEditorNew=!!isNew;activeTextEditorOriginal=String(drawings[index].text||'');
+ let ed=document.createElement('textarea');activeTextEditor=ed;ed.className='chartTextEditor';ed.value=activeTextEditorOriginal;ed.placeholder='Type chart note…';ed.setAttribute('aria-label','Edit chart text');ed.spellcheck=true;wrap.appendChild(ed);positionTextEditor();
+ const stop=e=>e.stopPropagation();['mousedown','mouseup','click','dblclick','wheel','touchstart','touchmove','touchend','touchcancel'].forEach(name=>ed.addEventListener(name,stop,{passive:name==='wheel'?false:undefined}));
+ ed.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeTextEditor({commit:!isNew,cancelNew:isNew})}else if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();e.stopPropagation();ed.blur()}});
+ ed.addEventListener('blur',()=>{if(activeTextEditor===ed)closeTextEditor({commit:true})},{once:true});
+ requestAnimationFrame(()=>{ed.focus();if(!isNew)ed.select()});
+ drawAll();
+}
+function createTextDrawingAt(x,y){
+ let mobile=document.documentElement.classList.contains('mobileUI'),scaleZone=mobile?64:124,plotRight=Math.max(80,wrap.clientWidth-scaleZone-8),plotBottom=Math.max(60,wrap.clientHeight-30),w=mobile?150:180,h=48;
+ let l=Math.max(50,Math.min(x,plotRight-w)),t=Math.max(8,Math.min(y,plotBottom-h)),r=Math.min(plotRight,l+w),b=Math.min(plotBottom,t+h);
+ pushDrawingHistory();drawings.push({type:'text',t1:tOfX(l),p1:pOf(t),t2:tOfX(r),p2:pOf(b),text:''});selectedDrawing=drawings.length-1;hoverDrawing=-1;setToolMode('cursor');drawAll();startTextEditor(selectedDrawing,true);
+}
+function hitTextDrawingIndex(x,y){
+ for(let n=drawings.length-1;n>=0;n--){let g=drawings[n];if(g.type!=='text')continue;let b=textDrawingBounds(g);if(x>=b.l-8&&x<=b.r+8&&y>=b.t-8&&y<=b.b+8)return n}return-1;
+}
+
+// Intercept Text-tool placement before the normal pan/draw mousedown handler.
+wrap.addEventListener('mousedown',e=>{
+ if(tool!=='text'||e.button!==0)return;
+ if(e.target&&e.target.closest&&e.target.closest('button,select,input,textarea,.leftTools,.chartHead,.bidask,.autoTimer,.reviewBanner,.settingsPanel,.priceTag,.autoScaleBtn,.tzSelect'))return;
+ let r=wrap.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,scaleZone=document.documentElement.classList.contains('mobileUI')?64:124;
+ if(x>wrap.clientWidth-scaleZone)return;
+ e.preventDefault();e.stopImmediatePropagation();createTextDrawingAt(x,y);
+},true);
+wrap.addEventListener('dblclick',e=>{
+ if(e.target&&e.target.closest&&e.target.closest('button,select,input,textarea,.leftTools,.chartHead,.bidask,.autoTimer,.reviewBanner,.settingsPanel,.priceTag,.autoScaleBtn,.tzSelect'))return;
+ let r=wrap.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,n=hitTextDrawingIndex(x,y);if(n<0)return;
+ e.preventDefault();e.stopImmediatePropagation();selectedDrawing=n;drawingDrag=null;setToolMode('cursor');drawAll();startTextEditor(n,false);
+},true);
+
+// Keep an open text editor attached to its chart coordinates while the chart rerenders.
+const _v7118DrawAll=drawAll;
+drawAll=function(){_v7118DrawAll();positionTextEditor()};
+/* ================== end v7.11.8 text drawing tool ================== */
+
+loadPrefs();migrateRenamedSetupTags();stats.peakEquity=Math.max(stats.peakEquity,accountSize());renderRecent();updateAutoScaleButton();loadSelectedMarket($('symbol').value);initMobileGui();initWelcomeAndSound();initV711Ui();initV7114Ui();attachPrefsAutosave();setActionState();resize();setTimeout(closeSidebarWithHint,5000);setTimeout(showBottomResizeHint,60000);initMobileTouchControls();initManualMobileNextButton();
 
 </script>
 </body>
