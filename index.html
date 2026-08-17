@@ -50,7 +50,7 @@ html.mobileUI #autoStart.nextScenarioReady{animation:none;}
 .welcomeCard{width:min(520px,calc(100vw - 34px));background:linear-gradient(180deg,#121b26,#0c121a);border:1px solid #314154;border-radius:18px;box-shadow:0 30px 90px #000b;padding:26px 28px;text-align:left}
 .welcomeCard h1{margin:0 0 8px;font-size:28px;letter-spacing:.2px;color:#f8fafc}
 .welcomeCard p{margin:8px 0;color:#cbd5e1}.welcomeCard ul{margin:14px 0 20px;padding-left:22px;color:#dbeafe}.welcomeCard li{margin:6px 0}.welcomeCard .fine{font-size:12px;color:#94a3b8;margin-top:14px}
-.welcomeTerms{display:flex;gap:10px;align-items:flex-start;margin:16px 0 10px;padding:12px;border:1px solid #314154;border-radius:12px;background:#0d1520;color:#cbd5e1;font-size:12px;line-height:1.35}.welcomeTerms.flash,.welcomePasswordRow.flash{border-color:#ff4d5d;box-shadow:0 0 0 2px rgba(255,77,93,.28),0 0 20px rgba(255,77,93,.18)}.welcomePasswordRow{display:grid;grid-template-columns:1fr auto;gap:8px;margin:10px 0;padding:10px;border:1px solid #314154;border-radius:12px;background:#0d1520}.welcomePasswordRow input{width:100%;min-width:0}.welcomePasswordRow button{min-width:96px;font-weight:800}.welcomeError{display:none;margin:6px 0 10px;color:#fb7185;font-size:12px;font-weight:800}.welcomeError.show{display:block}
+.welcomeTerms{display:flex;gap:10px;align-items:flex-start;margin:16px 0 10px;padding:12px;border:1px solid #314154;border-radius:12px;background:#0d1520;color:#cbd5e1;font-size:12px;line-height:1.35}.welcomeTerms.flash,.welcomePasswordRow.flash{border-color:#ff4d5d;box-shadow:0 0 0 2px rgba(255,77,93,.28),0 0 20px rgba(255,77,93,.18)}.welcomePasswordRow{display:grid;grid-template-columns:1fr auto;gap:8px;margin:10px 0;padding:10px;border:1px solid #314154;border-radius:12px;background:#0d1520}.welcomePasswordRow input{width:100%;min-width:0}.welcomePasswordRow button{min-width:96px;font-weight:800}.welcomePasswordRow.noPassword{grid-template-columns:1fr}.welcomePasswordRow.noPassword input{display:none}.welcomePasswordRow.noPassword button{width:100%;min-height:42px}.welcomePasswordRow button:disabled{opacity:.58;cursor:wait}.welcomeError{display:none;margin:6px 0 10px;color:#fb7185;font-size:12px;font-weight:800}.welcomeError.show{display:block}
 .tool.soundOn{color:#60a5fa}.tool.soundOff{color:#94a3b8}
 
 
@@ -373,8 +373,8 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
       <li>Simulated and hypothetical results do not represent real trading results and do not guarantee or predict future performance.</li>
       <li>Trading involves risk. Any real trading decision made outside this simulator is your responsibility.</li>
     </ul>
-    <div class="welcomeTerms" id="welcomeTermsBox"><span>By entering the access password and using this site, you agree that this is only a private practice website and that you understand the terms listed above.</span></div>
-    <div class="welcomePasswordRow" id="welcomePasswordBox"><input id="welcomePassword" type="password" inputmode="numeric" autocomplete="off" placeholder="Access password" aria-label="Access password"><button id="welcomeStart" class="primary">Enter</button></div>
+    <div class="welcomeTerms" id="welcomeTermsBox"><span>By entering and using this site, you agree that this is only a private practice website and that you understand the terms listed above.</span></div>
+    <div class="welcomePasswordRow" id="welcomePasswordBox"><input id="welcomePassword" type="password" autocomplete="current-password" placeholder="Access password" aria-label="Access password"><button id="welcomeStart" class="primary">I Agree — Enter Site</button></div>
     <div class="welcomeError" id="welcomeError">Incorrect password. Please enter the access password to continue.</div>
     <p class="fine">Private educational simulator only. Not financial advice. Not affiliated with any broker, charting platform, exchange, index provider, market-data provider, or prop firm.</p>
   </div>
@@ -478,7 +478,7 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
   <div class="section"><h3>Session</h3><div style="display:none"><select id="tf"><option value="1">1m</option><option value="5" selected>5m</option><option value="15">15m</option><option value="60">1h</option><option value="240">4h</option></select><select id="days"><option value="1" selected>1 day</option></select><input id="reveal" type="hidden" value="50"><select id="gapMode"><option value="include" selected>Include all gaps</option></select><input id="gapPts" type="hidden" value="999999"><input id="gapBuffer" type="hidden" value="0"></div><p class="help">Timeframe is controlled from the chart toolbar. Scenarios open at a readable zoom, while additional pre-decision history is available for context: about 1 day on 1m, 2 days on 5m, 3 days on 15m, and 4 days on 1h/4h. Scenario selection never starts inside the maintenance break.</p><button id="random" class="primary" style="width:100%">New random window</button></div>
 
   <div class="section"><h3>Data <span id="loaded" class="status">built-in futures data ready</span></h3><div class="dataBuiltIn"><div class="dataLine"><b>NQ1 Continuous Futures</b><span>40,108 · 1-minute candles</span></div><div class="dataLine"><b>ES1 Continuous Futures</b><span>40,112 · 1-minute candles</span></div></div><input class="file" type="file" id="csv" accept=".csv"><div id="customDataMeta" class="customDataMeta">User Uploaded: Empty</div><div id="dataError" class="dataError"></div><p class="help">Upload a compatible 1-minute OHLC CSV to the separate <b>User Uploaded</b> slot. Uploading does not modify or replace the built-in NQ1 or ES1 data. After importing, choose <b>User Uploaded</b> from the contract dropdown on the chart. A later upload replaces only the User Uploaded slot.</p><button id="sample" class="primary" style="width:100%">Reload selected data</button></div>
-  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.16.2<br>Build: Guide Readability Refresh<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="footerLink">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>Trade-log bias is calculated at entry using the last completed 4-hour Supertrend candle with ATR length 12 and multiplier 3.5. The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, account bookkeeping, and the local Trade Log may be saved in your browser. When anonymous research sharing is enabled, simulated trade records are also sent to the Replay Trader research database as described below.</p></div>
+  <div class="section"><h3>About</h3><p class="help"><b style="color:#dbeafe">Replay Trader</b><br>Version 7.17.1<br>Build: Backend Access Overlay<br>Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="footerLink">@_aidan_w</a><br><br>This is a private, browser-based replay simulator built for educational chart practice and simulated trade review. It is not a broker, signal service, trading system, financial adviser, investment adviser, tax adviser, legal adviser, prop-firm service, or professional advice platform.<br><br>Trade-log bias is calculated at entry using the last completed 4-hour Supertrend candle with ATR length 12 and multiplier 3.5. The simulator may display historical, imported, sample, or market-style data for practice. Open positions are automatically liquidated and pending orders canceled at 4:59 PM ET, with the 5:00–6:00 PM ET maintenance break marked on the chart. Data and simulated results are provided only for private educational testing. Do not copy, resell, republish, or redistribute any market data from this site.<br><br>Settings, preferences, account bookkeeping, and the local Trade Log may be saved in your browser. When anonymous research sharing is enabled, simulated trade records are also sent to the Replay Trader research database as described below.</p></div>
   <div class="legalBlock"><h3>Privacy</h3><label class="researchShareRow" for="researchSharing"><input id="researchSharing" type="checkbox" checked><span><b>Share simulated trade data for aggregate research</b><span>Enabled by default. Contributes simulated trade records without a persistent user or browser identifier. Turn this off to stop future research submissions.</span></span></label><button id="openPrivacyPolicy" class="privacyPolicyBtn" type="button">View Privacy Policy</button></div>
   <div class="legalBlock"><h3>Terms of use / disclaimer</h3><p>This simulator is provided only for private education, chart replay, journaling, and practice. It is not a brokerage platform, signal service, financial adviser, investment adviser, prop-firm service, or trading recommendation system. Nothing in this simulator should be interpreted as financial, investment, tax, legal, brokerage, prop-firm, or trading advice.</p><p>Historical, simulated, and hypothetical results are not real trading results and are not guarantees or predictions of future performance. Simulated trading cannot fully account for slippage, liquidity, commissions, execution delays, emotional pressure, live-market conditions, or real financial risk. Market data may be incomplete, delayed, inaccurate, adjusted, imported from third-party files, or provided only for private educational testing. Do not copy, resell, republish, or redistribute market data from this site. Futures, stocks, options, and other financial instruments involve substantial risk, including the risk of losing more than expected. You are solely responsible for any real trading decisions you make outside this simulator.</p><p>This software is provided “as is” and “as available,” without warranties of any kind. Use it at your own risk. The author is not responsible for trading losses, missed trades, data errors, software bugs, browser issues, or decisions made based on simulator output.</p></div>
   <div class="legalBlock"><h3>Research Admin</h3><a class="privacyPolicyBtn adminDashboardLink" href="/admin" target="_blank" rel="noopener noreferrer">Open Research Admin Dashboard</a><p class="adminDashboardNote">Private aggregate analytics and CSV export. Administrator password required.</p></div>
@@ -515,7 +515,7 @@ html.mobileUI .settingsPanel.chartSettingsPanel,html.mobileUI .settingsPanel.wid
       <div class="metric"><span>R:R</span><b id="rrTxt">--</b></div>
     </div>
     <div class="small" style="margin-top:7px;color:#8d99aa;align-self:flex-start">Created by <a href="https://www.instagram.com/_aidan_w/" target="_blank" rel="noopener noreferrer" class="footerLink">@_aidan_w</a><span style="color:#657184"> -- </span><a href="https://discord.gg/P9Akxd2epU" target="_blank" rel="noopener noreferrer" class="footerLink">Join Trading Discord</a></div>
-    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.16.2</div>
+    <div class="simVersionCredit small" style="margin-top:2px;color:#6f7b8c;align-self:flex-start">Version 7.17.1</div>
   </div>
   <div class="bottomBlock">
     <div class="bottomTitle">Replay controls</div>
@@ -793,19 +793,20 @@ function playTone(type){
   o.connect(g).connect(ac.destination);o.start(now);o.stop(now+(type==='flat'?.20:.32));
  }catch(e){}
 }
+let backendSiteAccessAuthorized=false;
 function initWelcomeAndSound(){
  updateSoundButton();
  let sb=$('soundToggle');if(sb)sb.onclick=()=>{soundEnabled=!soundEnabled;localStorage.futSoundMuted=soundEnabled?'0':'1';updateSoundButton();if(soundEnabled)playTone('flat')};
  let overlay=$('welcomeOverlay'), start=$('welcomeStart'), passInput=$('welcomePassword'), termsBox=$('welcomeTermsBox'), passBox=$('welcomePasswordBox'), welcomeError=$('welcomeError');
- const ACCESS_PASSWORD='8888';
- const ACCESS_KEY='futPrivateAccessGranted_v1';
- function flashAccess(){
-  if(welcomeError)welcomeError.classList.add('show');
+ let passwordRequired=true,accessStatusReady=false,accessBusy=false;
+ function setAccessError(message,flash=true){
+  if(welcomeError){welcomeError.textContent=message||'Unable to verify access. Please try again.';welcomeError.classList.add('show')}
   const box=passBox||termsBox;
-  if(box){box.classList.remove('flash');void box.offsetWidth;box.classList.add('flash');setTimeout(()=>box.classList.remove('flash'),650)}
-  if(passInput)passInput.focus();
+  if(flash&&box){box.classList.remove('flash');void box.offsetWidth;box.classList.add('flash');setTimeout(()=>box.classList.remove('flash'),650)}
+  if(passwordRequired&&passInput)passInput.focus();
  }
- if(passInput)passInput.addEventListener('input',()=>{if(welcomeError)welcomeError.classList.remove('show');if(passBox)passBox.classList.remove('flash')});
+ function clearAccessError(){if(welcomeError)welcomeError.classList.remove('show');if(passBox)passBox.classList.remove('flash')}
+ if(passInput)passInput.addEventListener('input',clearAccessError);
  function hardHideWelcome(){
   if(!overlay)return;
   overlay.classList.remove('show');
@@ -823,26 +824,75 @@ function initWelcomeAndSound(){
   overlay.style.visibility='visible';
   overlay.style.opacity='1';
   overlay.classList.add('show');
-  setTimeout(()=>{if(passInput)passInput.focus()},80);
+  setTimeout(()=>{if(passwordRequired&&passInput&&!passInput.disabled)passInput.focus()},80);
  }
- function closeWelcome(){
-  if(!overlay)return;
-  const entered=(passInput&&passInput.value?passInput.value.trim():'');
-  if(entered!==ACCESS_PASSWORD){flashAccess();return}
-  localStorage.setItem(ACCESS_KEY,'1');
-  localStorage.futWelcomeSeen='1';
-  hardHideWelcome();
-  playTone('flat');
+ function renderAccessMode(){
+  if(passBox)passBox.classList.toggle('noPassword',!passwordRequired);
+  if(passInput){passInput.disabled=!passwordRequired;passInput.value='';passInput.placeholder='Access password'}
+  if(termsBox){let span=termsBox.querySelector('span');if(span)span.textContent=passwordRequired?'By entering the access password and using this site, you agree that this is only a private practice website and that you understand the terms listed above.':'By entering and using this site, you agree that this is only a private practice website and that you understand the terms listed above.'}
+  if(start){start.disabled=false;start.textContent='I Agree — Enter Site'}
+  clearAccessError();
  }
- // Fail-safe: when the welcome card is not meant to be shown, it cannot invisibly block mobile taps.
+ async function loadAccessStatus(){
+  accessStatusReady=false;accessBusy=true;
+  if(start){start.disabled=true;start.textContent='Checking access…'}
+  if(passInput)passInput.disabled=true;
+  // Show the real simulator behind the existing blurred overlay while the backend is checked.
+  hardShowWelcome();
+  try{
+   const res=await fetch('/api/access/status',{method:'GET',credentials:'same-origin',cache:'no-store',headers:{'Accept':'application/json'}});
+   const data=await res.json().catch(()=>null);
+   if(!res.ok||!data||data.ok!==true)throw new Error(data?.error||'Access service unavailable');
+   passwordRequired=!!data.passwordRequired;
+   backendSiteAccessAuthorized=!!data.authorized;
+   accessStatusReady=true;
+   if(backendSiteAccessAuthorized){hardHideWelcome();setTimeout(()=>{if(typeof maybeShowFirstRunGuide==='function')maybeShowFirstRunGuide()},80);return}
+   renderAccessMode();hardShowWelcome();
+  }catch(e){
+   backendSiteAccessAuthorized=false;passwordRequired=true;
+   if(passBox)passBox.classList.remove('noPassword');
+   if(passInput)passInput.disabled=true;
+   if(start){start.disabled=true;start.textContent='Access unavailable'}
+   setAccessError('Access service unavailable. Please refresh and try again.',false);
+   hardShowWelcome();
+  }finally{accessBusy=false}
+ }
+ async function closeWelcome(){
+  if(!overlay||accessBusy||!accessStatusReady)return;
+  accessBusy=true;clearAccessError();
+  const entered=passwordRequired&&passInput&&passInput.value?passInput.value.trim():'';
+  if(start){start.disabled=true;start.textContent='Checking…'}
+  if(passInput)passInput.disabled=true;
+  try{
+   const res=await fetch('/api/access/enter',{method:'POST',credentials:'same-origin',cache:'no-store',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({password:entered})});
+   const data=await res.json().catch(()=>null);
+   if(!res.ok||!data||data.ok!==true||data.authorized!==true){
+    if(res.status===401){setAccessError('Incorrect password. Please enter the access password to continue.');return}
+    throw new Error(data?.error||'Access request failed');
+   }
+   backendSiteAccessAuthorized=true;
+   hardHideWelcome();
+   playTone('flat');
+   setTimeout(()=>{if(typeof maybeShowFirstRunGuide==='function')maybeShowFirstRunGuide()},80);
+  }catch(e){
+   if(!welcomeError?.classList.contains('show'))setAccessError('Unable to verify access. Please try again.',false);
+  }finally{
+   accessBusy=false;
+   if(overlay?.classList.contains('show')){
+    if(start){start.disabled=false;start.textContent='I Agree — Enter Site'}
+    if(passInput)passInput.disabled=!passwordRequired;
+   }
+  }
+ }
+ // The overlay is controlled by backend access state; no password or access-granted flag is stored in public HTML/localStorage.
  hardHideWelcome();
- if(overlay&&localStorage.getItem(ACCESS_KEY)!=='1')setTimeout(hardShowWelcome,120);
+ setTimeout(loadAccessStatus,40);
  if(start){
   start.onclick=closeWelcome;
   start.addEventListener('touchend',e=>{e.preventDefault();e.stopPropagation();closeWelcome()},{passive:false});
  }
  if(passInput)passInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();closeWelcome()}});
- if(overlay)overlay.addEventListener('click',e=>{if(e.target===overlay&&document.documentElement.classList.contains('mobileUI'))flashAccess()});
+ if(overlay)overlay.addEventListener('click',e=>{if(e.target===overlay&&document.documentElement.classList.contains('mobileUI'))setAccessError(passwordRequired?'Enter the access password to continue.':'Use the button below to enter the site.')});
  // Emergency mobile fallback: hidden overlays remain noninteractive.
  setTimeout(()=>{if(overlay&&!overlay.classList.contains('show'))hardHideWelcome()},600);
 }
@@ -2416,7 +2466,7 @@ updateSoundButton=function(){let b=$('soundToggle');if(!b)return;b.classList.tog
 /* How It Works ----------------------------------------------------- */
 function openHowItWorks(firstRun=false){let o=$('howWorksOverlay');if(!o)return;o.classList.toggle('firstRun',!!firstRun);o.classList.add('show');o.setAttribute('aria-hidden','false')}
 function closeHowItWorks(markSeen=false){let o=$('howWorksOverlay');if(!o)return;if(markSeen)try{localStorage.setItem(HOW_IT_WORKS_KEY,'1')}catch(e){}o.classList.remove('show','firstRun');o.setAttribute('aria-hidden','true')}
-function maybeShowFirstRunGuide(){let access=localStorage.getItem('futPrivateAccessGranted_v1')==='1',seen=localStorage.getItem(HOW_IT_WORKS_KEY)==='1';if(access&&!seen&&!$('welcomeOverlay')?.classList.contains('show'))openHowItWorks(true)}
+function maybeShowFirstRunGuide(){let seen=localStorage.getItem(HOW_IT_WORKS_KEY)==='1';if(backendSiteAccessAuthorized&&!seen&&!$('welcomeOverlay')?.classList.contains('show'))openHowItWorks(true)}
 
 /* Settings persistence audit -------------------------------------- */
 gatherPrefs=function(){return{symbol:$('symbol')?.value,contracts:$('contracts')?.value,accountPlan:$('accountPlan')?.value,accountSize:$('accountSize')?.value,loss:$('loss')?.value,trailLimit:$('trailLimit')?.value,trailMode:$('trailMode')?.value,comm:$('comm')?.value,autoLen:$('autoLen')?.value,speed:$('speed')?.value,tf:String(tf),tzSelect:$('tzSelect')?.value,theme:wrap?.classList.contains('dark')?'dark':'light',autoScale:!!autoScale,emaUseDema:$('emaUseDema')?.checked,ema1On:$('ema1On')?.checked,ema1Len:$('ema1Len')?.value,ema1Color:$('ema1Color')?.value,ema2On:$('ema2On')?.checked,ema2Len:$('ema2Len')?.value,ema2Color:$('ema2Color')?.value,ema3On:$('ema3On')?.checked,ema3Len:$('ema3Len')?.value,ema3Color:$('ema3Color')?.value,stOn:$('stOn2')?.checked,stAtr:$('stAtr2')?.value,stMult:$('stMult2')?.value,sessionsOn:$('sessionsOn2')?.checked,sessionTokyoOn:$('sessionTokyoOn')?.checked,sessionLondonOn:$('sessionLondonOn')?.checked,sessionNewYorkOn:$('sessionNewYorkOn')?.checked,sessionTokyoColor:$('sessionTokyoColor')?.value,sessionLondonColor:$('sessionLondonColor')?.value,sessionNewYorkColor:$('sessionNewYorkColor')?.value,sessionOpacity:$('sessionOpacity')?.value,sessionLabels:$('sessionLabels')?.checked,focusFilter:focusFilterValue,chartAppearance,soundEnabled:!!soundEnabled}};
@@ -2702,10 +2752,10 @@ drawAll=function(){_v7118DrawAll();positionTextEditor()};
 /* ================== end v7.11.8 text drawing tool ================== */
 
 
-/* ================= v7.16.2 anonymous research sharing ================= */
+/* ================= v7.17.1 anonymous research sharing ================= */
 const RESEARCH_API_BASE='https://replay-trader-research-api.apogeelab.workers.dev';
 const RESEARCH_SHARING_KEY='replayTraderResearchSharingV1';
-const RESEARCH_APP_VERSION='7.16.2';
+const RESEARCH_APP_VERSION='7.17.1';
 const researchSyncTimers=new Map(),researchSyncChains=new Map();
 
 function researchSharingEnabled(){try{return localStorage.getItem(RESEARCH_SHARING_KEY)!=='0'}catch(e){return true}}
@@ -2730,7 +2780,7 @@ finalizeCurrentAccount=function(outcome,reason){let n=currentAccountNumber(),out
 function openPrivacyPolicy(){let o=$('privacyOverlay');if(!o)return;o.classList.add('show');o.setAttribute('aria-hidden','false')}
 function closePrivacyPolicy(){let o=$('privacyOverlay');if(!o)return;o.classList.remove('show');o.setAttribute('aria-hidden','true')}
 function initResearchSharing(){let toggle=$('researchSharing');if(toggle){toggle.checked=researchSharingEnabled();toggle.addEventListener('change',()=>{setResearchSharingEnabled(toggle.checked);toast(toggle.checked?'Anonymous research sharing enabled.':'Anonymous research sharing disabled. Future trades will stay local.')})}if($('openPrivacyPolicy'))$('openPrivacyPolicy').onclick=openPrivacyPolicy;if($('privacyClose'))$('privacyClose').onclick=closePrivacyPolicy;if($('privacyDone'))$('privacyDone').onclick=closePrivacyPolicy;if($('privacyOverlay'))$('privacyOverlay').onclick=e=>{if(e.target===$('privacyOverlay'))closePrivacyPolicy()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('privacyOverlay')?.classList.contains('show'))closePrivacyPolicy()})}
-/* =============== end v7.16.2 anonymous research sharing =============== */
+/* =============== end v7.17.1 anonymous research sharing =============== */
 
 loadPrefs();migrateRenamedSetupTags();stats.peakEquity=Math.max(stats.peakEquity,accountSize());renderRecent();updateAutoScaleButton();loadSelectedMarket($('symbol').value);initMobileGui();initWelcomeAndSound();initV711Ui();initV7114Ui();initResearchSharing();attachPrefsAutosave();setActionState();resize();setTimeout(closeSidebarWithHint,5000);setTimeout(showBottomResizeHint,60000);initMobileTouchControls();initManualMobileNextButton();
 
